@@ -11,6 +11,7 @@ Daily technical breakdowns of the latest machine learning research in the automo
 | 5 | [DriveZero: End-to-End Driving Beyond Human Demonstrations](day-05-drivezero/) | [2609.06055](https://arxiv.org/abs/2609.06055) | Closed-loop RL / teacher-student distillation |
 | 6 | [COSTER: Collision Snapshot Guided Time-Reversed Scenario Generation](day-06-coster/) | [2609.06433](https://arxiv.org/abs/2609.06433) | Safety-critical scenario generation (CVAE) |
 | 7 | [MC-DeTra: Motion-Consistent Joint Detection + Trajectory Forecasting](day-07-mc-detra/) | [2609.11717](https://arxiv.org/abs/2609.11717) | Joint BEV perception + forecasting |
+| 8 | [Marigold: Diffusion Models as Monocular Depth Estimators](day-08-marigold/) | [2312.02145](https://arxiv.org/abs/2312.02145) | Monocular depth estimation (general CV, evaluated for automotive fit) |
 
 Each `day-0N-*/` folder is self-contained and independently runnable:
 
