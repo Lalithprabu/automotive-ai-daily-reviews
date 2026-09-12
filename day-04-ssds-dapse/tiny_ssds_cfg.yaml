@@ -1,0 +1,18 @@
+model:
+  traj_feat_dim: 3
+  ctx_feat_dim: 8
+  model_dim: 32
+  cond_dim: 32
+  n_heads: 4
+  n_dual_blocks: 1
+  n_single_blocks: 1
+data:
+  n_agents: 4
+  n_horizon: 12
+  n_context: 6
+dapse:
+  r_t: 0.5
+  beta: 0.3
+  eta: 0.02
+  n_inner_steps: 3
+  n_outer_steps: 8

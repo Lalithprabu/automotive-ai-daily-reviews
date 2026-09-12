@@ -1,0 +1,33 @@
+# DriveZero -- reference configuration
+# arXiv:2609.06055
+
+drive_vfm:
+  source_dims:
+    dinov3: 1024
+    siglip2: 1152
+    sam: 256
+    depth_anything_v2: 384
+  model_dim: 256
+  n_heads: 8
+  n_fusion_layers: 4
+
+teacher:
+  privileged_dim: 128     # ground-truth BEV/occupancy summary width
+  action_dim: 2           # (steering, acceleration)
+  hidden: 256
+
+student:
+  goal_dim: 64
+  hidden: 128
+
+ppo:
+  clip_eps: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+
+inference:
+  value_guided_search_k: 8
+
+train:
+  batch_size: 32
+  lr: 1.0e-3

@@ -1,0 +1,23 @@
+# MC-DeTra -- reference configuration
+# arXiv:2609.11717 (builds on DeTra, arXiv:2406.04426)
+
+model:
+  d_model: 64
+  n_objects: 8          # N
+  n_future_steps: 4      # T (t=0 detection, t>0 forecast)
+  n_modes: 3              # K
+  n_blocks: 2             # B refinement blocks
+  n_heads: 4
+  lidar_channels: 32
+  map_feat_dim: 32
+  occupancy_grid: 5       # aux occupancy patch side length
+  knn_k: 4                # nearest map tokens per query
+
+motion_consistency_losses:
+  past_motion: 1.0
+  occupancy: 1.0
+  heading_vel: 1.0
+
+train:
+  batch_size: 8
+  lr: 1.0e-3

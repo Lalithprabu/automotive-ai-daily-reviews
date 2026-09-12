@@ -1,0 +1,14 @@
+# Daily Tech Review Series — Log
+
+Tracks which paper/algorithm was covered on each day so future runs don't repeat a pick and can continue the day counter.
+
+| Day | Date | Paper | arXiv | Category |
+|---|---|---|---|---|
+| 1 | 2026-09-05 | SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving | [2609.03602](https://arxiv.org/abs/2609.03602) | End-to-end autonomous driving / World-Action Models |
+| 2 | 2026-09-06 | Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving | [2609.00111](https://arxiv.org/abs/2609.00111) | Vision-language foundation model unifying ADAS perception + trajectory/motion planning |
+
+**Record correction (2026-09-06 run):** The originally logged Day 1 entry named "CoLT-Drive" (arXiv:2609.00242), but the actual published Day 1 asset (`day-01-sv-wam/`) covers a different paper, SV-WAM (arXiv:2609.03602). This appears to be from two separate runs on the same day — the log below now reflects what was actually published. CoLT-Drive (2609.00242) and DNC-IMM (2609.01120, lane-change intention recognition) remain unused and are still eligible for a future day if nothing more recent/impactful is found.
+
+**Selection notes (Day 2):** Searched arXiv listings (cs.RO, cs.CV, cs.LG, eess.SY, cs.NI) for automotive-ML papers submitted within the prior 14 days (Aug 23 – Sep 6, 2026), across ADAS perception, multi-modal trajectory forecasting, EV battery/thermal modeling, and V2X latency prediction. Candidates considered: DNC-IMM (still unused, arXiv:2609.01120, Sept 1 2026 — narrower scope than the pick below); "The Role of Collective Perception and 5G NR-V2X Sidelink in Road Safety" (arXiv:2609.01478, Sept 1 2026 — network-simulation study, not a novel neural architecture, poor fit for the GitHub PyTorch-implementation requirement); WM-RMoE / "Risk-Aware Decision-Making for Autonomous Overtaking" (arXiv:2609.00385 — confirmed still outside the 14-day window, original submission July 14 2026 despite the September-looking ID). Selected Qwen-Drive-1.0 (arXiv:2609.00111, submitted Aug 31 2026) for unifying 3D perception, VQA, and diffusion-based motion planning inside one VLM backbone — a genuine architectural departure rather than an incremental tweak, with concrete reported metrics (nuScenes 43.95 mAP / 60.99 mIoU, OpenScene 43.45/71.27, NAVSIM PDMS 90.7, WOD-E2E RFS 7.91) and a clear novel mechanism (Planning Expert cross-attending into the VLM's own cached KV states).
+
+**Visual assets policy (added 2026-09-06):** Every day's folder ships a rendered architecture diagram (`assets/*_architecture.png`), and a results stat-tile image (`assets/*_results.png`) whenever hard benchmark numbers were actually verified from the source paper — never fabricated. See the project's `AUTOMOTIVE AI TECHNICAL REFERENCE MATRIX` §5 for the full policy.

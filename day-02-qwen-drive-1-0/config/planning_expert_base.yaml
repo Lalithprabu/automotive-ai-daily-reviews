@@ -1,0 +1,28 @@
+# Planning Expert base configuration
+model:
+  model_dim: 1024
+  n_layers: 32
+  n_heads: 16
+  n_caches: 8
+  cond_dim: 1024
+  waypoint_dim: 3      # (x, y, heading)
+  n_waypoints: 50       # 5s @ 10Hz
+
+data:
+  n_kv_heads: 4          # grouped-query heads in the (frozen) VLM backbone
+  l_ctx: 32               # cached context length (image + text tokens)
+  synthetic: true          # flip to false once a real manifest is wired up
+
+loss:
+  lambda_vel: 0.1
+  lambda_accel: 0.1
+
+sampling:
+  n_steps: 10             # 10-step Euler solver, matches the paper
+
+train:
+  batch_size: 4
+  epochs: 50
+  lr: 1.0e-4
+  weight_decay: 0.01
+  optimizer: adamw

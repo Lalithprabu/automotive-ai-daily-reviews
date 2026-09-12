@@ -1,0 +1,15 @@
+model:
+  d_model: 24
+  n_objects: 5
+  n_future_steps: 8
+  n_modes: 3
+  n_blocks: 2
+  n_heads: 4
+  lidar_channels: 12
+  map_feat_dim: 12
+  occupancy_grid: 5
+  knn_k: 3
+sim:
+  lidar_h: 20
+  lidar_w: 20
+  n_map_tokens: 12

@@ -1,0 +1,22 @@
+# SSDS + DAPSE -- reference configuration
+# arXiv:2609.04921
+
+model:
+  traj_feat_dim: 3
+  ctx_feat_dim: 8
+  model_dim: 256
+  cond_dim: 256
+  n_heads: 8
+  n_dual_blocks: 4
+  n_single_blocks: 4
+  mlp_ratio: 4.0
+  max_traj_tokens: 512
+
+dapse:
+  beta: 1.0
+  eta: 0.05
+  n_inner_steps: 4
+
+train:
+  batch_size: 8
+  lr: 1.0e-3

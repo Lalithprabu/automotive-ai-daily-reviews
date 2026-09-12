@@ -1,0 +1,23 @@
+model:
+  model_dim: 32
+  n_layers: 4
+  n_heads: 4
+  n_caches: 2
+  cond_dim: 32
+  waypoint_dim: 3
+  n_waypoints: 12
+data:
+  n_kv_heads: 2
+  l_ctx: 8
+  synthetic: true
+loss:
+  lambda_vel: 0.1
+  lambda_accel: 0.1
+sampling:
+  n_steps: 4
+train:
+  batch_size: 2
+  epochs: 1
+  lr: 1.0e-4
+  weight_decay: 0.01
+  optimizer: adamw

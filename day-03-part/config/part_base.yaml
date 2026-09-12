@@ -1,0 +1,24 @@
+# PART -- reference configuration
+# arXiv:2609.02289
+
+model:
+  model_dim: 128
+  point_feat_dim: 64
+  n_heads: 4
+  n_layers: 6
+  n_queries: 64
+
+daqi:
+  n_iters: 3
+
+supervision:
+  mask_prob: 0.15
+  soft_target: 0.5
+
+loss:
+  lambda_point: 5.0
+  lambda_vel: 2.0
+
+train:
+  batch_size: 8
+  lr: 1.0e-3

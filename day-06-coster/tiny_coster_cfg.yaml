@@ -1,0 +1,14 @@
+model:
+  map_point_dim: 6
+  agent_state_dim: 4
+  hidden_dim: 24
+  latent_dim: 6
+  state_dim: 4
+  n_history_steps: 8
+  t_rev: 10
+  n_collision_time_bins: 6
+  n_heads: 2
+sim:
+  n_agents: 4
+  n_polylines: 6
+  n_points: 5

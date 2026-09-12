@@ -1,0 +1,21 @@
+drive_vfm:
+  source_dims:
+    dinov3: 24
+    siglip2: 28
+    sam: 16
+    depth_anything_v2: 12
+  model_dim: 32
+  n_heads: 4
+  n_fusion_layers: 2
+teacher:
+  privileged_dim: 16
+  action_dim: 2
+  hidden: 32
+student:
+  goal_dim: 8
+  hidden: 16
+sim:
+  n_steps: 14
+  n_tokens_per_source: 6
+  dt: 0.3
+  search_k: 8

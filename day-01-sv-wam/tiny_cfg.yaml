@@ -1,0 +1,22 @@
+model:
+  n_cams: 6
+  embed_dim: 32
+  n_layers: 2
+  n_heads: 4
+  n_action_steps: 6
+  n_video_tokens: 8
+  action_dim: 3
+data:
+  img_size: [64, 96]
+  synthetic: true
+loss:
+  lambda_video: 1.0
+  lambda_drivable: 0.5
+  vehicle_length: 4.8
+  vehicle_width: 1.9
+train:
+  batch_size: 2
+  epochs: 1
+  lr: 3.0e-4
+  weight_decay: 0.01
+  optimizer: adamw

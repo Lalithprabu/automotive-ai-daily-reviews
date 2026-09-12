@@ -1,0 +1,20 @@
+# COSTER -- reference configuration
+# arXiv:2609.06433
+
+model:
+  map_point_dim: 7
+  agent_state_dim: 4       # (x, y, heading, v)
+  hidden_dim: 128
+  latent_dim: 32
+  state_dim: 4
+  n_history_steps: 20
+  t_rev: 30                 # backward rollout length
+  n_collision_time_bins: 20
+  n_heads: 4
+
+loss:
+  beta: 0.1                 # KL weight
+
+train:
+  batch_size: 16
+  lr: 1.0e-3

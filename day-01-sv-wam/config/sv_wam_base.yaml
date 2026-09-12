@@ -1,0 +1,26 @@
+# SV-WAM base configuration
+model:
+  n_cams: 6
+  embed_dim: 512
+  n_layers: 6
+  n_heads: 8
+  n_action_steps: 6        # 6 waypoints
+  n_video_tokens: 64
+  action_dim: 3             # (x, y, heading)
+
+data:
+  img_size: [224, 400]
+  synthetic: true           # flip to false once a real clip_index manifest is wired up
+
+loss:
+  lambda_video: 1.0
+  lambda_drivable: 0.5
+  vehicle_length: 4.8
+  vehicle_width: 1.9
+
+train:
+  batch_size: 8
+  epochs: 50
+  lr: 3.0e-4
+  weight_decay: 0.01
+  optimizer: adamw
