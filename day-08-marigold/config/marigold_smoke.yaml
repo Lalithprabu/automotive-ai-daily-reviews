@@ -1,0 +1,20 @@
+# Reference config for the reduced-scale smoke-test reconstruction.
+# NOT the authors' hyperparameters (the real Marigold reuses SD's full
+# ~866M-parameter VAE + U-Net) — this is sized to train/test in seconds on CPU.
+
+model:
+  latent_channels: 4          # matches SD-style VAE latent depth
+  base_channels: 16           # real SD U-Net stem: 320
+  time_embed_dim: 32          # real SD: 320 (x4 in MLP)
+  num_train_timesteps: 1000   # standard DDPM schedule length
+  num_inference_steps: 4      # Marigold's few-step trailing-DDIM regime (paper: 1-4)
+
+training:
+  batch_size: 4
+  lr: 1.0e-3
+  optimizer: adam
+  data: synthetic_only        # mirrors the paper's real-data-free training protocol
+
+inference:
+  num_ensemble: 5             # independent noise seeds averaged via affine alignment
+  output: affine_invariant_depth  # NOT metric — needs external scale/shift calibration

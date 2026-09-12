@@ -1,0 +1,9 @@
+model:
+  latent_channels: 4
+  base_channels: 16
+  time_embed_dim: 32
+  num_train_timesteps: 1000
+  num_inference_steps: 4
+sim:
+  image_h: 32
+  image_w: 32
