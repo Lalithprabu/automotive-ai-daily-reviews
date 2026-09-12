@@ -21,6 +21,10 @@ Marigold turns a frozen Stable Diffusion image generator into a monocular depth 
 
 ## Simulation
 
+![Marigold concept simulation](assets/social/marigold_simulation.gif)
+
+*Illustrative simulation of the idea (hand-drawn scene, not real model output) — see [Simulation](#simulation) below for the actual model running.*
+
 ![Marigold few-step denoising trajectory](trajectory_simulation.gif)
 
 The real few-step "trailing DDIM" reverse process, run on this repo's own reconstructed model: starting from pure noise, the depth latent is denoised step-by-step and decoded at every step. Every frame is this model's own forward pass (untrained/random weights by default — plug in a checkpoint with `--checkpoint` for a trained result). Generate your own with:
