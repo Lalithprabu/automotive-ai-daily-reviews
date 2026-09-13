@@ -12,6 +12,7 @@ Daily technical breakdowns of the latest machine learning research in the automo
 | 6 | [COSTER: Collision Snapshot Guided Time-Reversed Scenario Generation](day-06-coster/) | [2609.06433](https://arxiv.org/abs/2609.06433) | Safety-critical scenario generation (CVAE) |
 | 7 | [MC-DeTra: Motion-Consistent Joint Detection + Trajectory Forecasting](day-07-mc-detra/) | [2609.11717](https://arxiv.org/abs/2609.11717) | Joint BEV perception + forecasting |
 | 8 | [Marigold: Diffusion Models as Monocular Depth Estimators](day-08-marigold/) | [2312.02145](https://arxiv.org/abs/2312.02145) | Monocular depth estimation (general CV, evaluated for automotive fit) |
+| 9 | [TrajFusionNet+: Transformer-Based Prediction of Pedestrian Crossing Intention via Fusion of Trajectory Representations and Scene Graphs](day-09-trajfusionnet-plus/) | [2609.10806](https://arxiv.org/abs/2609.10806) | ADAS pedestrian crossing-intention prediction — adds a Graph Attention Module onto TrajFusionNet |
 
 Each `day-0N-*/` folder is self-contained and independently runnable:
 

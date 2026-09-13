@@ -7,6 +7,10 @@ Tracks which paper/algorithm was covered on each day so future runs don't repeat
 | 1 | 2026-09-05 | SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving | [2609.03602](https://arxiv.org/abs/2609.03602) | End-to-end autonomous driving / World-Action Models |
 | 2 | 2026-09-06 | Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving | [2609.00111](https://arxiv.org/abs/2609.00111) | Vision-language foundation model unifying ADAS perception + trajectory/motion planning |
 | 8 | 2026-09-12 | Marigold: Repurposing Diffusion-Based Image Generators for Monocular Depth Estimation | [2312.02145](https://arxiv.org/abs/2312.02145) | Monocular depth estimation — reader-requested automotive-applicability review, not an automotive-origin paper |
+| 9 | 2026-09-13 | TrajFusionNet+: Transformer-Based Prediction of Pedestrian Crossing Intention via Fusion of Trajectory Representations and Scene Graphs | [2609.10806](https://arxiv.org/abs/2609.10806) | ADAS vision perception + pedestrian crossing-intention prediction — adds a Graph Attention Module (pedestrian-centric scene graph) as a third late-fused branch onto the verified two-branch TrajFusionNet (arXiv:2508.19866) |
+
+**Selection notes (Day 9):** Originally assembled as "Day 8" — renumbered after checking this repo directly and finding Day 8 (Marigold) already here. See `day-09-trajfusionnet-plus/README.md` for full selection rationale and sourcing notes.
+
 
 **Record correction (2026-09-06 run):** The originally logged Day 1 entry named "CoLT-Drive" (arXiv:2609.00242), but the actual published Day 1 asset (`day-01-sv-wam/`) covers a different paper, SV-WAM (arXiv:2609.03602). This appears to be from two separate runs on the same day — the log below now reflects what was actually published. CoLT-Drive (2609.00242) and DNC-IMM (2609.01120, lane-change intention recognition) remain unused and are still eligible for a future day if nothing more recent/impactful is found.
 

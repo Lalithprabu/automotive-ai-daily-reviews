@@ -1,0 +1,42 @@
+# Tiny config for fast smoke-testing (train.py --config tiny_trajfusionnetplus_cfg.yaml)
+sam:
+  past_len: 6
+  future_len: 8
+  traj_channels: 5
+  d_model: 32
+  traj_enc_layers: 1
+  traj_dec_layers: 1
+  traj_heads: 2
+  traj_ffn_dim: 64
+  cls_layers: 1
+  cls_heads: 2
+  cls_ffn_dim: 64
+  proj_dim: 16
+  dropout: 0.1
+
+vam:
+  in_channels: 3
+  base_channels: 8
+  num_stages: 2
+  proj_dim: 16
+  dropout: 0.1
+
+gam:
+  node_feat_dim: 8
+  d_model: 32
+  num_heads: 2
+  num_layers: 1
+  proj_dim: 16
+  dropout: 0.1
+  max_nodes: 8
+
+fusion_hidden_dim: 24
+dropout: 0.1
+
+train:
+  batch_size: 8
+  lr: 0.001
+  steps: 20
+  cls_loss_weight: 1.0
+  traj_loss_weight: 1.0
+  seed: 0
