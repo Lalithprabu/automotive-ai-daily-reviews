@@ -108,6 +108,8 @@ arXiv's own `/abs`, `/pdf`, and `/html` endpoints returned HTTP 429 on every att
 python simulate.py --config config.yaml --checkpoint checkpoints/mm_future.pt
 ```
 
+![MM-Future simulation](mm_future_simulation.gif)
+
 ## Citation
 
 ```bibtex

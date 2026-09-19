@@ -213,6 +213,16 @@ The bottom strip plots the curriculum threshold (declining) and
 `supervised_cells` count (growing) across the full 150-step phase-2 history,
 with a marker tracking the current frame's training step.
 
+![LDE simulation](assets/lde_simulation.gif)
+
+Note on reproducing this from a fresh clone: `checkpoints/*.pt` is
+git-ignored (same as every other day in this series), so only a thinned
+subset of the 51 training checkpoints ships in the zip hand-off for size —
+enough for `simulate.py` to still render a real multi-frame animation
+without `train.py` first, but `python train.py --config config.yaml`
+regenerates the full 51-checkpoint set (150 steps, ~15s CPU) if you want
+the exact 50-frame version shown above.
+
 ## Citation
 
 ```

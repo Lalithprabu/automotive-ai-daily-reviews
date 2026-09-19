@@ -123,6 +123,8 @@ python simulate.py --config config.yaml --frames 30
 
 Output: `assets/sparse_bevnet_simulation.gif` (30 frames, ~20s render time on CPU).
 
+![Sparse-BEVNet simulation](assets/sparse_bevnet_simulation.gif)
+
 ## Citation
 
 ```
