@@ -1,0 +1,39 @@
+# READ (Risk-Informed fields) -- reconstruction config.
+# All dimensions here are this reconstruction's own defaults; the
+# paper's exact hyperparameters were not recoverable (see README
+# "Sourcing note" / "Reconstruction defaults").
+
+model:
+  bev_channels: 3
+  agent_features: 4
+  hidden_dim: 128
+  pooled_size: 4
+  num_scene_layers: 2
+  num_scene_heads: 4
+  num_freqs: 8          # Fourier positional encoding frequency bands
+  max_freq: 4.0          # lowered from an initial 6.0 -- see positional_encoding.py
+  num_cross_layers: 2
+  num_risk_heads: 4
+
+scene:
+  num_timesteps: 30
+  dt: 0.2
+  grid_size: 48
+  num_history_steps: 5
+
+loss:
+  margin: 0.5
+  background_weight: 1.0
+  num_agent_probes: 16
+  num_background_probes: 32
+
+training:
+  num_steps: 100
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  log_every: 10
+  seed: 0
+
+trajectory_refinement:
+  num_steps: 20
+  step_size: 0.05

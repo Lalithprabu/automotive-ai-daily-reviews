@@ -1,0 +1,42 @@
+# DRiF reconstruction config
+# Reconstruction defaults (not specified in the paper) are flagged inline.
+
+bev:
+  range_m: 50.0          # BEV_RANGE_M: square window is [-25, +25] m around ego
+  grid_size: 64           # H = W = 64 cells  (reconstruction default)
+  in_channels: 5           # occupancy, lane-corridor, ego-history x, ego-history y, velocity
+  base_channels: 32        # conv stem width (reconstruction default)
+  bottleneck_channels: 128 # channels fed into the 3 heads, F_t: [B, 128, 16, 16]
+  attn_heads: 4             # self-attention bottleneck heads (reconstruction default)
+
+heads:
+  static_map_classes: 3     # background, drivable, lane-boundary
+  planning_horizon: 8        # T future waypoints
+  planning_dim: 2             # (x, y) per waypoint
+
+scene:
+  num_risk_points: 96         # N sampled BEV points per scene for pairwise supervision
+  num_pairs: 64                 # P sampled pairs per scene
+  seed: 0
+
+loss:
+  w_rank: 3.0
+  w_map: 0.4
+  w_plan: 0.3
+  w_tv: 0.08
+  rank_margin: 0.3
+
+train:
+  steps: 250
+  batch_size: 16
+  lr: 0.0003
+  weight_decay: 0.0001
+  log_every: 25
+
+simulate:
+  steps: 400
+  batch_size: 16
+  lr: 0.0003
+  timesteps: 12
+  fps: 4
+  out_gif: assets/trajectory_simulation.gif

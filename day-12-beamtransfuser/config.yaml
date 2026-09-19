@@ -1,0 +1,47 @@
+# BeamTransFuser reconstruction config
+#
+# NOTE: the paper's scale (d_model=256) trains at ~3.6s/step on CPU-only
+# hardware, which is too slow for iterating on this reconstruction. This
+# config ships a smaller default (d_model=128, n_heads=4) that trains at
+# ~0.5-0.6s/step on CPU. This is a SPEED-DRIVEN reconstruction default, not
+# a value reported in the paper.
+
+model:
+  d_model: 128
+  n_heads: 4
+  n_fusion_blocks: 4
+  ffn_hidden: 256
+  dropout: 0.1
+  num_beams: 64          # beam codebook size (reconstruction choice, not confirmed from paper)
+  tokens_per_modality:   # camera/lidar/radar must be perfect squares (laid out on a grid)
+    camera: 9
+    lidar: 9
+    radar: 4
+    gps: 1
+
+data:
+  # synthetic DeepSense6G-style vehicle drive-by scene: no public dataset
+  # recovered for this paper (arXiv rate-limited), so this is a procedurally
+  # generated stand-in shaped like a V2X drive-by beam-prediction task.
+  camera_shape: [3, 32, 32]
+  lidar_shape: [1, 32, 32]
+  radar_shape: [1, 16, 16]
+  gps_dim: 4
+  modality_dropout_prob: 0.15   # probability any single modality is fully absent for a sample
+  val_size: 512
+  seed: 1234
+
+train:
+  batch_size: 32
+  steps: 300
+  lr: 0.0003
+  weight_decay: 0.0001
+  log_every: 20
+  seed: 42
+
+simulate:
+  n_frames: 90
+  drop_start_frame: 35
+  drop_end_frame: 55
+  drop_modality: camera
+  fps: 8

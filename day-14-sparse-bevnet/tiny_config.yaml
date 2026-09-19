@@ -1,0 +1,32 @@
+# Small/fast config for smoke tests and CI -- not used for the reported results.
+num_cameras: 6
+image_size: 32
+bev_size: 8
+bev_range: 12.0
+num_objects_min: 1
+num_objects_max: 3
+
+train_samples: 16
+val_samples: 8
+calib_samples: 8
+
+backbone_channels: 16
+feature_size: 4
+num_heads: 2
+bra_region_grid: 2
+bra_topk: 2
+topk_cameras: 2
+cga_groups: 2
+
+batch_size: 4
+steps: 10
+lr: 0.001
+box_loss_weight: 1.0
+seed: 0
+
+threshold_sweep_min: 0.05
+threshold_sweep_max: 0.95
+threshold_sweep_step: 0.05
+
+checkpoint_path: tiny_checkpoint.pt
+threshold_path: tiny_threshold.json

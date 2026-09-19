@@ -1,0 +1,38 @@
+# LDE reconstruction config (Day 13)
+# Synthetic-task defaults -- see README "Reconstruction defaults" section.
+
+seed: 0
+
+data:
+  H: 32
+  W: 32
+  C_in: 8
+  num_objects: 6
+  ego_range: 10.0
+  collab_range: 15.0
+  collab_offset_range: [4, 8]
+  noise_std: 0.15
+  signal_scale: 3.0
+
+model:
+  in_channels: 8
+  feat_channels: 64
+  budget_ratio: 0.4          # fraction of BEV cells kept under the V2X bandwidth budget
+  fov_radius_cells: 16.0     # ego's trusted FoV radius, in grid cells
+  ema_momentum: 0.99
+  curriculum_start: 0.90
+  curriculum_end: 0.50
+
+train:
+  batch_size: 16
+  pretrain_steps: 150        # phase 1: supervised teacher pretraining
+  lde_steps: 150             # phase 2: main Mean-Teacher self-training loop
+  lr: 0.003
+  eval_every: 10
+  log_path: assets/train_log.json
+  checkpoint_dir: assets/checkpoints
+
+simulate:
+  num_frames: 50
+  fps: 4
+  output_path: assets/lde_simulation.gif

@@ -1,0 +1,41 @@
+# Sparse-BEVNet reconstruction config (full run).
+# All numeric values below are this project's own reconstruction defaults
+# unless explicitly noted as paper-sourced in README.md. The paper itself
+# (a short 4-page CISAT 2026 paper) does not publish these internal dims.
+
+# --- scene / data ---
+num_cameras: 6
+image_size: 64          # per-camera synthetic image, HxW
+bev_size: 16             # BEV grid is bev_size x bev_size cells
+bev_range: 12.0          # BEV half-extent in meters (grid covers [-12, 12] x [-12, 12])
+num_objects_min: 1
+num_objects_max: 5
+
+train_samples: 512
+val_samples: 128
+calib_samples: 128
+
+# --- model ---
+backbone_channels: 32
+feature_size: 8          # backbone output feature map is feature_size x feature_size
+num_heads: 4
+bra_region_grid: 2       # BiLevelRoutingAttention: 2x2 = 4 regions
+bra_topk: 2               # each region routes to its top-2 most relevant regions
+topk_cameras: 2           # SparseSpatialCrossAttention: each BEV cell routes to top-2 of 6 cameras
+cga_groups: 4              # CascadedGroupAttention: 4 cascaded head-groups
+
+# --- training ---
+batch_size: 8
+steps: 600
+lr: 0.001
+box_loss_weight: 1.0
+seed: 0
+
+# --- calibration ---
+threshold_sweep_min: 0.05
+threshold_sweep_max: 0.95
+threshold_sweep_step: 0.01
+
+# --- output paths ---
+checkpoint_path: checkpoint.pt
+threshold_path: threshold.json

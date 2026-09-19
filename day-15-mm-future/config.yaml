@@ -1,0 +1,54 @@
+# MM-Future (reconstruction) — shipped config
+#
+# NOTE ON DIMENSIONS: the paper (arXiv:2609.20377) reports d_model=256 and
+# 64 MM-Tokens per two-frame chunk, trained on real multi-camera nuScenes-style
+# video against the NAVSIM / HUGSIM benchmarks with up to 64 trajectory
+# proposals. Those dimensions and that data are not reproducible on this
+# project's CPU-only build sessions in a few minutes of training, so this
+# shipped config uses a deliberately smaller reconstruction default (see
+# README "Sourcing & Reconstruction Note"). Every dimension below is this
+# project's own default, not a value taken from the paper, unless the
+# comment says otherwise.
+
+data:
+  grid_size: 32          # synthetic top-down BEV occupancy grid, grid_size x grid_size
+  num_agents: 4           # other vehicles sharing the scene with ego
+  history_frames: 4       # paper: 2s history @ 2Hz = 4 frames
+  future_frames: 8        # paper: 4s horizon @ 2Hz = 8 frames
+  frames_per_chunk: 2     # paper: "every two-frame temporal chunk"
+  num_cameras: 4           # front, front-left, front-right, rear (paper spec)
+  camera_crop: 16          # synthetic camera "view" = 16x16 crop of the BEV grid
+  num_train_scenes: 512
+  num_val_scenes: 64
+  seed: 15
+
+model:
+  d_model: 64              # paper: 256 (reconstruction default, see note above)
+  n_heads: 4
+  n_flow_layers: 3         # bidirectional joint flow-matching transformer depth
+  patch_dim: 32             # CNN backbone output channels before tokenization
+  register_tokens_per_camera: 4   # paper: register tokens per camera image
+  chunk_tokens: 16          # paper: 64 tokens per two-frame chunk (reconstruction default)
+  action_dim: 4              # [dx, dy, sin(psi), cos(psi)] — matches paper's normalized differential motion
+  num_action_clusters: 8    # K-means clusters defining the Gaussian-mixture action prior
+  num_proposals: 8           # paper trains/evaluates with up to 64 proposals; 8 here for CPU speed
+  bev_decode_size: 16        # auxiliary decoder head: scene tokens -> coarse occupancy grid (visualization only, not in paper)
+  flow_ode_steps: 8          # Euler integration steps at inference (generate())
+
+loss:
+  action_weight: 1.0        # paper: action loss weight 1.0
+  scene_weight: 0.1          # paper: scene loss weight 0.1
+  score_weight: 1.0          # paper: scoring loss weight 1.0
+
+train:
+  epochs: 18
+  batch_size: 16
+  lr: 0.0003
+  weight_decay: 0.01
+  device: cpu
+  log_every: 10
+  checkpoint_path: checkpoints/mm_future.pt
+
+simulate:
+  num_frames: 30
+  out_path: mm_future_simulation.gif
