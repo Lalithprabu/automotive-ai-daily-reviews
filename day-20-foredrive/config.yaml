@@ -1,0 +1,105 @@
+# ForeDrive reconstruction — all hyperparameters live here.
+#
+# IMPORTANT: this project's YAML values use DECIMAL notation only (e.g. 0.0003,
+# not 3e-4). Bare scientific-notation literals (3e-4) are parsed by PyYAML's
+# default SafeLoader as STRINGS, not floats, because the resolver regex used
+# by PyYAML's default Loader does not accept an exponent with no decimal
+# point and no explicit sign in some versions. That bug bit an earlier day
+# in this series (optimizer silently received a string learning rate and
+# crashed several steps into training with a confusing dtype error deep
+# inside the Adam optimizer). To avoid re-introducing it, every float below
+# is written with an explicit decimal point and no exponent.
+
+# ---------------------------------------------------------------------------
+# Scene / synthetic data
+# ---------------------------------------------------------------------------
+data:
+  raster_size: 64          # H = W of the synthetic front-view raster (px)
+  raster_channels: 3        # occupancy-style channels (ego lane, agents, road edges)
+  num_agents_min: 1
+  num_agents_max: 3
+  scene_len: 16              # timesteps simulated per scene
+  context_len: 6              # number of past/current frames the model conditions on (we use the last one)
+  horizons: [1, 2, 3, 4]      # future frame offsets predicted by the world model (H=4)
+  dt: 0.5                     # seconds per timestep -> horizons span 0.5s .. 2.0s
+  num_waypoints: 6            # DiT planner predicts this many future ego (x, y) waypoints
+  train_scenes: 512
+  val_scenes: 64
+  seed: 20260924
+
+# ---------------------------------------------------------------------------
+# Visual encoder (shared "online encoder")
+# ---------------------------------------------------------------------------
+encoder:
+  token_dim: 32               # C, channel dim of each visual token
+  tokens_per_side: 8           # raster is downsampled to an 8x8 grid -> 64 tokens
+  ego_state_dim: 4              # (vx, vy, steering_proxy, speed) ego context vector
+
+# ---------------------------------------------------------------------------
+# JEPA-style latent world model / multi-horizon predictor
+# ---------------------------------------------------------------------------
+world_model:
+  hidden_dim: 64
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.1
+
+# ---------------------------------------------------------------------------
+# Gated visual fusion + future-status injection
+# ---------------------------------------------------------------------------
+fusion:
+  status_dim: 8               # per-horizon status embedding size (horizon index + confidence)
+  fused_token_dim: 32          # output token dim consumed by the DiT planner
+
+# ---------------------------------------------------------------------------
+# Trajectory-Adaptive Bias (TAB)
+# ---------------------------------------------------------------------------
+tab:
+  hidden_dim: 32
+
+# ---------------------------------------------------------------------------
+# Diffusion Transformer (DiT) planner
+# ---------------------------------------------------------------------------
+dit:
+  hidden_dim: 64
+  num_layers: 3
+  num_heads: 4
+  dropout: 0.1
+  num_diffusion_steps: 25      # training-time noise schedule length
+  num_sampling_steps: 10        # reverse-process steps used at inference
+  beta_start: 0.0001
+  # REAL BUG FOUND + FIXED during development: with a short training-time
+  # noise schedule, the "standard" DDPM beta_end=0.02 (tuned for T=1000 in the
+  # original Ho et al. 2020 schedule) leaves alpha_bar at the FINAL training
+  # timestep nowhere near 0 -- e.g. at T=50 it was still ~0.60, meaning even
+  # the "most noised" training example retained ~78% of its original signal
+  # amplitude. But at INFERENCE, sampling starts from x_T ~ N(0, 1) (i.e.
+  # alpha_bar effectively 0, fully corrupted). The model was never trained on
+  # inputs that noisy, so every sampled trajectory started from a badly
+  # out-of-distribution input and the reverse process never recovered --
+  # displacement error stayed several times worse than a trivial
+  # constant-velocity baseline no matter how much longer training ran (loss
+  # kept dropping, but sampled-trajectory quality did not improve, which was
+  # the tell that this was a schedule bug, not an undertrained model). Fix:
+  # a short schedule (T=25) needs a much larger beta_end to fully corrupt the
+  # signal by the last step -- 0.4 gives alpha_bar[-1] ~= 0.0028, i.e. <6% of
+  # the original amplitude, closely matching the x_T ~ N(0, 1) the sampler
+  # actually starts from. T was also shortened from 50 to 25 (with
+  # num_sampling_steps correspondingly 15 -> 10) purely to make this small
+  # demo model converge faster on CPU within this project's time budget.
+  beta_end: 0.4
+
+# ---------------------------------------------------------------------------
+# Training
+# ---------------------------------------------------------------------------
+train:
+  batch_size: 16
+  epochs: 6
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  forecast_loss_weight: 1.0
+  planning_loss_weight: 1.0
+  grad_clip_norm: 1.0
+  log_every: 5
+  checkpoint_path: "checkpoint.pt"
+  device: "cpu"

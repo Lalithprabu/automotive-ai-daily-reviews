@@ -1,0 +1,62 @@
+# =============================================================================
+# Day 19 — Prediction-Aided V2X Safety Message Recovery via Uncertainty-Aware
+# LDPC Decoding — reconstruction config.
+#
+# SOURCING: nothing in this file is taken from the paper (arXiv:2609.25609).
+# The paper's abstract gives no architecture dimensions, LDPC code parameters,
+# or dataset details -- only the headline result (87.27% recovery of failed
+# messages at Eb/N0 = 0.75 dB). Every value below is this repo's own default,
+# chosen to make a small, fast, CPU-runnable reconstruction of the *mechanism*
+# described in the abstract (predictive distribution -> bit probabilities ->
+# prior LLR -> combined LDPC decode).
+# =============================================================================
+
+bsm_fields:
+  # Fixed-point quantization scheme for each continuous BSM field.
+  # [low, high, num_bits]. LSB step = (high - low) / (2**num_bits - 1).
+  x:       {low: -500.0, high: 500.0, bits: 16}   # meters, relative to a local BSM origin
+  y:       {low: -500.0, high: 500.0, bits: 16}   # meters
+  speed:   {low: 0.0,    high: 50.0,  bits: 10}   # m/s (~180 km/h max)
+  heading: {low: -3.14159265, high: 3.14159265, bits: 10}  # radians
+  accel:   {low: -10.0,  high: 10.0,  bits: 8}    # m/s^2
+  # total payload bits = 16+16+10+10+8 = 60, zero-padded to 64 (see src/bsm.py)
+
+ldpc:
+  n: 256          # codeword length (bits)
+  k: 128          # message length (bits) -- 64 real BSM bits + 64 reserved/zero-padded bits
+  wc: 4           # target variable-node (column) degree of the base construction
+  wr: 8           # target check-node (row) degree of the base construction (n=256 must be divisible by wr)
+  seed: 1234
+  max_bp_iters: 30
+  min_sum_alpha: 0.75   # normalized min-sum damping factor
+
+channel:
+  eb_n0_db_train_range: [-1.0, 3.0]   # range sampled during the empirical BP test
+  eb_n0_db_demo: 0.75                 # matches the paper's headline operating point
+  bpsk_amplitude: 1.0
+
+predictor:
+  encoder: gru        # disclosed choice: single-layer GRU encoder-decoder (paper does not specify)
+  hidden_dim: 64
+  num_fields: 5        # x, y, speed, heading, accel
+  history_len: 10       # observed BSM timesteps (@ 100ms cadence -> 1.0s history)
+  future_len: 5         # predicted future timesteps (-> 0.5s ahead)
+  dropout: 0.1
+
+training:
+  num_trajectories: 4000
+  batch_size: 64
+  epochs: 25
+  lr: 0.001
+  weight_decay: 0.00001
+  seed: 42
+  val_fraction: 0.15
+
+simulation:
+  num_messages: 40
+  eb_n0_db: 0.75
+  fps: 2
+  seed: 7
+
+bit_llr:
+  max_exact_blocks: 64   # see models/bit_llr.py docstring for what this approximation means

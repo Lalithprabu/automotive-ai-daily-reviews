@@ -1,0 +1,48 @@
+# RiskWorld reconstruction config.
+# NOTE: all learning-rate / weight-decay values are written as plain decimals
+# (e.g. 0.0005, not 5e-4). yaml.safe_load() parses bare scientific notation like
+# "5e-4" as a *string* (no decimal point/sign after the 'e' triggers YAML 1.1's
+# resolver to skip the float rule), which then crashes torch.optim.Adam with
+# "TypeError: '<' not supported between instances of 'str' and 'float'" or similar.
+# This bit a prior day in this series -- every numeric hyperparameter below is a
+# plain decimal literal to avoid it.
+
+seed: 17
+
+data:
+  grid_size: 32          # BEV grid is grid_size x grid_size cells
+  cell_meters: 2.0        # meters per cell (~64m x 64m window)
+  history_len: 4           # past timesteps fed to the temporal actor encoder
+  horizon: 3                # future occupancy steps forecast (short-horizon proxy for the paper's up-to-3s horizon)
+  max_agents: 6              # max dynamic agents per scene (padded)
+  num_train_scenes: 256
+  num_val_scenes: 48
+  batch_size: 8
+  cross_traffic_prob: 0.5     # fraction of scenes containing the late-emerging cross-traffic hazard family
+
+model:
+  bev_in_channels: 4        # [road_mask, lane_mask, static_obstacle_mask, agent_footprint]
+  bev_feat_channels: 32
+  actor_hidden_dim: 32
+  actor_feat_dim: 32
+  risk_head_hidden: 32
+  flow_head_hidden: 32
+  residual_head_hidden: 32
+
+planning:
+  num_candidates: 5
+  tau_risk: 0.35              # risk threshold above which the nominal trajectory is considered unsafe
+  tau_dev: 3.0                 # max allowed L2 deviation (meters) of a replacement candidate from nominal
+
+train:
+  epochs: 12
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  grad_clip_norm: 1.0
+  occ_loss_weight: 1.0
+  risk_loss_weight: 0.5
+  log_every: 5
+
+paths:
+  checkpoint: checkpoints/riskworld.pt
+  gif_out: outputs/riskworld_simulation.gif

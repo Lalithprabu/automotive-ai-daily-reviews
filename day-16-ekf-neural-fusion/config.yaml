@@ -1,0 +1,48 @@
+# Day 16 - EKF + Neural Late Fusion - configuration
+# NOTE: These are this repo's OWN chosen defaults for a small, fast-to-train
+# reconstruction. They are NOT values reported in the paper (arXiv:2609.19813) -
+# the paper's abstract does not disclose network dims, batch size, optimizer,
+# or epoch counts, so nothing here should be read as "paper-sourced".
+
+data:
+  history_len: 8        # 4.0s of history @ 0.5s steps (nuScenes prediction convention)
+  future_len: 12         # 6.0s prediction horizon @ 0.5s steps
+  dt: 0.5
+  num_train: 1536
+  num_val: 384
+  num_test: 384
+  noise_std: 0.05         # observation noise added to synthetic positions
+  seed: 42
+
+ekf:
+  num_models: 4           # CV, CA, CTRV, CTRA
+  process_noise_pos: 0.05
+  process_noise_vel: 0.1
+  process_noise_yaw: 0.05
+  process_noise_acc: 0.1
+
+neural_predictor:
+  hidden_size: 64
+  latent_size: 16
+  encoder_layers: 1
+  decoder_layers: 1
+
+fusion:
+  embed_dim: 32
+  num_candidates: 5       # 1 neural + 4 EKF
+  attn_hidden: 32
+  residual_hidden: 32
+
+train:
+  batch_size: 64
+  predictor_epochs: 15
+  fusion_epochs: 25
+  lr: 0.001
+  weight_decay: 0.00001
+  device: cpu
+  checkpoint_path: checkpoints/day16_fusion.pt
+
+simulate:
+  scene_index: 7
+  fps: 4
+  out_path: trajectory_fusion_simulation.gif

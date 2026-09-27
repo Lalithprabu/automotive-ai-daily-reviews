@@ -1,0 +1,39 @@
+# ChronoFuse reconstruction — training configuration.
+# All values are this repo's own reconstruction defaults (see SOURCING.md);
+# none are sourced from the paper except backbone/head being kept small
+# enough that ChronoFuse's own parameter count stays close to the paper's
+# reported ~0.17M-parameter budget for the fusion module itself.
+
+model:
+  in_channels: 2
+  backbone_channels: [32, 64, 128]
+  fpn_channels: 64
+  num_classes: 2          # vehicle, pedestrian
+  cache_len: 4
+  latency_dim: 32
+  max_latency: 8.0
+
+data:
+  height: 128
+  width: 128
+  t_obs: 5
+  max_agents: 3
+  max_latency_steps: 4
+  train_samples: 640
+  val_samples: 128
+  seed: 0
+
+train:
+  epochs: 12
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.00001
+  size_weight: 0.1
+  offset_weight: 1.0
+  log_every: 5
+  checkpoint_path: checkpoints/chronofuse.pt
+
+simulate:
+  num_frames: 24
+  fps: 4
+  output_path: chronofuse_simulation.gif

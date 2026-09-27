@@ -1,0 +1,19 @@
+seed: 0
+grid:
+  grid_h: 32
+  grid_w: 32
+  cell_size: 1.0
+  ego_row: 24
+data:
+  train_scenes: 480
+  val_scenes: 80
+  occlusion: 0.65
+model:
+  channels: 32
+train:
+  epochs: 16
+  batch_size: 8
+  lr: 0.001
+  weight_decay: 0.00001
+  box_loss_weight: 0.5
+  map_loss_weight: 1.0

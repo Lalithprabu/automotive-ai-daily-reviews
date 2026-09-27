@@ -1,0 +1,52 @@
+# config.yaml
+# ---------------------------------------------------------------------------
+# ALL numeric hyperparameters are written in decimal form on purpose
+# (e.g. 0.001 instead of 1e-3). A prior day in this series hit a real bug
+# where PyYAML's safe_load() parsed a bare "1e-3" as a *string*, not a float,
+# because YAML 1.1 requires a decimal point or sign in the exponent form for
+# the implicit-float resolver to match (e.g. "1.0e-3" or "1e-03" work, but
+# "1e-3" does not, depending on the parser's regex). To avoid re-triggering
+# that class of bug entirely, every float below is written with an explicit
+# leading digit and decimal point (e.g. 0.001), never bare scientific
+# notation.
+# ---------------------------------------------------------------------------
+
+seed: 42
+
+data:
+  n_cells: 53                 # matches paper's stated dataset size (53 cells)
+  cycles_per_cell_min: 40
+  cycles_per_cell_max: 120
+  charge_len_T: 120            # timesteps in the charging window (~20 min @ 10s/step)
+  ic_grid_M: 50                 # resolution of the discharge IC voltage grid
+  voltage_grid_min: 3.0
+  voltage_grid_max: 4.2
+  c_rate_min: 1.0
+  c_rate_max: 4.0
+  train_frac_cells: 0.70        # fraction of CELLS (not cycles) used for train
+  val_frac_cells: 0.15          # remainder (0.15) goes to test -> genuine unseen-cell eval
+  noise_std_ic: 0.02
+  noise_std_signal: 0.01
+
+model:
+  input_size: 3
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.2
+  ic_head_hidden: 128
+  soh_head_hidden: 32
+
+train:
+  epochs: 25
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.000010
+  soh_loss_weight: 0.5
+  grad_clip_norm: 5.0
+  val_check_every: 1
+  checkpoint_path: "checkpoints/chargeic_lstm_best.pt"
+
+simulate:
+  fps: 4
+  cycles_to_show: 30
+  output_path: "battery_ic_simulation.gif"
