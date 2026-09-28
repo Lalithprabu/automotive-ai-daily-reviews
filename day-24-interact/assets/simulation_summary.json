@@ -1,0 +1,40 @@
+{
+  "anchor_names": [
+    "aggressive_merge",
+    "accelerate_past",
+    "hold_lane_delay",
+    "cautious_yield",
+    "decelerate_follow"
+  ],
+  "new_way_predictor_calls": 5,
+  "old_way_a_predictor_calls": 1,
+  "old_way_b_naive_calls_single_anchor": 128,
+  "old_way_b_naive_calls_all_anchors": 640,
+  "old_way_b_wall_time_s": 0.020429134368896484,
+  "committed_anchor": "accelerate_past",
+  "per_anchor_forecast_error": {
+    "aggressive_merge": {
+      "new_way_ade": 0.034945692867040634,
+      "old_way_ade": 0.39529743790626526
+    },
+    "accelerate_past": {
+      "new_way_ade": 0.053690068423748016,
+      "old_way_ade": 0.2874951958656311
+    },
+    "hold_lane_delay": {
+      "new_way_ade": 0.04709580913186073,
+      "old_way_ade": 0.05896906927227974
+    },
+    "cautious_yield": {
+      "new_way_ade": 0.040385790169239044,
+      "old_way_ade": 0.18849977850914001
+    },
+    "decelerate_follow": {
+      "new_way_ade": 0.05974392965435982,
+      "old_way_ade": 0.42280298471450806
+    }
+  },
+  "mean_new_way_ade": 0.04717225804924965,
+  "mean_old_way_ade": 0.27061289325356486,
+  "mean_ade_reduction_pct": 82.56836269621154
+}

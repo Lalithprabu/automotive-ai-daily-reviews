@@ -1,0 +1,59 @@
+# ============================================================================
+# INTERACT reconstruction — configuration
+# All numeric defaults below are THIS PROJECT'S OWN reconstruction choices,
+# not values taken from the paper (see SOURCING.md).
+# ============================================================================
+
+seed: 7
+
+scenario:
+  history_len: 8          # H: number of past timesteps observed for ego + other agent
+  future_len: 10           # T: number of future timesteps predicted / planned
+  base_speed: 1.0          # nominal longitudinal speed unit (normalized, unitless)
+  state_dim: 4              # per-timestep feature dim: [lat, spd, dlat, dspd]
+  cond_dim: 2                # intent/anchor vector dim: [target_lat_offset, target_speed_delta]
+  future_dim: 2              # predicted trajectory feature dim: [lat, spd]
+  # ground-truth reactive-behavior coefficients (synthetic simulator, NOT paper-sourced)
+  k_speed_reaction: 0.6
+  k_lateral_reaction: 0.5
+  noise_std: 0.04
+
+anchors:
+  # K=5 canonical ego intents, derived from simple merge/negotiation geometry.
+  # (name, base_lat_offset, base_speed_delta)
+  k: 5
+  definitions:
+    - [aggressive_merge, 1.0, 0.8]
+    - [accelerate_past, 0.3, 1.0]
+    - [hold_lane_delay, 0.0, 0.0]
+    - [cautious_yield, -0.3, -0.6]
+    - [decelerate_follow, -1.0, -1.0]
+  default_gap_to_merge: 3.0    # meters-ish (unitless), scales urgency
+  default_lane_width: 1.0      # scales lateral offsets
+
+model:
+  hidden_dim: 32
+  lr: 0.003
+  epochs: 18
+  batch_size: 64
+  train_samples: 3000
+  val_samples: 600
+  val_anchor_samples_per_anchor: 250   # bucketed val set for regression test / ADE-FDE by anchor
+
+cem:
+  n_iter: 4
+  n_samples: 32
+  elite_frac: 0.2
+  init_std: 0.35
+  bounds: [-1.5, 1.5]
+  cost_weights:
+    collision: 4.0
+    comfort: 0.5
+    progress: 1.0
+    trust_region: 5.0
+  collision_margin: 0.35
+  trust_region_radius: 0.35
+
+paths:
+  checkpoints_dir: checkpoints
+  assets_dir: assets
