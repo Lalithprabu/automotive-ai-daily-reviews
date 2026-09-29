@@ -1,0 +1,18 @@
+{
+  "raw": {
+    "lat_rms": 0.35149640705109847,
+    "jerk_rms": 6.17577656232869,
+    "steer_rate_rms": 0.23259513777879506,
+    "progress": 0.9460575719649562,
+    "off_road_rate": 0.025
+  },
+  "eco": {
+    "lat_rms": 0.4452583331188588,
+    "jerk_rms": 1.959505869886931,
+    "steer_rate_rms": 0.14100278418714352,
+    "progress": 0.954630788485607,
+    "off_road_rate": 0.0
+  },
+  "jerk_reduction_pct": 68.2711016159551,
+  "progress_gain_pct_points": 0.8573216520650795
+}

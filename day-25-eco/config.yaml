@@ -1,0 +1,23 @@
+# All values are this repo's own reconstruction defaults (see SOURCING.md); none are paper-sourced.
+horizon: 8            # future waypoints T (0.5 s apart -> 4 s)
+history: 4            # executed-history points H (0.5 s apart)
+wp_dt: 0.5
+route_points: 8       # perceived route points ahead (4 m apart)
+route_spacing: 4.0
+hidden: 128
+train_samples: 8000
+val_samples: 1000
+epochs: 60
+batch_size: 128
+lr: 0.002
+weight_decay: 0.0001
+label_noise: 0.15     # metres, iid per-waypoint demo noise (open-loop BC supervision)
+eco:
+  lambda_accel: 1.0
+  lambda_jerk: 4.0
+  lambda_fidelity: 0.6
+eval:
+  episodes: 40
+  perception_noise: 0.35   # metres of iid noise on perceived route points (closed loop)
+  max_steps: 400           # 0.1 s sim steps
+seed: 0
