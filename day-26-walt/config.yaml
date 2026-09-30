@@ -1,0 +1,9 @@
+seed: 0
+n_train: 3000
+n_val: 500
+wm_epochs: 25
+ae_epochs: 40
+planner_epochs: 40
+batch_size: 64
+lr: 0.002
+repa_weight: 0.5
