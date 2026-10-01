@@ -1,0 +1,47 @@
+old {'reward': -2.5236470699310303, 'collision_rate': 0.49900001287460327, 'offroad_rate': 0.0010000000474974513, 'progress': 0.8721686005592346, 'ade_vs_expert': 2.7484638690948486}
+[s1] ep0 loss 3.1657
+[s1] ep10 loss 2.2884
+[s1] ep20 loss 2.1682
+[s1] ep29 loss 2.1259
+stage1 {'reward': 1.9117268323898315, 'collision_rate': 0.07199999690055847, 'offroad_rate': 0.0, 'progress': 0.915716290473938, 'ade_vs_expert': 2.9780585765838623}
+[s2] ep0 loss 0.8925 good-label-frac 0.77
+[s2] ep5 loss 0.8059 good-label-frac 0.77
+[s2] ep10 loss 0.7935 good-label-frac 0.77
+[s2] ep15 loss 0.7822 good-label-frac 0.77
+[s2] ep19 loss 0.7725 good-label-frac 0.77
+stage2 {'reward': 2.309570550918579, 'collision_rate': 0.03200000151991844, 'offroad_rate': 0.0, 'progress': 0.9073759913444519, 'ade_vs_expert': 2.934232473373413}
+{
+  "old_regression": {
+    "reward": -2.5236470699310303,
+    "collision_rate": 0.49900001287460327,
+    "offroad_rate": 0.0010000000474974513,
+    "progress": 0.8721686005592346,
+    "ade_vs_expert": 2.7484638690948486
+  },
+  "emplan_stage1_only": {
+    "reward": 1.9117268323898315,
+    "collision_rate": 0.07199999690055847,
+    "offroad_rate": 0.0,
+    "progress": 0.915716290473938,
+    "ade_vs_expert": 2.9780585765838623
+  },
+  "emplan_stage2": {
+    "reward": 2.309570550918579,
+    "collision_rate": 0.03200000151991844,
+    "offroad_rate": 0.0,
+    "progress": 0.9073759913444519,
+    "ade_vs_expert": 2.934232473373413
+  },
+  "expert_reference": {
+    "reward": 2.523038387298584,
+    "collision_rate": 0.0010000000474974513,
+    "offroad_rate": 0.0,
+    "progress": 0.8692482113838196,
+    "ade_vs_expert": 0.0
+  },
+  "params": {
+    "regression": 36368,
+    "emplan": 85904
+  },
+  "train_seconds": 21.797093629837036
+}
