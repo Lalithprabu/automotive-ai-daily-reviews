@@ -1,0 +1,13 @@
+# decimal-only floats (PyYAML safe_load does not parse bare 1e-3)
+seed: 0
+n_train: 3000
+n_val: 400
+n_test: 600
+epochs: 40
+batch_size: 64
+lr: 0.002
+weight_decay: 0.0001
+seeds: [0, 1, 2]
+model:
+  d: 64
+  flow_steps: 4

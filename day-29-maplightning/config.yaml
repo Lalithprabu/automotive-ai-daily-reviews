@@ -1,0 +1,11 @@
+# Decimal-only floats (PyYAML safe_load does not parse bare 1e-3 as float).
+seed: 0
+steps: 1500
+batch_size: 32
+lr: 0.002
+weight_decay: 0.0001
+train_jitter_deg: 1.5        # extrinsic perturbation std (deg) seen in training, SAME for both models
+eval_jitter_sweep: [0.0, 1.0, 2.0, 4.0, 6.0]
+eval_samples: 256
+d_model: 64
+n_map_tokens: 24
