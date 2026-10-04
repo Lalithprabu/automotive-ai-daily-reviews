@@ -1,0 +1,40 @@
+== ego_only: 68,427 params
+  step    0 loss 3.611  (0s)
+  step  100 loss 0.456  (21s)
+  step  200 loss 0.542  (41s)
+  step  300 loss 0.539  (62s)
+  step  400 loss 0.433  (83s)
+  step  500 loss 0.335  (104s)
+  step  600 loss 0.390  (124s)
+  step  699 loss 0.479  (145s)
+   {"AP@1.0": 0.7911025245825198, "AP@1.0_blind": 0.0021684015122292568, "AP@2.0": 0.8211290228872858, "AP@2.0_blind": 0.014824808205309646}
+== naive: 68,427 params
+  step    0 loss 4.207  (0s)
+  step  100 loss 0.122  (21s)
+  step  200 loss 0.079  (43s)
+  step  300 loss 0.043  (65s)
+  step  400 loss 0.068  (86s)
+  step  500 loss 0.037  (108s)
+  step  600 loss 0.048  (129s)
+  step  699 loss 0.033  (151s)
+   {"AP@1.0": 0.8977947004817448, "AP@1.0_blind": 0.0961065558072251, "AP@2.0": 0.9259103630272913, "AP@2.0_blind": 0.1410214832727709}
+== traf: 68,427 params
+  step    0 loss 4.207  (0s)
+  step  100 loss 0.110  (45s)
+  step  200 loss 0.094  (91s)
+  step  300 loss 0.045  (136s)
+  step  400 loss 0.056  (180s)
+  step  500 loss 0.028  (225s)
+  step  600 loss 0.047  (269s)
+  step  699 loss 0.023  (314s)
+   {"AP@1.0": 0.8987728283992474, "AP@1.0_blind": 0.09836258657551436, "AP@2.0": 0.9253728761388591, "AP@2.0_blind": 0.1436249779457453}
+== egorefine: 68,427 params
+  step    0 loss 3.813  (1s)
+  step  100 loss 0.105  (75s)
+  step  200 loss 0.090  (150s)
+  step  300 loss 0.044  (226s)
+  step  400 loss 0.051  (301s)
+  step  500 loss 0.023  (375s)
+  step  600 loss 0.041  (450s)
+  step  699 loss 0.028  (526s)
+   {"AP@1.0": 0.904437185864744, "AP@1.0_blind": 0.10405653183996248, "AP@2.0": 0.927274414413064, "AP@2.0_blind": 0.1431436609955249}
