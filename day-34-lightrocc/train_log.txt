@@ -1,0 +1,63 @@
+generating synthetic scenes ...
+/home/claude/day-34-lightrocc/src/lightrocc/model.py:30: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, 1)
+/home/claude/day-34-lightrocc/src/lightrocc/losses.py:54: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  parts.update(exist=l_exist.item(), center=float(c_loss) / n)
+[lightrocc] step 1/2500 loss 4.3331 1s
+[lightrocc] step 100/2500 loss 3.6980 64s
+[lightrocc] step 200/2500 loss 3.0965 116s
+[lightrocc] step 300/2500 loss 2.9894 170s
+[lightrocc] step 400/2500 loss 2.8298 225s
+[lightrocc] step 500/2500 loss 2.6914 279s
+[lightrocc] step 600/2500 loss 2.4118 333s
+[lightrocc] step 700/2500 loss 2.2057 388s
+[lightrocc] step 800/2500 loss 1.9760 445s
+[lightrocc] step 900/2500 loss 1.7795 501s
+[lightrocc] step 1000/2500 loss 1.5177 557s
+[lightrocc] step 1100/2500 loss 1.3522 611s
+[lightrocc] step 1200/2500 loss 1.2532 662s
+[lightrocc] step 1300/2500 loss 1.1495 713s
+[lightrocc] step 1400/2500 loss 1.1066 764s
+[lightrocc] step 1500/2500 loss 1.0686 819s
+[lightrocc] step 1600/2500 loss 0.9965 868s
+[lightrocc] step 1700/2500 loss 1.0123 920s
+[lightrocc] step 1800/2500 loss 0.9378 973s
+[lightrocc] step 1900/2500 loss 0.8974 1025s
+[lightrocc] step 2000/2500 loss 0.8825 1077s
+[lightrocc] step 2100/2500 loss 0.8364 1135s
+[lightrocc] step 2200/2500 loss 0.8147 1189s
+[lightrocc] step 2300/2500 loss 0.7995 1241s
+[lightrocc] step 2400/2500 loss 0.7815 1293s
+[lightrocc] step 2500/2500 loss 0.7793 1346s
+lightrocc {"iou": [0.4984228014945984, 0.49183300137519836, 0.44378626346588135, 0.37504374980926514, 0.30483266711235046], "f1": [0.9049388315060105, 0.8908839702839887, 0.8278313063696104, 0.7302359205981935, 0.6117876475768317], "ade": [0.6584994482468257, 0.671974814241704, 0.8095500023232731, 0.95466082395519, 1.05630124514463]}
+/home/claude/day-34-lightrocc/src/lightrocc/model.py:30: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(layer, 1)
+[dense] step 1/2500 loss 1.0814 0s
+[dense] step 100/2500 loss 1.0489 15s
+[dense] step 200/2500 loss 0.9932 31s
+[dense] step 300/2500 loss 0.9763 46s
+[dense] step 400/2500 loss 0.9636 62s
+[dense] step 500/2500 loss 0.9511 78s
+[dense] step 600/2500 loss 0.9454 93s
+[dense] step 700/2500 loss 0.9238 108s
+[dense] step 800/2500 loss 0.9087 122s
+[dense] step 900/2500 loss 0.8820 137s
+[dense] step 1000/2500 loss 0.8621 152s
+[dense] step 1100/2500 loss 0.8358 166s
+[dense] step 1200/2500 loss 0.8268 181s
+[dense] step 1300/2500 loss 0.8068 197s
+[dense] step 1400/2500 loss 0.7915 212s
+[dense] step 1500/2500 loss 0.7765 226s
+[dense] step 1600/2500 loss 0.7632 242s
+[dense] step 1700/2500 loss 0.7489 256s
+[dense] step 1800/2500 loss 0.7376 271s
+[dense] step 1900/2500 loss 0.7172 287s
+[dense] step 2000/2500 loss 0.7151 303s
+[dense] step 2100/2500 loss 0.7011 319s
+[dense] step 2200/2500 loss 0.6924 334s
+[dense] step 2300/2500 loss 0.6878 350s
+[dense] step 2400/2500 loss 0.6843 365s
+[dense] step 2500/2500 loss 0.6795 379s
+dense {"iou": [0.2589147984981537, 0.33158278465270996, 0.2768758535385132, 0.1916286051273346, 0.13865289092063904], "f1": [0.5382749825810572, 0.6763706452034137, 0.5357442587036947, 0.35608616669550863, 0.2630719195726028], "ade": [1.1068757988991549, 0.8019566859805632, 0.9774364916871925, 1.023358362814063, 1.0172307684799562]}
+done -> checkpoints/results.json

@@ -1,0 +1,4 @@
+seed: 0
+data: {n_train: 6000, n_val: 600, n_test: 1200}
+model: {code_dim: 16, d_model: 64, n_heads: 4, n_layers: 2, n_modes: 3}
+train: {epochs: 40, batch_size: 64, lr: 0.002, weight_decay: 0.0001}

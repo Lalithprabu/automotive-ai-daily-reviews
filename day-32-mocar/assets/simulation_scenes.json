@@ -1,0 +1,26 @@
+[
+ {
+  "scene": "junction_straight",
+  "test_index": 0,
+  "mocar_top1_ADE": 0.08915717899799347,
+  "oneshot_top1_ADE": 0.03509169816970825
+ },
+ {
+  "scene": "junction_left",
+  "test_index": 2,
+  "mocar_top1_ADE": 1.3930954933166504,
+  "oneshot_top1_ADE": 1.3376693725585938
+ },
+ {
+  "scene": "junction_right",
+  "test_index": 7,
+  "mocar_top1_ADE": 1.771790623664856,
+  "oneshot_top1_ADE": 1.8075276613235474
+ },
+ {
+  "scene": "road",
+  "test_index": 8,
+  "mocar_top1_ADE": 0.2024371474981308,
+  "oneshot_top1_ADE": 0.08044853061437607
+ }
+]

@@ -1,0 +1,63 @@
+[ego_only] step     0 loss 2.0389 det=2.039
+[ego_only] step   100 loss 0.8531 det=0.853
+[ego_only] step   200 loss 0.6632 det=0.663
+[ego_only] step   300 loss 0.6661 det=0.666
+[ego_only] step   400 loss 0.6883 det=0.688
+[ego_only] step   500 loss 0.5798 det=0.580
+[ego_only] step   600 loss 0.4109 det=0.411
+[ego_only] step   700 loss 0.6678 det=0.668
+[ego_only] step   800 loss 0.5988 det=0.599
+[ego_only] step   900 loss 0.7160 det=0.716
+[ego_only] step  1000 loss 0.6221 det=0.622
+[ego_only] step  1100 loss 0.5662 det=0.566
+[ego_only] step  1200 loss 0.5513 det=0.551
+[ego_only] step  1300 loss 0.5964 det=0.596
+[ego_only] step  1400 loss 0.8090 det=0.809
+[ego_only] step  1500 loss 0.6353 det=0.635
+[ego_only] step  1600 loss 0.6412 det=0.641
+[ego_only] step  1700 loss 0.6499 det=0.650
+[ego_only] step  1799 loss 0.5244 det=0.524
+[ego_only] done in 307s, params=55,572
+ego_only {'AP@r1': 0.6972558498382568, 'AP@r2': 0.7369250655174255}
+[old_way] step     0 loss 2.0962 det=2.040 calib=0.057
+[old_way] step   100 loss 0.9040 det=0.847 calib=0.057
+[old_way] step   200 loss 0.5207 det=0.464 calib=0.057
+[old_way] step   300 loss 0.4716 det=0.414 calib=0.057
+[old_way] step   400 loss 0.4569 det=0.399 calib=0.058
+[old_way] step   500 loss 0.3864 det=0.327 calib=0.059
+[old_way] step   600 loss 0.3045 det=0.245 calib=0.060
+[old_way] step   700 loss 0.4661 det=0.405 calib=0.061
+[old_way] step   800 loss 0.3875 det=0.332 calib=0.055
+[old_way] step   900 loss 0.4361 det=0.376 calib=0.060
+[old_way] step  1000 loss 0.4450 det=0.388 calib=0.057
+[old_way] step  1100 loss 0.3519 det=0.294 calib=0.058
+[old_way] step  1200 loss 0.3603 det=0.304 calib=0.056
+[old_way] step  1300 loss 0.3948 det=0.337 calib=0.058
+[old_way] step  1400 loss 0.5331 det=0.475 calib=0.058
+[old_way] step  1500 loss 0.4342 det=0.378 calib=0.056
+[old_way] step  1600 loss 0.4229 det=0.367 calib=0.056
+[old_way] step  1700 loss 0.4141 det=0.356 calib=0.058
+[old_way] step  1799 loss 0.3660 det=0.310 calib=0.056
+[old_way] done in 286s, params=55,572
+old_way {'AP@r1': 0.7210196256637573, 'AP@r2': 0.8142064809799194, 'offset_err': 1.1535239219665527}
+[sparse2comm] step     0 loss 3.3092 det=2.039 recon=0.200 flow=1.028 calib=0.042
+[sparse2comm] step   100 loss 1.7014 det=0.846 recon=0.124 flow=0.703 calib=0.029
+[sparse2comm] step   200 loss 1.0175 det=0.360 recon=0.088 flow=0.547 calib=0.022
+[sparse2comm] step   300 loss 1.0560 det=0.417 recon=0.072 flow=0.547 calib=0.020
+[sparse2comm] step   400 loss 0.8938 det=0.342 recon=0.075 flow=0.456 calib=0.020
+[sparse2comm] step   500 loss 0.7919 det=0.263 recon=0.064 flow=0.443 calib=0.022
+[sparse2comm] step   600 loss 0.7223 det=0.220 recon=0.065 flow=0.419 calib=0.018
+[sparse2comm] step   700 loss 0.8089 det=0.314 recon=0.062 flow=0.413 calib=0.019
+[sparse2comm] step   800 loss 0.7328 det=0.278 recon=0.063 flow=0.376 calib=0.016
+[sparse2comm] step   900 loss 0.7681 det=0.269 recon=0.062 flow=0.416 calib=0.021
+[sparse2comm] step  1000 loss 0.7740 det=0.309 recon=0.057 flow=0.392 calib=0.016
+[sparse2comm] step  1100 loss 0.6530 det=0.236 recon=0.057 flow=0.345 calib=0.015
+[sparse2comm] step  1200 loss 0.6973 det=0.223 recon=0.058 flow=0.399 calib=0.017
+[sparse2comm] step  1300 loss 0.5805 det=0.194 recon=0.053 flow=0.320 calib=0.015
+[sparse2comm] step  1400 loss 0.9395 det=0.389 recon=0.060 flow=0.474 calib=0.016
+[sparse2comm] step  1500 loss 0.7463 det=0.256 recon=0.057 flow=0.417 calib=0.017
+[sparse2comm] step  1600 loss 0.7227 det=0.244 recon=0.053 flow=0.410 calib=0.016
+[sparse2comm] step  1700 loss 0.7369 det=0.238 recon=0.057 flow=0.423 calib=0.018
+[sparse2comm] step  1799 loss 0.6714 det=0.221 recon=0.060 flow=0.374 calib=0.016
+[sparse2comm] done in 1407s, params=55,572
+sparse2comm {'AP@r1': 0.7882731556892395, 'AP@r2': 0.8654465675354004, 'offset_err': 0.5242587327957153}

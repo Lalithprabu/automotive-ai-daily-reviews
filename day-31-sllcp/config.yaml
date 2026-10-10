@@ -1,0 +1,12 @@
+seed: 0
+alpha: 0.1            # target: >=90% of truly-unsafe trajectories land in a "flag" set
+bandwidth: 0.5        # localization kernel bandwidth h
+n_train: 6000
+n_cal: 8000
+n_test: 15000         # same count as the paper's CARLA test set (synthetic here)
+train_mix: [0.34, 0.33, 0.33]
+cal_mix:   [0.60, 0.30, 0.10]   # calibration is mostly clear scenes ...
+test_mix:  [0.15, 0.30, 0.55]   # ... but deployment is mostly occluded -> covariate shift
+epochs: 25
+batch_size: 128
+lr: 0.002

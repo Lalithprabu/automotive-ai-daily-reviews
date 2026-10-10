@@ -1,0 +1,5 @@
+# NOTE: decimals only (PyYAML safe_load does not parse bare 1e-3 as a float).
+seed: 0
+data: {n_train: 600, n_val: 200, n_test: 300, T_obs: 6, H: 4, N: 192}
+model: {d: 48, K: 3, topk: 6}
+train: {steps: 600, batch_size: 24, lr: 0.002, weight_decay: 0.0001, train_horizon: 3, nll_weight: 0.05}

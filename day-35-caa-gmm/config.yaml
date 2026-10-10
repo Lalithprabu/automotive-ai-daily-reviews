@@ -1,0 +1,19 @@
+# NOTE: decimals only (PyYAML safe_load does not parse bare 1e-3 as float).
+seed: 0
+data:
+  n_train: 9000
+  n_val: 1000
+  n_test: 1500
+model:
+  d_model: 64
+  n_heads: 4
+  n_modes: 6
+train:
+  epochs: 40
+  batch_size: 128
+  lr: 0.002
+  weight_decay: 0.0001
+  relax_eps: 0.05
+robustness:
+  drop_probs: [0.0, 0.3, 0.6, 1.0]
+  pos_noise_m: 1.0

@@ -1,0 +1,43 @@
+# LighTROcc reconstruction config (ALL values are this repo's own defaults, not paper-sourced)
+# NOTE: write floats in decimal form (PyYAML safe_load does not parse bare 1e-3).
+world:
+  grid_x: 32          # forward cells (1 m each), x in [2, 34) m
+  grid_y: 32          # lateral cells (1 m each), y in [-16, 16) m
+  grid_z: 4           # vertical voxels (0.5 m each), z in [0, 2) m
+  x_min: 2.0
+  y_min: -16.0
+  cell: 1.0
+  cell_z: 0.5
+  t_future: 4         # forecast steps (dt = 0.5 s each)
+camera:
+  h: 24               # feature-map rows
+  w: 48               # feature-map cols
+  focal: 28.0         # px (feature-map units)
+  cam_height: 1.5
+data:
+  n_train: 2400
+  n_val: 300
+  n_test: 600
+  max_vehicles: 4
+  seed: 7
+model:
+  d_model: 64
+  n_heads: 4
+  ff: 128
+  n_queries: 6
+  n_gauss: 3
+  dec_layers: 2
+  bev_queries: 16     # dense baseline: 16x16 BEV queries -> upsampled to 32x32
+train:
+  steps: 2500
+  batch: 16
+  lr: 0.002
+  weight_decay: 0.0001
+  seed: 0
+  w_occ_bce: 1.0
+  w_dice: 1.0
+  w_exist: 1.0
+  w_center: 0.5
+  w_yaw: 0.5
+  w_size: 0.3
+  w_depth: 0.5
