@@ -1,0 +1,32 @@
+# Day 37 - SCOPE reconstruction. ALL values are this repo's own defaults (not paper-sourced).
+seed: 7
+data:
+  n_train: 16000
+  n_val: 1500
+  n_test: 1500
+backbone:
+  hidden: 256
+  depth: 4
+  sigma_data: 0.5
+  steps: 5000
+  batch: 512
+  lr: 0.002
+  p_mean: -1.5
+  p_std: 1.5
+sampler:
+  steps: 16
+  sigma_max: 2.0
+  sigma_min: 0.02
+head:
+  sigma0: 0.05
+  hidden: 256
+  bandwidth: 6
+  rank: 4
+  anchors: 8000
+  steps: 3000
+  batch: 256
+  lr: 0.001
+  probes: 8
+  kl_weight: 0.05
+mc_baseline:
+  samples: 32

@@ -1,0 +1,33 @@
+{
+ "low crowd density (c<0.33)": {
+  "n": 510,
+  "scope_nll": -1.7993786926176327,
+  "fixed_nll": -1.5667415420507502,
+  "scope_cov95": 0.9506535947712418,
+  "fixed_cov95": 0.9754901960784313
+ },
+ "mid (0.33-0.66)": {
+  "n": 482,
+  "scope_nll": -1.369424891724915,
+  "fixed_nll": -1.3610015953670895,
+  "scope_cov95": 0.9550484094052559,
+  "fixed_cov95": 0.9652489626556017
+ },
+ "high crowd density (c>=0.66)": {
+  "n": 508,
+  "scope_nll": -0.9674856366028848,
+  "fixed_nll": -0.9084897516807635,
+  "scope_cov95": 0.9534120734908137,
+  "fixed_cov95": 0.8918963254593176
+ },
+ "_downstream_brake_decision": {
+  "n_scenes": 754,
+  "oracle_brake_rate": 0.42838196286472147,
+  "agree_with_oracle_scope": 0.6405835543766578,
+  "agree_with_oracle_fixed": 0.28779840848806365,
+  "scope_misses": 271,
+  "fixed_misses": 323,
+  "scope_false_alarms": 0,
+  "fixed_false_alarms": 214
+ }
+}

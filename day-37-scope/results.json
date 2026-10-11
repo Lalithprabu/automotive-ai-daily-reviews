@@ -1,0 +1,62 @@
+{
+ "alpha": {
+  "scope": 0.9987288529839768,
+  "fixed": 0.9865850901989653,
+  "mc": 1.331953193925053,
+  "oracle": 1.337135910993893
+ },
+ "test_metrics": {
+  "SCOPE (calibrated)": {
+   "nll_per_step": -1.379485756293778,
+   "nll_last_step": -0.7696390287132631,
+   "cov95": 0.953,
+   "cov95_last_step": 0.9666666666666667,
+   "final_tube_area": 0.03368859778022127
+  },
+  "Fixed covariance": {
+   "nll_per_step": -1.2777024988883408,
+   "nll_last_step": -0.6399997184531955,
+   "cov95": 0.9438888888888889,
+   "cov95_last_step": 0.94,
+   "final_tube_area": 0.03134110308804399
+  },
+  "MC sampling (K=32)": {
+   "nll_per_step": -1.3388872450162583,
+   "nll_last_step": -0.6523998031410849,
+   "cov95": 0.9573333333333334,
+   "cov95_last_step": 0.96,
+   "final_tube_area": 0.038002684627716915
+  },
+  "Oracle (true noise cov)": {
+   "nll_per_step": -1.3933715304556047,
+   "nll_last_step": -0.7696368690917145,
+   "cov95": 0.9572222222222222,
+   "cov95_last_step": 0.9786666666666667,
+   "final_tube_area": 0.036340333589766495
+  },
+  "Undistilled curvature (dense Hessian target)": {
+   "nll_per_step": -1.4009412382869646,
+   "nll_last_step": -0.7674254944651878,
+   "cov95": 0.9502777777777778,
+   "cov95_last_step": 0.96,
+   "final_tube_area": 0.031959218800741235
+  },
+  "SCOPE (uncalibrated, alpha=1)": {
+   "nll_per_step": -1.3794481471508677,
+   "nll_last_step": -0.7695094869193683,
+   "cov95": 0.9532777777777778,
+   "cov95_last_step": 0.9673333333333334,
+   "final_tube_area": 0.03373147344591274
+  }
+ },
+ "latency_ms": {
+  "scope_head_plus_solve_ms": 0.6750520000044465,
+  "mc_sampling_ms": 30.527544000005946,
+  "nominal_decode_ms (shared by all)": 18.502381899998
+ },
+ "params": {
+  "backbone": 217112,
+  "scope_head": 249760
+ },
+ "quick": false
+}
