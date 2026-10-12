@@ -1,0 +1,21 @@
+# WZDrive reconstruction config (all values are this repo's defaults, NOT paper-sourced)
+seed: 7
+data:
+  n_train: 6000
+  n_val: 1200
+  hist_steps: 8        # 2.0 s @ 4 Hz
+  fut_steps: 12        # 3.0 s @ 4 Hz
+  dt: 0.25
+model:
+  d_model: 64
+  n_heads: 4
+  n_modes: 6           # K=6, matches the paper's reported minADE/minFDE@6
+  n_dec_layers: 2
+  dropout: 0.1
+train:
+  epochs: 40
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  cls_weight: 0.5
+  relax_eps: 0.05      # relaxed winner-take-all: non-winners get eps share of loss
