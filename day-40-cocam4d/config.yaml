@@ -1,0 +1,27 @@
+# NOTE: decimal-form floats only (PyYAML safe_load does not parse bare 1e-3).
+seed: 7
+data:
+  n_train_scenes: 1500
+  n_val_scenes: 200
+  n_steps: 16          # frames per simulated scene (dt = 0.1 s -> 10 Hz)
+  dt: 0.1
+  seq_len: 6           # frames of track history fed to the model
+  n_objects: 8
+  n_agents: 3
+  sensor_range: 45.0
+  pose_sigma: 0.2      # meters of GPS/IMU relative-pose error on collaborators
+model:
+  d_model: 64
+  n_heads: 4
+  n_layers: 3
+  attn_window: 3       # frame-adjacent causal window (self + 2 previous frames)
+  dropout: 0.0
+train:
+  epochs: 25
+  batch_size: 256
+  lr: 0.002
+  weight_decay: 0.0001
+  w_vel: 1.0
+  w_nll: 0.3
+  w_dyn: 0.5
+  w_unc: 1.0
