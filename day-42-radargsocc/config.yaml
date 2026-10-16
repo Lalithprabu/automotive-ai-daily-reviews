@@ -1,0 +1,11 @@
+seed: 0
+train_scenes: 200
+val_scenes: 40
+epochs: 20
+batch_size: 8
+lr: 0.002
+weight_decay: 0.0001
+feat_dim: 24
+baseline_dim: 40
+attn_points: 4
+class_weights: [1.0, 1.5, 2.0, 2.0, 6.0]
