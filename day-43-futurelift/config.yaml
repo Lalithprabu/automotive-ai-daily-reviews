@@ -1,0 +1,5 @@
+seed: 0
+data: {n_train: 4000, n_val: 600, n_test: 800}
+backbone: {K: 6, hidden: 128, epochs: 60, lr: 0.002, batch_size: 128}
+refiner: {d: 64, heads: 4, layers: 2, R: 3, epochs: 22, lr: 0.002, batch_size: 64}
+variants: [bidirectional, causal, none]
