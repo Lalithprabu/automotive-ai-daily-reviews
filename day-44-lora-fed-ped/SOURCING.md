@@ -1,0 +1,7 @@
+# Sourcing & disclosure (Day 44)
+Paper: *Pedestrian Trajectory Prediction through LoRA Federated Training*, S. Travagliati & M. L. Merani (Univ. of Modena and Reggio Emilia), arXiv:2610.18640 (cs.NI), submitted 13 Oct 2026.
+
+**Paper-sourced (abstract level only, via alphaxiv mirror summary; arxiv.org abs/html returned HTTP 429):** vehicles collect pedestrian trajectories and federated-fine-tune a trajectory foundation model; an edge server aggregates; LoRA reduces radio usage; more local rounds per communication round; a new figure of merit for V2I radio resources; claims "excellent accuracy, significantly lower communication cost".
+**NOT recovered:** foundation model identity, LoRA rank/targets, aggregation algorithm, datasets, any numeric result, baselines. **No paper metric is quoted anywhere in this repo.**
+**This repo's own choices:** tiny Transformer forecaster, LoRA rank 4/alpha 8 on qkv/proj/ff1/ff2 + output head, FedAvg, synthetic walker (pretrain) and curb stop-and-go crosser (clients, non-IID) data, and the radio-resource model (bits / 20,000 bits per resource block) — NOT the paper's figure of merit.
+**Measured here (synthetic, single seed):** frozen base ADE 2.792 m; constant-velocity 2.492; full FedAvg (12 rounds x1 epoch) 1.963 ADE/4.475 FDE; LoRA FedAvg (4 rounds x3 epochs) 2.018/4.517; payload 102,488 -> 9,752 params; bits -96.8%. Note: the frozen base is worse than constant-velocity on the shifted domain; full FedAvg beats LoRA slightly on accuracy.

@@ -1,0 +1,144 @@
+{
+ "zero_shot": {
+  "ade": 2.7922964096069336,
+  "fde": 5.884868621826172
+ },
+ "const_vel": {
+  "ade": 2.4916646480560303,
+  "fde": 5.368079662322998
+ },
+ "full_fl": [
+  {
+   "round": 1,
+   "ade": 2.1714260578155518,
+   "fde": 4.824974060058594,
+   "bits": 52473856,
+   "resource_blocks": 2623.6928,
+   "payload_params": 102488
+  },
+  {
+   "round": 2,
+   "ade": 2.0522260665893555,
+   "fde": 4.663427829742432,
+   "bits": 104947712,
+   "resource_blocks": 5247.3856,
+   "payload_params": 102488
+  },
+  {
+   "round": 3,
+   "ade": 2.0137698650360107,
+   "fde": 4.575013637542725,
+   "bits": 157421568,
+   "resource_blocks": 7871.0784,
+   "payload_params": 102488
+  },
+  {
+   "round": 4,
+   "ade": 1.991067886352539,
+   "fde": 4.527385234832764,
+   "bits": 209895424,
+   "resource_blocks": 10494.7712,
+   "payload_params": 102488
+  },
+  {
+   "round": 5,
+   "ade": 1.985897183418274,
+   "fde": 4.5034499168396,
+   "bits": 262369280,
+   "resource_blocks": 13118.464,
+   "payload_params": 102488
+  },
+  {
+   "round": 6,
+   "ade": 1.969977617263794,
+   "fde": 4.483358860015869,
+   "bits": 314843136,
+   "resource_blocks": 15742.1568,
+   "payload_params": 102488
+  },
+  {
+   "round": 7,
+   "ade": 1.9636552333831787,
+   "fde": 4.478872299194336,
+   "bits": 367316992,
+   "resource_blocks": 18365.8496,
+   "payload_params": 102488
+  },
+  {
+   "round": 8,
+   "ade": 1.9762014150619507,
+   "fde": 4.485309600830078,
+   "bits": 419790848,
+   "resource_blocks": 20989.5424,
+   "payload_params": 102488
+  },
+  {
+   "round": 9,
+   "ade": 1.9718294143676758,
+   "fde": 4.483499526977539,
+   "bits": 472264704,
+   "resource_blocks": 23613.2352,
+   "payload_params": 102488
+  },
+  {
+   "round": 10,
+   "ade": 1.9641637802124023,
+   "fde": 4.470884323120117,
+   "bits": 524738560,
+   "resource_blocks": 26236.928,
+   "payload_params": 102488
+  },
+  {
+   "round": 11,
+   "ade": 1.9608343839645386,
+   "fde": 4.470968246459961,
+   "bits": 577212416,
+   "resource_blocks": 28860.6208,
+   "payload_params": 102488
+  },
+  {
+   "round": 12,
+   "ade": 1.9630753993988037,
+   "fde": 4.474569320678711,
+   "bits": 629686272,
+   "resource_blocks": 31484.3136,
+   "payload_params": 102488
+  }
+ ],
+ "full_payload_params": 102488,
+ "lora_fl": [
+  {
+   "round": 1,
+   "ade": 2.096529960632324,
+   "fde": 4.7192182540893555,
+   "bits": 4993024,
+   "resource_blocks": 249.6512,
+   "payload_params": 9752
+  },
+  {
+   "round": 2,
+   "ade": 2.047084093093872,
+   "fde": 4.608421325683594,
+   "bits": 9986048,
+   "resource_blocks": 499.3024,
+   "payload_params": 9752
+  },
+  {
+   "round": 3,
+   "ade": 2.021967649459839,
+   "fde": 4.542883396148682,
+   "bits": 14979072,
+   "resource_blocks": 748.9536,
+   "payload_params": 9752
+  },
+  {
+   "round": 4,
+   "ade": 2.017733573913574,
+   "fde": 4.516540050506592,
+   "bits": 19972096,
+   "resource_blocks": 998.6048,
+   "payload_params": 9752
+  }
+ ],
+ "lora_payload_params": 9752
+}

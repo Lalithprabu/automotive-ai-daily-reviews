@@ -1,0 +1,25 @@
+# Day 44 config. All values are this repo's reconstruction defaults (paper details not recoverable).
+seed: 0
+obs_len: 8
+pred_len: 12
+d_model: 64
+n_heads: 4
+n_layers: 2
+lora_rank: 4
+lora_alpha: 8.0
+lora_targets: ["qkv", "proj", "ff1", "ff2"]
+pretrain_epochs: 12
+pretrain_samples: 6000
+n_clients: 8
+client_samples: 300
+val_samples: 800
+lr_pretrain: 0.002
+lr_fl_full: 0.001
+lr_fl_lora: 0.004
+batch_size: 64
+# Federated schedules: LoRA uses MORE local epochs per round, FEWER rounds (paper's stated strategy).
+full_fl: {rounds: 12, local_epochs: 1}
+lora_fl: {rounds: 4, local_epochs: 3}
+# Radio model (this repo's own figure of merit, NOT the paper's)
+bits_per_param: 32
+bits_per_resource_block: 20000
