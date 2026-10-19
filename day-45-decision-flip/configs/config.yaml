@@ -1,0 +1,8 @@
+# Decision-FLIP reconstruction config (decimal-form floats only; PyYAML safe_load trap)
+grid: {x: 16, y: 16, z: 4}
+num_classes: 5          # 0 empty, 1 road, 2 vehicle, 3 building, 4 vegetation
+feat_channels: 6
+model: {num_gaussians: 384, hidden: 48, max_shift: 1.5}
+train: {steps: 700, batch_size: 8, lr: 0.01, seed: 0}
+data: {train_scenes: 400, calib_scenes: 48, val_scenes: 96}
+prune: {otsu_min_sep: 0.35, recovery_steps: 120, recovery_lr: 0.003}
