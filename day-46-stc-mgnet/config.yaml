@@ -1,0 +1,20 @@
+seed: 7
+data:
+  n_train: 3000
+  n_val: 600
+  n_test: 1200
+  window: 16
+  scene_len: 48
+model:
+  in_channels: 4
+  hidden: [32, 64, 64]
+  visual_dim: 6
+  ego_dim: 2
+  embed_dim: 32
+  temporal_kernel: 5
+  dropout: 0.2
+train:
+  epochs: 22
+  batch_size: 64
+  lr: 0.003
+  weight_decay: 0.0001
