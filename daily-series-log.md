@@ -56,3 +56,5 @@ Tracks which paper/algorithm was covered on each day so future runs don't repeat
 
 **Visual assets policy (added 2026-09-06):** Every day's folder ships a rendered architecture diagram (`assets/*_architecture.png`), and a results stat-tile image (`assets/*_results.png`) whenever hard benchmark numbers were actually verified from the source paper — never fabricated. See the project's `AUTOMOTIVE AI TECHNICAL REFERENCE MATRIX` §5 for the full policy.
 | 49 | 2026-10-23 | Decision Making and Ride Comfort Evaluation Based on Lane-Change Prediction for Autonomous Vehicles (Manzour et al.) | [2610.30528](https://arxiv.org/abs/2610.30528) | Lane-change / cut-in intent prediction: TransE knowledge-graph embeddings + Bayesian inference (interpretable predictor) |
+
+| 50 | 2026-10-24 | Perceives but Doesn't Brake: A Perception-Action Binding Gap in Reasoning Driving VLAs (Cercola et al.) | [2610.28184](https://arxiv.org/abs/2610.28184) | ADAS / end-to-end planning safety: training-free hazard-energy guidance on a frozen flow-matching trajectory sampler (paper: footprint intrusion 58.1% to 14.5%; repo is a synthetic rebuild, closed-loop collisions 95% to 1.7%) |

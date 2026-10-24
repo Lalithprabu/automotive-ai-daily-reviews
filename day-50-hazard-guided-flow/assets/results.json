@@ -1,0 +1,42 @@
+{
+  "open_loop": {
+    "baseline": {
+      "intrusion": 0.4699999988079071,
+      "mean_final_s": 23.750741958618164,
+      "lateral_abs": 0.014525140635669231
+    },
+    "guided": {
+      "intrusion": 0.004999999888241291,
+      "mean_final_s": 15.265437126159668,
+      "lateral_abs": 0.03655766695737839
+    }
+  },
+  "binding_gap": {
+    "baseline": {
+      "d_plan_per_speed_pct10": 2.4412519931793213,
+      "d_plan_per_hazard_20pct_closer": 4.693997383117676,
+      "hazard_to_speed_ratio": 1.922782063484192
+    },
+    "guided": {
+      "d_plan_per_speed_pct10": 5.807904243469238,
+      "d_plan_per_hazard_20pct_closer": 9.620308876037598,
+      "hazard_to_speed_ratio": 1.6564162969589233
+    }
+  },
+  "far_hazard_mean_final_s": {
+    "baseline": 58.18401336669922,
+    "guided": 57.71159744262695
+  },
+  "closed_loop": {
+    "baseline": {
+      "collision_rate": 0.95,
+      "mean_final_gap_m": -0.4731209874153137,
+      "n": 60
+    },
+    "guided": {
+      "collision_rate": 0.016666666666666666,
+      "mean_final_gap_m": 3.0708524724772195,
+      "n": 60
+    }
+  }
+}

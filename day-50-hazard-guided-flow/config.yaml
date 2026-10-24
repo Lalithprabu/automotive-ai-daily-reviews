@@ -1,0 +1,17 @@
+# All values are this repo's reconstruction defaults (NOT paper-sourced). Decimal-only floats (PyYAML safe_load).
+horizon: 20            # waypoints
+dt: 0.25               # seconds between waypoints (5 s horizon)
+hidden: 192
+depth: 4
+batch_size: 256
+epochs: 60
+lr: 0.002
+weight_decay: 0.0001
+n_train: 30000
+n_val: 1000
+hazard_frac: 0.08      # rare hazard demos -> induces the perception-action binding gap by construction
+sampler_steps: 16
+guide_lambda: 3.0      # hazard-energy guidance strength (swept 0.02-4.0 in open loop; see README)
+guide_margin: 5.0      # clearance (m) the energy asks for; swept 0.8-6.0, larger = earlier/more conservative braking
+seed: 0
+checkpoint: checkpoints/flow.pt
