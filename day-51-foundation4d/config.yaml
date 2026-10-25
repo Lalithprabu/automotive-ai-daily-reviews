@@ -1,0 +1,19 @@
+# All values are this repo's reconstruction defaults (not paper-sourced). Decimal-form floats only.
+model:
+  dim: 64
+  heads: 4
+  depth: 4
+  patch: 4
+  n_views: 4
+  n_frames: 2
+data:
+  img_h: 24
+  img_w: 32
+  n_train: 800
+  n_val: 128
+  seed: 0
+train:
+  epochs: 12
+  batch_size: 16
+  lr: 0.002
+  weight_decay: 0.0001

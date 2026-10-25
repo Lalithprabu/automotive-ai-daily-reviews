@@ -1,0 +1,40 @@
+{
+  "joint_factorized": {
+    "depth_absrel": 0.07696131616830826,
+    "occ_iou": 0.48943638801574707,
+    "det_thr": 0.05,
+    "det_precision": 0.9889807162534435,
+    "det_recall": 0.799554565701559,
+    "det_f1": 0.8842364532019705,
+    "params": 671653,
+    "train_seconds": 389.3,
+    "loss_first": 4.22592945098877,
+    "loss_last": 1.0015566098690032
+  },
+  "det_only_old_way": {
+    "det_thr": 0.3,
+    "det_precision": 0.9757412398921833,
+    "det_recall": 0.8062360801781737,
+    "det_f1": 0.8829268292682927,
+    "params": 671653,
+    "train_seconds": 397.5,
+    "loss_first": 1.13105264544487,
+    "loss_last": 0.6879176938533783
+  },
+  "joint_dense_attention": {
+    "depth_absrel": 0.08231490105390549,
+    "occ_iou": 0.4797727167606354,
+    "det_thr": 0.7,
+    "det_precision": 0.9919571045576407,
+    "det_recall": 0.8240534521158129,
+    "det_f1": 0.9002433090024331,
+    "params": 271781,
+    "train_seconds": 197.9,
+    "loss_first": 4.242049741744995,
+    "loss_last": 1.0350574350357056
+  },
+  "attention_pairs_per_layer": {
+    "factorized": 92928,
+    "dense": 147456
+  }
+}
