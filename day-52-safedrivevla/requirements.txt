@@ -1,0 +1,6 @@
+torch>=2.1
+numpy
+pyyaml
+opencv-python-headless
+imageio
+pytest

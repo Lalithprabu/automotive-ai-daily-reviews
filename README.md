@@ -72,3 +72,7 @@ Days 1–4's code was carried forward from each day's own original daily-review 
 **Days 31–37** were each built in a scheduled cloud session from an abstract-level read of the paper (arXiv full text was rate-limited, HTTP 429, every day), so every architecture dimension, dataset and number in those folders is the repo's own disclosed reconstruction; each folder's `SOURCING.md` lists exactly what is paper-sourced. Weekly summary carousel: *The AI Road Trip, Leg 5* (Days 31–37).
 
 This is an independent, best-effort reference implementation series for educational purposes — it is **not** any of the papers' authors' official code release.
+## Day 52 - SafeDriveVLA (2026-10-26)
+Conflict-aware instruction following: a 3-level compliance mode (FOLLOW / ADAPT / REFUSE) plus a world model that "dreams" what happens if the ego strictly obeys the instruction. Paper: [arXiv:2610.20609](https://arxiv.org/abs/2610.20609). Code, tests and simulation: [day-52-safedrivevla](day-52-safedrivevla/). Synthetic reconstruction, not the authors' model or numbers; see its SOURCING.md.
+
+![SafeDriveVLA simulation](day-52-safedrivevla/assets/safedrivevla_simulation.gif)

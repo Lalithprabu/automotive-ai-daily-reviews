@@ -1,0 +1,13 @@
+# SafeDriveVLA-Mini config (this repo's own defaults; see SOURCING.md)
+horizon: 8            # dream steps (dt = 0.5 s)
+max_agents: 4
+dim: 64
+heads: 4
+enc_layers: 2
+train_scenes: 8000
+val_scenes: 1500
+epochs: 30
+batch_size: 128
+lr: 2.0e-3
+seed: 0
+loss_w: {risk: 1.0, gap: 1.0, mode: 1.0, action: 2.0}
