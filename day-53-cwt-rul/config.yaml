@@ -1,0 +1,5 @@
+# CWT-RUL-Mini config (this repo's own defaults; see SOURCING.md)
+data: {n_cells: 1500, n_cycles: 50, T: 128, seed: 0, val_frac: 0.15, test_frac: 0.15}
+cwt: {n_scales: 32, w0: 6.0, s_min: 1.5, s_max: 40.0, compress: 4}
+model: {width: 24, emb: 64, dropout: 0.1}
+train: {epochs: 40, batch: 64, lr: 2.0e-3, wd: 1.0e-4, n_choices: [1, 5, 10, 25, 50], max_cycles_in: 4}

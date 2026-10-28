@@ -1,0 +1,67 @@
+[blind] it     0 loss 0.9054  (0s)
+[blind] it   250 loss 0.6108  (8s)
+[blind] it   500 loss 0.6186  (16s)
+[blind] it   750 loss 0.8679  (23s)
+[blind] it  1000 loss 0.6002  (30s)
+[blind] it  1199 loss 0.5941  (37s)
+blind {"ADE_m": 0.7948556542396545, "FDE_m": 1.781649112701416, "yaw_err_deg": 2.371062171475589, "speed_err": 0.7706679105758667}
+[point] it     0 loss 0.9054  (0s)
+[point] it   250 loss 0.4606  (10s)
+[point] it   500 loss 0.5531  (19s)
+[point] it   750 loss 0.7607  (28s)
+[point] it  1000 loss 0.5164  (38s)
+[point] it  1199 loss 0.5366  (46s)
+point {"ADE_m": 0.7434489130973816, "FDE_m": 1.638015866279602, "yaw_err_deg": 1.536876355715096, "speed_err": 0.7387489676475525}
+[pooled] it     0 loss 0.9054  (0s)
+[pooled] it   250 loss 0.0956  (50s)
+[pooled] it   500 loss 0.0469  (103s)
+[pooled] it   750 loss 0.0289  (167s)
+[pooled] it  1000 loss 0.0210  (216s)
+[pooled] it  1199 loss 0.0155  (255s)
+pooled {"ADE_m": 0.12268892675638199, "FDE_m": 0.2663022577762604, "yaw_err_deg": 0.6949324561396614, "speed_err": 0.10563556104898453}
+[spatial] it     0 loss 0.9054  (0s)
+[spatial] it   250 loss 0.0469  (48s)
+[spatial] it   500 loss 0.0163  (99s)
+[spatial] it   750 loss 0.0150  (148s)
+[spatial] it  1000 loss 0.0067  (198s)
+[spatial] it  1199 loss 0.0064  (235s)
+spatial {"ADE_m": 0.07121580839157104, "FDE_m": 0.1569053679704666, "yaw_err_deg": 0.4445655126904137, "speed_err": 0.06409033387899399}
+{
+ "physics": {
+  "ADE_m": 0.994057834148407,
+  "FDE_m": 2.22890043258667,
+  "yaw_err_deg": 3.5149367723442615,
+  "speed_err": 0.9504155516624451
+ },
+ "_meta": {
+  "iters": 1200,
+  "batch": 64,
+  "seed": 0,
+  "horizon_steps": 24,
+  "n_test": 1000
+ },
+ "blind": {
+  "ADE_m": 0.7948556542396545,
+  "FDE_m": 1.781649112701416,
+  "yaw_err_deg": 2.371062171475589,
+  "speed_err": 0.7706679105758667
+ },
+ "point": {
+  "ADE_m": 0.7434489130973816,
+  "FDE_m": 1.638015866279602,
+  "yaw_err_deg": 1.536876355715096,
+  "speed_err": 0.7387489676475525
+ },
+ "pooled": {
+  "ADE_m": 0.12268892675638199,
+  "FDE_m": 0.2663022577762604,
+  "yaw_err_deg": 0.6949324561396614,
+  "speed_err": 0.10563556104898453
+ },
+ "spatial": {
+  "ADE_m": 0.07121580839157104,
+  "FDE_m": 0.1569053679704666,
+  "yaw_err_deg": 0.4445655126904137,
+  "speed_err": 0.06409033387899399
+ }
+}
