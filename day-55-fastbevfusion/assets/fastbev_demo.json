@@ -1,0 +1,1 @@
+{"final_running_f1": {"lidar_only": 0.5, "add": 0.526, "xattn": 0.533}, "stats": {"lidar_only": [88.0, 1.0, 175.0], "add": [100.0, 17.0, 163.0], "xattn": [97.0, 4.0, 166.0]}}
