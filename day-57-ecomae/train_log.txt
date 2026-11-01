@@ -1,0 +1,57 @@
+seed 0 sup    ID {'acc': 0.9913333333333333, 'ece': 0.004987487951914493, 'aurc': 0.0004126093648430876}  OOD {'acc': 0.8393333333333334, 'ece': 0.13404055702686313, 'aurc': 0.052550971581695714}  [9s]
+seed 0 timae: pretraining
+    pre ep00 rec=0.099 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep05 rec=0.061 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep10 rec=0.055 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep15 rec=0.052 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep20 rec=0.052 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep24 rec=0.054 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+seed 0 timae  ID {'acc': 0.99, 'ece': 0.0066130369106929005, 'aurc': 0.0015140152772471053}  OOD {'acc': 0.874, 'ece': 0.10134573471546175, 'aurc': 0.04405887222659294}  [304s]
+seed 0 ecomae: pretraining
+    pre ep00 rec=0.110 evi=0.806 mu=0.004 alpha=1.162 rep=0.006
+    pre ep05 rec=0.085 evi=0.107 mu=0.004 alpha=0.120 rep=0.005
+    pre ep10 rec=0.061 evi=-0.274 mu=0.053 alpha=0.062 rep=0.012
+    pre ep15 rec=0.055 evi=-0.340 mu=0.040 alpha=0.026 rep=0.010
+    pre ep20 rec=0.055 evi=-0.359 mu=0.031 alpha=0.010 rep=0.012
+    pre ep24 rec=0.056 evi=-0.340 mu=0.034 alpha=0.008 rep=0.011
+seed 0 ecomae ID {'acc': 0.9913333333333333, 'ece': 0.006197644631067908, 'aurc': 0.00012265548839746496}  OOD {'acc': 0.8813333333333333, 'ece': 0.09803978602091472, 'aurc': 0.03212373905874713}  [535s]
+seed 1 sup    ID {'acc': 0.9953333333333333, 'ece': 0.0029118545055389247, 'aurc': 5.717482855846374e-05}  OOD {'acc': 0.9113333333333333, 'ece': 0.06854734484354655, 'aurc': 0.014571993208342645}  [542s]
+seed 1 timae: pretraining
+    pre ep00 rec=0.096 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep05 rec=0.063 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep10 rec=0.058 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep15 rec=0.056 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep20 rec=0.053 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep24 rec=0.058 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+seed 1 timae  ID {'acc': 0.994, 'ece': 0.003236599485079426, 'aurc': 7.374110460288886e-05}  OOD {'acc': 0.9093333333333333, 'ece': 0.06749673215548192, 'aurc': 0.02077192727980418}  [760s]
+seed 1 ecomae: pretraining
+    pre ep00 rec=0.114 evi=0.878 mu=0.013 alpha=1.408 rep=0.006
+    pre ep05 rec=0.079 evi=-0.130 mu=0.010 alpha=0.126 rep=0.005
+    pre ep10 rec=0.065 evi=-0.218 mu=0.067 alpha=0.085 rep=0.012
+    pre ep15 rec=0.062 evi=-0.303 mu=0.106 alpha=0.028 rep=0.010
+    pre ep20 rec=0.057 evi=-0.332 mu=0.076 alpha=0.008 rep=0.008
+    pre ep24 rec=0.063 evi=-0.330 mu=0.083 alpha=0.008 rep=0.010
+seed 1 ecomae ID {'acc': 0.994, 'ece': 0.004096694548924712, 'aurc': 0.0003244317013379127}  OOD {'acc': 0.9, 'ece': 0.08157100546360012, 'aurc': 0.023310563676512318}  [995s]
+seed 2 sup    ID {'acc': 0.9973333333333333, 'ece': 0.000990740378697715, 'aurc': 1.6973461406045863e-05}  OOD {'acc': 0.9133333333333333, 'ece': 0.06860632695754365, 'aurc': 0.016664680634182732}  [1004s]
+seed 2 timae: pretraining
+    pre ep00 rec=0.102 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep05 rec=0.060 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep10 rec=0.056 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep15 rec=0.056 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep20 rec=0.054 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+    pre ep24 rec=0.051 evi=0.000 mu=0.000 alpha=0.000 rep=0.000
+seed 2 timae  ID {'acc': 0.998, 'ece': 0.0012832833131153837, 'aurc': 2.1903918423141385e-05}  OOD {'acc': 0.9213333333333333, 'ece': 0.05687561772267022, 'aurc': 0.015361380827071777}  [1232s]
+seed 2 ecomae: pretraining
+    pre ep00 rec=0.120 evi=0.876 mu=0.003 alpha=1.418 rep=0.006
+    pre ep05 rec=0.076 evi=-0.132 mu=0.012 alpha=0.249 rep=0.005
+    pre ep10 rec=0.060 evi=-0.231 mu=0.024 alpha=0.058 rep=0.013
+    pre ep15 rec=0.059 evi=-0.301 mu=0.013 alpha=0.024 rep=0.009
+    pre ep20 rec=0.057 evi=-0.372 mu=0.022 alpha=0.010 rep=0.010
+    pre ep24 rec=0.055 evi=-0.373 mu=0.015 alpha=0.009 rep=0.009
+seed 2 ecomae ID {'acc': 0.9953333333333333, 'ece': 0.0035680199861526816, 'aurc': 3.758718816305813e-05}  OOD {'acc': 0.946, 'ece': 0.04343902715047206, 'aurc': 0.011977647215920418}  [1471s]
+
+| method | ID acc | ID ECE | ID AURC | OOD acc | OOD ECE | OOD AURC |
+|---|---|---|---|---|---|---|
+| sup | 0.995±0.002 | 0.003±0.002 | 0.000±0.000 | 0.888±0.034 | 0.090±0.031 | 0.028±0.017 |
+| timae | 0.994±0.003 | 0.004±0.002 | 0.001±0.001 | 0.902±0.020 | 0.075±0.019 | 0.027±0.012 |
+| ecomae | 0.994±0.002 | 0.005±0.001 | 0.000±0.000 | 0.909±0.027 | 0.074±0.023 | 0.022±0.008 |

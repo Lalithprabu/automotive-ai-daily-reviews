@@ -1,0 +1,9 @@
+{
+ "seed": 10,
+ "star": {
+  "cls": "pedestrian",
+  "onset": 39,
+  "p_full_at_onset_minus_3": 0.219,
+  "p_stateless_at_onset_minus_3": 0.243
+ }
+}

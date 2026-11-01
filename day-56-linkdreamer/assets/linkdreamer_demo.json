@@ -1,0 +1,40 @@
+{
+ "final_running_f1": {
+  "ego-only": 0.633,
+  "reuse": 0.722,
+  "LinkDreamer-style": 0.699,
+  "upper ref": 0.777
+ },
+ "comm_per_frame": {
+  "ego-only": 0.0,
+  "reuse": 0.273,
+  "LinkDreamer-style": 0.091,
+  "upper ref": 1.0
+ },
+ "modes": [
+  "high-rate refresh",
+  "high-rate refresh",
+  "reuse (motion-comp.)",
+  "low-rate refresh",
+  "low-rate refresh",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "low-rate refresh",
+  "low-rate refresh",
+  "low-rate refresh",
+  "low-rate refresh",
+  "low-rate refresh",
+  "low-rate refresh",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)",
+  "reuse (motion-comp.)"
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "cls": "left",
+ "env": "fog",
+ "seed": 5,
+ "summary": {
+  "sup": {
+   "final_pred": "left",
+   "p_true_final": 0.998,
+   "frames_correct": 16,
+   "of": 16
+  },
+  "ecomae": {
+   "final_pred": "left",
+   "p_true_final": 0.998,
+   "frames_correct": 16,
+   "of": 16
+  }
+ }
+}
