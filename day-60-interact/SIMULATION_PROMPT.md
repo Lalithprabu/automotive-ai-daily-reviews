@@ -1,0 +1,7 @@
+# Simulation script / prompt (image-video AI or rendering engine)
+16:9 (1240x640), ~4 s at 3 fps (12 frames), light technical dashboard, title "AI in action: an object-centric world model imagines the next 1.5 s".
+**Left (INPUT -> PREDICTION -> GROUND TRUTH):** a 48x48 pixel-art ego-centric bird's-eye "camera" feed of a 3-lane road (forward = up), black asphalt with dotted lane lines; red cars, green trucks, ONE blue ego car near the bottom. Every object wears a thin coloured bounding box with an id tag (s0, s1, ...) = the slot the encoder bound to it. From the centre of each box draw (a) a DASHED RED polyline with dots = the world model's predicted path for the next 1.5 s (3 steps) given the planner's chosen latent ego action, and (b) a SOLID GREEN polyline = where the object really goes when the simulator executes that same action (ground truth). When an adjacent-lane car merges into the ego lane, its red dashed path should bend into the lane while a no-action baseline's path would stay straight.
+**Right top:** bars for five candidate ego actions (brake / ease / keep / accel / swerve-left): blue = planner cost (chosen action darker), green = privileged oracle cost.
+**Right middle:** ego speed (m/s) and nearest-gap telemetry vs frame, red vertical band when a car cuts in, black line on collision.
+**Right bottom:** mean centroid error (m) of the +1.5 s prediction vs frame.
+Footer: "Synthetic demo - NOT NAVSIM / nuScenes, NOT the paper's results".

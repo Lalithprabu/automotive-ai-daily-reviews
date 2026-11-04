@@ -1,0 +1,60 @@
+[    22s] data (800, 11, 3, 48, 48)
+[    24s] wm step 0 rec=24.520
+[    64s] wm step 100 rec=1.421
+[   105s] wm step 200 rec=1.365
+[   146s] wm step 300 rec=1.367
+[   186s] wm step 400 rec=1.372
+[   227s] wm step 500 rec=1.232
+[   267s] wm step 600 rec=1.394
+[   338s] wm step 700 rec=1.356 slot=12.393 pimg=1.318 ent=1.573
+[   407s] wm step 800 rec=1.419 slot=0.301 pimg=1.383 ent=1.609
+[   476s] wm step 900 rec=1.426 slot=0.024 pimg=1.414 ent=1.609
+[   545s] wm step 1000 rec=1.270 slot=0.230 pimg=1.253 ent=1.609
+[   617s] wm step 1100 rec=1.316 slot=0.070 pimg=1.292 ent=1.609
+[   686s] wm step 1200 rec=1.429 slot=0.007 pimg=1.396 ent=1.609
+[   755s] wm step 1300 rec=1.338 slot=0.000 pimg=1.326 ent=1.609
+[   831s] wm step 1400 rec=1.455 slot=0.000 pimg=1.430 ent=1.609
+[   903s] wm step 1500 rec=1.376 slot=0.000 pimg=1.381 ent=1.609
+[   976s] wm step 1600 rec=1.462 slot=0.000 pimg=1.424 ent=1.609
+[  1051s] wm step 1700 rec=1.484 slot=0.000 pimg=1.461 ent=1.609
+[  1125s] wm step 1800 rec=1.402 slot=0.000 pimg=1.347 ent=1.609
+[  1201s] wm step 1900 rec=1.273 slot=0.000 pimg=1.237 ent=1.609
+[  1272s] wm step 1999 rec=1.502 slot=0.000 pimg=1.478 ent=1.609
+[  1284s] latent-action purity vs true prototype 0.9
+[  1324s] planner slot_full: val agreement with oracle 0.537, mean cost regret 1.155
+[  1330s] planner slot_nofuture: val agreement with oracle 0.537, mean cost regret 1.155
+[  1383s] planner dense: val agreement with oracle 0.413, mean cost regret 0.362
+[  1423s] open loop {"copy_last": 13.551, "action_blind": 14.05, "grounded": 14.05, "inferred": 14.05, "cutin_windows": 93, "other_windows": 507, "action_blind_cutin": 15.027, "action_blind_nocutin": 13.87, "grounded_cutin": 15.027, "grounded_nocutin": 13.87, "recon_mse_x1e3": 14.129, "active_slots_mean": -1.0}
+[  1440s] closed loop {
+ "keep": {
+  "collision_rate": 0.393,
+  "progress_m": 59.6,
+  "min_gap_m": 1.36
+ },
+ "random": {
+  "collision_rate": 0.32,
+  "progress_m": 53.4,
+  "min_gap_m": 1.43
+ },
+ "dense": {
+  "collision_rate": 0.1,
+  "progress_m": 48.1,
+  "min_gap_m": 2.33
+ },
+ "slot_nofuture": {
+  "collision_rate": 0.393,
+  "progress_m": 59.6,
+  "min_gap_m": 1.36
+ },
+ "slot_full": {
+  "collision_rate": 0.393,
+  "progress_m": 59.6,
+  "min_gap_m": 1.36
+ },
+ "oracle": {
+  "collision_rate": 0.143,
+  "progress_m": 56.1,
+  "min_gap_m": 2.46
+ }
+}
+[  1440s] done

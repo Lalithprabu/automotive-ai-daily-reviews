@@ -1,0 +1,8 @@
+{
+ "seed": 11,
+ "frames": 12,
+ "collisions": 0,
+ "cutins": 2,
+ "agree_with_oracle": 0.083,
+ "mean_pred_err_m": NaN
+}

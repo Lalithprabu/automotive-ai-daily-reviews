@@ -1,0 +1,71 @@
+{
+ "args": {
+  "quick": false,
+  "seed": 0,
+  "steps": 2000,
+  "psteps": 1000,
+  "ntrain": 800,
+  "out": "checkpoints"
+ },
+ "latent_action_purity": 0.9,
+ "planner_val": {
+  "slot_full": {
+   "agree": 0.5366666913032532,
+   "regret": 1.155417799949646
+  },
+  "slot_nofuture": {
+   "agree": 0.5366666913032532,
+   "regret": 1.155417799949646
+  },
+  "dense": {
+   "agree": 0.41333332657814026,
+   "regret": 0.3620213270187378
+  }
+ },
+ "open_loop": {
+  "copy_last": 13.551,
+  "action_blind": 14.05,
+  "grounded": 14.05,
+  "inferred": 14.05,
+  "cutin_windows": 93,
+  "other_windows": 507,
+  "action_blind_cutin": 15.027,
+  "action_blind_nocutin": 13.87,
+  "grounded_cutin": 15.027,
+  "grounded_nocutin": 13.87,
+  "recon_mse_x1e3": 14.129,
+  "active_slots_mean": -1.0
+ },
+ "closed_loop": {
+  "keep": {
+   "collision_rate": 0.393,
+   "progress_m": 59.6,
+   "min_gap_m": 1.36
+  },
+  "random": {
+   "collision_rate": 0.32,
+   "progress_m": 53.4,
+   "min_gap_m": 1.43
+  },
+  "dense": {
+   "collision_rate": 0.1,
+   "progress_m": 48.1,
+   "min_gap_m": 2.33
+  },
+  "slot_nofuture": {
+   "collision_rate": 0.393,
+   "progress_m": 59.6,
+   "min_gap_m": 1.36
+  },
+  "slot_full": {
+   "collision_rate": 0.393,
+   "progress_m": 59.6,
+   "min_gap_m": 1.36
+  },
+  "oracle": {
+   "collision_rate": 0.143,
+   "progress_m": 56.1,
+   "min_gap_m": 2.46
+  }
+ }
+}

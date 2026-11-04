@@ -1,0 +1,8 @@
+{
+ "seed": 8,
+ "frames": 16,
+ "collisions": 0,
+ "mean_score_err": 0.0523,
+ "mean_regret": 0.0922,
+ "pick_is_best": 0.0
+}

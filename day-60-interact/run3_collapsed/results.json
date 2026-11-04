@@ -1,0 +1,71 @@
+{
+ "args": {
+  "quick": false,
+  "seed": 0,
+  "steps": 1600,
+  "psteps": 1000,
+  "ntrain": 800,
+  "out": "checkpoints"
+ },
+ "latent_action_purity": 0.428,
+ "planner_val": {
+  "slot_full": {
+   "agree": 0.5199999809265137,
+   "regret": 1.1456845998764038
+  },
+  "slot_nofuture": {
+   "agree": 0.38466668128967285,
+   "regret": 0.9944556355476379
+  },
+  "dense": {
+   "agree": 0.33133333921432495,
+   "regret": 0.3777814209461212
+  }
+ },
+ "open_loop": {
+  "copy_last": 13.551,
+  "action_blind": 57.487,
+  "grounded": 57.486,
+  "inferred": 57.559,
+  "cutin_windows": 93,
+  "other_windows": 507,
+  "action_blind_cutin": 61.774,
+  "action_blind_nocutin": 56.701,
+  "grounded_cutin": 61.769,
+  "grounded_nocutin": 56.7,
+  "recon_mse_x1e3": 65.64,
+  "active_slots_mean": 1.87
+ },
+ "closed_loop": {
+  "keep": {
+   "collision_rate": 0.393,
+   "progress_m": 59.6,
+   "min_gap_m": 1.36
+  },
+  "random": {
+   "collision_rate": 0.32,
+   "progress_m": 53.4,
+   "min_gap_m": 1.43
+  },
+  "dense": {
+   "collision_rate": 0.087,
+   "progress_m": 48.9,
+   "min_gap_m": 2.18
+  },
+  "slot_nofuture": {
+   "collision_rate": 0.29,
+   "progress_m": 51.7,
+   "min_gap_m": 1.61
+  },
+  "slot_full": {
+   "collision_rate": 0.393,
+   "progress_m": 59.4,
+   "min_gap_m": 1.36
+  },
+  "oracle": {
+   "collision_rate": 0.143,
+   "progress_m": 56.1,
+   "min_gap_m": 2.46
+  }
+ }
+}

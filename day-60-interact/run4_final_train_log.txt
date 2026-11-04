@@ -1,0 +1,56 @@
+[    23s] data (800, 11, 3, 48, 48)
+[    27s] wm step 0 rec=4.210
+[    68s] wm step 100 rec=3.844
+[   108s] wm step 200 rec=3.592
+[   148s] wm step 300 rec=3.262
+[   189s] wm step 400 rec=3.089
+[   228s] wm step 500 rec=2.659
+[   268s] wm step 600 rec=3.088
+[   326s] wm step 700 rec=2.920 slot=0.041 pimg=2.934 ent=1.609
+[   394s] wm step 800 rec=3.035 slot=0.024 pimg=3.022 ent=1.609
+[   459s] wm step 900 rec=2.956 slot=0.015 pimg=2.986 ent=1.609
+[   523s] wm step 1000 rec=2.630 slot=0.016 pimg=2.606 ent=1.609
+[   586s] wm step 1100 rec=2.751 slot=0.015 pimg=2.734 ent=1.609
+[   652s] wm step 1200 rec=2.944 slot=0.023 pimg=2.887 ent=1.609
+[   716s] wm step 1300 rec=2.720 slot=0.018 pimg=2.685 ent=1.609
+[   780s] wm step 1400 rec=2.939 slot=0.023 pimg=2.917 ent=1.609
+[   844s] wm step 1500 rec=2.893 slot=0.017 pimg=2.907 ent=1.609
+[   909s] wm step 1599 rec=2.698 slot=0.015 pimg=2.674 ent=1.609
+[   922s] latent-action purity vs true prototype 0.472
+[   952s] planner slot_full: val agreement with oracle 0.069, mean cost regret 0.753
+[   958s] planner slot_nofuture: val agreement with oracle 0.069, mean cost regret 0.753
+[  1010s] planner dense: val agreement with oracle 0.331, mean cost regret 0.378
+[  1040s] open loop {"copy_last": 13.551, "action_blind": 22.961, "grounded": 22.962, "inferred": 23.138, "cutin_windows": 93, "other_windows": 507, "action_blind_cutin": 24.255, "action_blind_nocutin": 22.723, "grounded_cutin": 24.257, "grounded_nocutin": 22.724, "recon_mse_x1e3": 23.091, "active_slots_mean": -1.0}
+[  1058s] closed loop {
+ "keep": {
+  "collision_rate": 0.393,
+  "progress_m": 59.6,
+  "min_gap_m": 1.36
+ },
+ "random": {
+  "collision_rate": 0.32,
+  "progress_m": 53.4,
+  "min_gap_m": 1.43
+ },
+ "dense": {
+  "collision_rate": 0.087,
+  "progress_m": 48.9,
+  "min_gap_m": 2.18
+ },
+ "slot_nofuture": {
+  "collision_rate": 0.053,
+  "progress_m": 24.6,
+  "min_gap_m": 2.54
+ },
+ "slot_full": {
+  "collision_rate": 0.053,
+  "progress_m": 24.6,
+  "min_gap_m": 2.54
+ },
+ "oracle": {
+  "collision_rate": 0.143,
+  "progress_m": 56.1,
+  "min_gap_m": 2.46
+ }
+}
+[  1058s] done
