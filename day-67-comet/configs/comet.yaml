@@ -1,0 +1,8 @@
+# Defaults mirrored by CoMETConfig (decimal notation on purpose: PyYAML reads 1e-3 as a string).
+num_senders: 1
+q: 0.05          # offset random-walk variance [m^2/s]
+r0: 0.20         # variance of a single matched-pair offset measurement [m^2]
+p0: 4.0          # prior offset variance [m^2]
+gate: 2.5        # base mutual-NN matching radius [m]
+gate_sigma_k: 1.5
+use_filter: true
