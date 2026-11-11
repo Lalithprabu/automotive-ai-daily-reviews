@@ -1,0 +1,14 @@
+ego_mlp: 2,316 params, 1200 steps
+step     1  loss 4.839  0s
+step   100  loss 1.630  0s
+step   200  loss 1.298  1s
+step   300  loss 0.675  1s
+step   400  loss 1.104  1s
+step   500  loss 0.868  1s
+step   600  loss 1.002  2s
+step   700  loss 0.967  2s
+step   800  loss 0.466  2s
+step   900  loss 0.854  3s
+step  1000  loss 0.580  3s
+step  1100  loss 0.853  3s
+step  1200  loss 0.790  4s

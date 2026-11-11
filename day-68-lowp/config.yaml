@@ -1,0 +1,21 @@
+# LOWP toy re-implementation (SYNTHETIC world) — hyper-parameters
+data:
+  img_hw: [40, 80]        # per-camera image (H, W); 4 cameras (front, front-left, front-right, back)
+  n_train: 6000
+  n_val: 800
+  n_test: 1500
+model:
+  d: 64                   # hidden size (paper does not report it; ours is tiny on purpose)
+  T: 6                    # 6 waypoints @ 0.5 s -> 3 s horizon
+  n_queries: 16           # per reader (paper: 16 + 16)
+  n_layers: 3             # per reader (paper: 3)
+  heights: 4              # anchor lifted to 4 heights over 3 m (paper)
+  ring_points: 8          # 8 ring points per height -> 32 candidates (paper)
+  ray_depths: 8           # 8 depths from 1 to 60 m (paper); log spacing is our choice
+  alpha_straight: 0.5     # inference mix weight on the deformable expert (paper)
+  alpha_turn: 0.8
+train:
+  steps: 1200
+  batch: 32
+  lr: 0.002
+  threads: 1

@@ -1,0 +1,14 @@
+lowp_s: 318,092 params, 1200 steps
+step     1  loss 5.630  0s
+step   100  loss 1.243  14s
+step   200  loss 1.392  28s
+step   300  loss 1.047  43s
+step   400  loss 0.573  59s
+step   500  loss 0.627  73s
+step   600  loss 0.406  87s
+step   700  loss 0.335  101s
+step   800  loss 0.176  116s
+step   900  loss 0.241  131s
+step  1000  loss 0.105  146s
+step  1100  loss 0.178  160s
+step  1200  loss 0.173  174s

@@ -1,0 +1,14 @@
+dense: 349,836 params, 1200 steps
+step     1  loss 4.874  2s
+step   100  loss 1.173  143s
+step   200  loss 1.118  272s
+step   300  loss 0.603  394s
+step   400  loss 0.398  520s
+step   500  loss 0.434  646s
+step   600  loss 0.353  774s
+step   700  loss 0.389  897s
+step   800  loss 0.209  1019s
+step   900  loss 0.256  1146s
+step  1000  loss 0.129  1269s
+step  1100  loss 0.191  1385s
+step  1200  loss 0.226  1507s
