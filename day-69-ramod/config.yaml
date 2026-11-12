@@ -1,0 +1,27 @@
+# RaMOD toy re-implementation - hyper-parameters
+# Paper-derived ideas: ego-motion estimate -> static-Doppler suppression -> multi-scale temporal features
+#                      -> class detection + radial/forward velocity under raw & unwrapped hypotheses + wrap prob.
+# Everything numeric below is MY choice for a CPU-sized toy (not from the paper).
+radar:               # see ramod/world.py
+  range_bins: 40     # 0.7 m bins, 28 m max range
+  azimuth_bins: 40   # uniform in sin(theta), +-60 deg
+  doppler_bins: 32   # 0.25 m/s bins
+  v_max: 4.0         # max unambiguous radial velocity (m/s); ego speeds go up to 8 m/s -> static clutter wraps
+data:
+  train_episodes: 100      # x 40 steps (10 Hz)
+  test_episodes: 25
+  train_seed: 0
+  test_seed: 9999
+  train_cache: cache/train.pkl
+  test_cache: cache/test.pkl
+model:
+  channels: 32
+  frames: 3                # target + 2 past cubes (paper default T = 3)
+train:
+  steps: 1500
+  batch: 16
+  lr: 2.0e-3
+  threads: 2
+eval:
+  iou: 0.30                # cube mAP IoU threshold used by the paper's headline number
+  score_thresh: 0.15
