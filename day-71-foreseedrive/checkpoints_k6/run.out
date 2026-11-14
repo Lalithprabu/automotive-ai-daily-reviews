@@ -1,0 +1,76 @@
+/home/claude/day-71-foreseedrive/foresee/model.py:60: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.enc = nn.TransformerEncoder(nn.TransformerEncoderLayer(d, 4, 2 * d, 0.0, batch_first=True,
+base params 242193
+[base] epoch 1/14 loss 0.7597 (27s)
+[base] epoch 2/14 loss 0.7371 (26s)
+[base] epoch 3/14 loss 0.6828 (25s)
+[base] epoch 4/14 loss 0.6926 (23s)
+[base] epoch 5/14 loss 0.6353 (44s)
+[base] epoch 6/14 loss 0.6419 (34s)
+[base] epoch 7/14 loss 0.6261 (24s)
+[base] epoch 8/14 loss 0.6139 (51s)
+[base] epoch 9/14 loss 0.5610 (25s)
+[base] epoch 10/14 loss 0.5659 (42s)
+[base] epoch 11/14 loss 0.6099 (25s)
+[base] epoch 12/14 loss 0.5447 (23s)
+[base] epoch 13/14 loss 0.5233 (26s)
+[base] epoch 14/14 loss 0.5203 (22s)
+predictor params 188614
+[predictor] epoch 1/12 loss 0.7446 (48s)
+[predictor] epoch 2/12 loss 0.3714 (40s)
+[predictor] epoch 3/12 loss 0.2851 (41s)
+[predictor] epoch 4/12 loss 0.2597 (57s)
+[predictor] epoch 5/12 loss 0.2465 (60s)
+[predictor] epoch 6/12 loss 0.2375 (63s)
+[predictor] epoch 7/12 loss 0.2285 (54s)
+[predictor] epoch 8/12 loss 0.2230 (69s)
+[predictor] epoch 9/12 loss 0.2178 (41s)
+[predictor] epoch 10/12 loss 0.2132 (49s)
+[predictor] epoch 11/12 loss 0.2101 (41s)
+[predictor] epoch 12/12 loss 0.2086 (44s)
+ForeseeDrive[full] trainable params 76800 | frozen base 242193
+[cond-full] epoch 1/10 loss 0.4936 (28s)
+[cond-full] epoch 2/10 loss 0.4491 (31s)
+[cond-full] epoch 3/10 loss 0.4111 (40s)
+[cond-full] epoch 4/10 loss 0.4292 (39s)
+[cond-full] epoch 5/10 loss 0.4100 (30s)
+[cond-full] epoch 6/10 loss 0.4001 (48s)
+[cond-full] epoch 7/10 loss 0.4112 (78s)
+[cond-full] epoch 8/10 loss 0.3980 (43s)
+[cond-full] epoch 9/10 loss 0.3931 (24s)
+[cond-full] epoch 10/10 loss 0.3915 (18s)
+ForeseeDrive[scorer] trainable params 39936 | frozen base 242193
+[cond-scorer] epoch 1/10 loss 0.4942 (57s)
+[cond-scorer] epoch 2/10 loss 0.4478 (10s)
+[cond-scorer] epoch 3/10 loss 0.4107 (3s)
+[cond-scorer] epoch 4/10 loss 0.4287 (3s)
+[cond-scorer] epoch 5/10 loss 0.4099 (3s)
+[cond-scorer] epoch 6/10 loss 0.3992 (3s)
+[cond-scorer] epoch 7/10 loss 0.4076 (3s)
+[cond-scorer] epoch 8/10 loss 0.3986 (3s)
+[cond-scorer] epoch 9/10 loss 0.3937 (3s)
+[cond-scorer] epoch 10/10 loss 0.3918 (3s)
+ForeseeDrive[naive] trainable params 76800 | frozen base 242193
+[cond-naive] epoch 1/10 loss 0.4993 (7s)
+[cond-naive] epoch 2/10 loss 0.5163 (8s)
+[cond-naive] epoch 3/10 loss 0.5017 (8s)
+[cond-naive] epoch 4/10 loss 0.5000 (7s)
+[cond-naive] epoch 5/10 loss 0.4565 (8s)
+[cond-naive] epoch 6/10 loss 0.3998 (8s)
+[cond-naive] epoch 7/10 loss 0.3996 (8s)
+[cond-naive] epoch 8/10 loss 0.3788 (8s)
+[cond-naive] epoch 9/10 loss 0.3537 (8s)
+[cond-naive] epoch 10/10 loss 0.3569 (7s)
+config                          pdms          nc         ttc          ep   collision         ade best_of_k_a best_of_k_p    degraded pdms_hidden  pdms_quiet
+base                           0.717       0.749       0.705       0.972      25.100       2.132       0.860       0.955       0.000       0.572       0.938
+scorer_only_pred               0.721       0.753       0.711       0.972      24.733       2.095       0.860       0.955       0.000       0.574       0.947
+scorer_only_oracle             0.872       0.919       0.861       0.972       8.133       1.406       0.860       0.955       0.000       0.810       0.965
+foresee_pred                   0.715       0.752       0.708       0.970      24.800       2.090       0.856       0.952       4.944       0.567       0.939  guard 0.01%
+foresee_pred_noguard           0.715       0.752       0.708       0.970      24.800       2.090       0.856       0.952       4.944       0.567       0.939
+foresee_shuffled               0.712       0.750       0.706       0.968      25.000       2.261       0.861       0.953       5.339       0.574       0.922  guard 0.03%
+foresee_oracle                 0.847       0.927       0.885       0.969       7.267       1.366       0.846       0.931      18.767       0.793       0.930  guard 0.06%
+naive_pred                     0.637       0.734       0.679       0.971      26.567       2.200       0.999       0.888      35.294       0.505       0.838
+naive_oracle                   0.693       0.851       0.788       0.964      14.867       1.828       1.251       0.840      50.106       0.641       0.772
+tokens {'conf_acc': 0.974141001701355, 'risk_recall': 0.8326260073434744, 'e_mae': 0.10608131438493729, 'live_tokens_pred': 22.395334243774414, 'live_tokens_teacher': 18.53733253479004}
+zero-token {'max_abs_traj_diff': 0.0, 'max_abs_logit_diff': 0.0, 'same_selection': 100.0}
+params {'base': 242193, 'predictor': 188614, 'cond_full': 76800, 'cond_scorer': 39936} cpu ms {'base': 2.6228699998682714, 'foresee': 7.454109999798675}

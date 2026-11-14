@@ -1,0 +1,8 @@
+torch>=2.2
+numpy
+pyyaml
+opencv-python
+imageio
+imageio-ffmpeg
+matplotlib
+pytest

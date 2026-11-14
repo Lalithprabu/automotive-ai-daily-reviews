@@ -1,0 +1,8 @@
+torch>=2.2
+numpy
+scikit-learn
+pyyaml
+opencv-python-headless
+imageio
+imageio-ffmpeg
+pytest

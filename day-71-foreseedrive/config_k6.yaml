@@ -1,0 +1,21 @@
+# ForeseeDrive toy re-implementation - all sizes are MY choices (paper does not state them in what I read)
+data:
+  n_train: 30000
+  n_test: 3000
+  seed_train: 1
+  seed_test: 999
+model:
+  d: 64
+  K: 6               # candidates / anchors (k-means on expert plans)
+  base_layers: 3     # adapter injected after each one
+train:
+  batch: 256
+  base_epochs: 14
+  pred_epochs: 12
+  cond_epochs: 10
+  lr: 0.002
+  p_teacher: 0.5     # adapter training: share of batches fed logged-future (teacher) tokens
+  lambda_p: 10.0     # candidate preservation
+  lambda_g: 1.0      # TTC-margin guard (train hinge)
+  eps_b: 1.0         # base candidate counts as CV-safe above this clearance (m)
+  eps_g: 0.75        # conditioned candidate must stay above this clearance (m)

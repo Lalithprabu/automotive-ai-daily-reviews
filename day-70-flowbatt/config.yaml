@@ -1,0 +1,29 @@
+# FlowBatt toy re-implementation - all values are MY choices unless marked (paper) / (repo README)
+data:
+  n_train: 2400              # run 1 used 640 -> FlowBatt memorised (val loss U-turn, 58% coverage)
+  n_val: 96
+  n_test: 320
+  seed: 7
+  horizon_cycles: 2550       # 256-point SOH grid, 10 cycles per point
+  traj_len: 256              # (repo README) each SOH trajectory has 256 points
+  early_cycles: 100          # (paper) capacity matrix from the first 100 cycles (MATR/HUST setting)
+  v_points: 100              # (repo README) capacity matrices are 100 x 100
+  prefix_len: 10             # (repo README) 10 down-sampled observed SOH points for the 100-cycle setting
+  eol: 0.80                  # (paper) 80 % end-of-life threshold
+model:
+  d_model: 128
+  depth: 4
+  heads: 4
+  patch: 16                  # 256 points -> 16 tokens
+  enc_channels: 32
+  leaky_slope: 0.3           # (repo README) xai-cnn uses LeakyReLU slope 0.3
+train:
+  steps: 2500
+  batch: 64
+  lr: 1.0e-3                 # (repo README) AdamW, lr 1e-3
+  warmup: 100                # (repo README) 100 warm-up optimizer steps
+  weight_decay: 1.0e-2
+sample:
+  flow_steps: 32             # Euler NFE for FlowBatt (MY choice - README does not state it)
+  ddpm_steps: 100            # DiffBatt-lite ancestral steps
+  n_samples: 100             # (paper) 90 % interval from 100 generated samples
