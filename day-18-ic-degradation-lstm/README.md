@@ -104,7 +104,7 @@ integration" framing -- this project's own confirmation, not a paper-reported pa
 ## Folder structure
 
 ```
-day18-ic-degradation-lstm/
+day-18-ic-degradation-lstm/
 ├── README.md
 ├── requirements.txt
 ├── config.yaml

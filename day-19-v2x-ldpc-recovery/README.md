@@ -33,7 +33,7 @@ No BER curves, other Eb/N0 points, predictor architecture, LDPC parameters, or d
 ## Folder structure
 
 ```
-day19-v2x-ldpc-recovery/
+day-19-v2x-ldpc-recovery/
 ├── README.md
 ├── config.yaml                  # all hyperparameters / disclosed defaults
 ├── requirements.txt

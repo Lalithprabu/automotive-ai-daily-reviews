@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- Source of assets/banner.png. Render: python tools/render_banner.py -->
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1280px;height:420px;overflow:hidden;font-family:Inter,sans-serif;color:#f3f5f8;
+     background:radial-gradient(900px 500px at 85% 30%,#1b2a3a 0%,#0d1117 65%)}
+.l{position:absolute;left:64px;top:64px;width:780px}
+.k{font-size:17px;font-weight:700;letter-spacing:4px;color:#ffb020}
+h1{font-family:"Inter Display",Inter,sans-serif;font-size:60px;line-height:1.02;font-weight:800;margin-top:14px}
+h1 span{color:#ffb020}
+p{font-size:21px;line-height:1.4;color:#a9b3c1;margin-top:18px}
+.steps{display:flex;gap:8px;margin-top:26px;flex-wrap:wrap}
+.s{font-size:15px;font-weight:700;padding:8px 12px;border-radius:999px;background:#1a2230;border:1px solid #2c3646;color:#dfe5ec}
+.s b{color:#ffb020;margin-right:6px}
+svg.road{position:absolute;right:0;top:0}
+</style></head><body>
+<div class="l">
+  <div class="k">AN OPEN DAILY SERIES · AUTOMOTIVE ML</div>
+  <h1>Automotive AI<br><span>Daily Reviews</span></h1>
+  <p style="max-width:640px">A new automotive research paper every day, rebuilt from scratch in PyTorch, tested, simulated and scored honestly.</p>
+  <div class="steps">
+    <span class="s"><b>1</b>Read the paper</span><span class="s"><b>2</b>Rebuild in PyTorch</span>
+    <span class="s"><b>3</b>Test</span><span class="s"><b>4</b>Simulate</span><span class="s"><b>5</b>Score honestly</span>
+  </div>
+</div>
+<svg class="road" width="560" height="420" viewBox="0 0 560 420">
+  <defs><path id="r" d="M 40 440 C 120 330, 420 360, 400 250 S 120 170, 230 90 S 470 40, 560 -10"/></defs>
+  <use href="#r" fill="none" stroke="#18202b" stroke-width="74" stroke-linecap="round"/>
+  <use href="#r" fill="none" stroke="#252d39" stroke-width="62" stroke-linecap="round"/>
+  <use href="#r" fill="none" stroke="#e8c45a" stroke-width="4" stroke-dasharray="18 16" opacity=".85"/>
+  <g fill="none" stroke="#4cc9f0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- perception: camera -->
+    <g transform="translate(150 352)"><circle r="30" fill="#0f1620" stroke="#ffb020"/><path d="M-13 -4h5l2-4h12l2 4h5v14h-26z"/><circle cx="0" cy="3" r="5"/></g>
+    <!-- prediction: branching path -->
+    <g transform="translate(398 262)"><circle r="30" fill="#0f1620" stroke="#ffb020"/><path d="M0 14V2M0 2l-9-12M0 2l9-12M0 2V-14"/></g>
+    <!-- planning: compass -->
+    <g transform="translate(205 160)"><circle r="30" fill="#0f1620" stroke="#ffb020"/><circle r="13"/><path d="M5-5l-3 8-8 3 3-8z"/></g>
+    <!-- v2x: tower -->
+    <g transform="translate(300 64)"><circle r="30" fill="#0f1620" stroke="#ffb020"/><path d="M0-2v15M-5 13h10M0-2l-4 15M0-2l4 15"/><path d="M-7-12a10 10 0 0 0 0 12M7-12a10 10 0 0 1 0 12"/></g>
+    <!-- battery -->
+    <g transform="translate(470 40)"><circle r="30" fill="#0f1620" stroke="#ffb020"/><rect x="-13" y="-7" width="23" height="14" rx="3"/><path d="M13-3v6M-1-4l-4 5h5l-4 5"/></g>
+    <!-- safety shield -->
+    <g transform="translate(292 334)"><circle r="30" fill="#0f1620" stroke="#ffb020"/><path d="M0-14l11 4v7c0 8-5 13-11 16-6-3-11-8-11-16v-7z"/><path d="M-5 0l4 4 6-7"/></g>
+  </g>
+  <g transform="translate(70 395) rotate(-50)"><rect x="-20" y="-12" width="40" height="24" rx="7" fill="#4cc9f0"/><rect x="3" y="-9" width="10" height="18" rx="3" fill="#0d1117" opacity=".7"/></g>
+</svg>
+</body></html>

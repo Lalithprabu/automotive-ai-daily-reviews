@@ -1,0 +1,27 @@
+name: "🙋 Suggest a use case"
+description: "A real driving problem you'd like to see an AI paper rebuilt for"
+title: "[Use case] "
+labels: ["use-case"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "The driving problem"
+      description: "What happens on the road today? (e.g. potholes at night, phantom braking, EV charging queues)"
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: "Closest domain"
+      options: ["Perception", "Prediction & forecasting", "Planning & end-to-end driving", "V2X & cooperative driving", "EV battery & vehicle health", "Safety, risk & uncertainty", "Not sure"]
+  - type: input
+    id: paper
+    attributes:
+      label: "A paper you have in mind (optional)"
+      placeholder: "arXiv link or title"
+  - type: input
+    id: credit
+    attributes:
+      label: "How should I credit you? (optional)"
+      placeholder: "Name or LinkedIn handle"

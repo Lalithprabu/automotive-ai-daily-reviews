@@ -28,7 +28,7 @@ build, disclosed as such throughout.
 ## 📁 Folder structure
 
 ```
-day21-chronofuse/
+day-21-chronofuse/
 ├── README.md                    # this file
 ├── SOURCING.md                  # full paper-vs-reconstruction disclosure
 ├── requirements.txt

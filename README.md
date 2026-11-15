@@ -1,78 +1,242 @@
-# Automotive AI Daily Tech Reviews
+<p align="center"><img src="assets/banner.png" alt="Automotive AI Daily Reviews" width="100%"></p>
 
-Daily technical breakdowns of the latest machine learning research in the automotive space — ADAS perception, trajectory/motion forecasting, EV battery analytics, V2X — each paired with a LinkedIn deep-dive post and a clean, tested PyTorch reference implementation of the paper's core architecture, complete with an animated simulation GIF.
+<p align="center">
+  <img alt="papers" src="https://img.shields.io/badge/papers%20rebuilt-71-ffb020?style=for-the-badge">
+  <img alt="latest" src="https://img.shields.io/badge/latest-Day%2072-4cc9f0?style=for-the-badge">
+  <img alt="simulations" src="https://img.shields.io/badge/simulations-68-3ddc84?style=for-the-badge">
+  <img alt="pytorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
+  <img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge">
+</p>
 
-| Day | Paper | arXiv | Category |
+<p align="center">
+  <a href="#-latest-road-trip-leg">Latest leg</a> ·
+  <a href="#-latest-simulations">Simulations</a> ·
+  <a href="#-explore-by-domain">Explore by domain</a> ·
+  <a href="#-the-ai-road-trip-weekly-recaps">Weekly recaps</a> ·
+  <a href="#-run-any-day-in-60-seconds">Quick start</a> ·
+  <a href="#-suggest-a-use-case">Suggest a use case</a>
+</p>
+
+Every day I pick a fresh automotive machine-learning paper (ADAS perception, motion forecasting, planning, V2X, EV batteries), **rebuild its core idea from scratch in PyTorch**, test it, run it in a synthetic simulation, and report honestly whether the idea held up at toy scale. Each day ships as one self-contained folder, plus a LinkedIn post that explains it in plain language.
+
+## 🔥 Latest road-trip leg
+
+**Leg 10 · Days 67–72: One drive home, 6 new AI papers**
+
+<p align="center"><img src="road-trip/AI-Road-Trip-Leg10-Overview.png" alt="Leg 10 overview" width="520"></p>
+
+| Real-world moment | Paper | Day | What my rebuild showed | Verdict |
+|---|---|---|---|---|
+| The blind intersection | [**CoMET**](day-67-comet/) | 67 | detection 0.34 → 0.88, zero learned weights | ✅ Held up |
+| The busy downtown street | [**LOWP**](day-68-lowp/) | 68 | path error 0.35 vs 0.42 m, no speed-up | 🟡 Partly |
+| Heavy rain on the highway | [**RaMOD**](day-69-ramod/) | 69 | speed error 0.57 vs 1.83 m/s | ✅ Held up |
+| Traffic slows suddenly | [**ForeseeDrive**](day-71-foreseedrive/) | 71 | crashes 25.5% → 5.7% with a perfect forecast; +1 pt with its own | 🟡 Partly |
+| Merging onto the highway | [**FloCOS**](day-72-flocos/) | 72 | merge crashes 2% vs 15.7% | ✅ Held up |
+| Parked in the garage | [**FlowBatt**](day-70-flowbatt/) | 70 | 2.6x faster, accuracy a tie | 🟡 Partly |
+
+<sub>All numbers come from my own small synthetic rebuilds, not the papers' results.</sub>
+
+## 🎬 Latest simulations
+
+<table>
+  <tr>
+    <td align="center" width="33%"><a href="day-72-flocos/"><img src="day-72-flocos/assets/flocos_simulation.gif" width="100%" alt="FloCOS simulation"></a><br><b>Day 72 · FloCOS</b><br><sub>Predicts the space a nearby car might take</sub></td>
+    <td align="center" width="33%"><a href="day-71-foreseedrive/"><img src="day-71-foreseedrive/assets/foresee_simulation.gif" width="100%" alt="ForeseeDrive simulation"></a><br><b>Day 71 · ForeseeDrive</b><br><sub>Gives the planner a forecast so it reacts early</sub></td>
+    <td align="center" width="33%"><a href="day-70-flowbatt/"><img src="day-70-flowbatt/assets/flowbatt_simulation.gif" width="100%" alt="FlowBatt simulation"></a><br><b>Day 70 · FlowBatt</b><br><sub>Forecasts a battery's ageing curve with uncertainty</sub></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%"><a href="day-69-ramod/"><img src="day-69-ramod/assets/ramod_simulation.gif" width="100%" alt="RaMOD simulation"></a><br><b>Day 69 · RaMOD</b><br><sub>Finds what's moving in raw radar, even in rain</sub></td>
+    <td align="center" width="33%"><a href="day-68-lowp/"><img src="day-68-lowp/assets/lowp_simulation.gif" width="100%" alt="LOWP simulation"></a><br><b>Day 68 · LOWP</b><br><sub>Reads the cameras only where the car will drive</sub></td>
+    <td align="center" width="33%"><a href="day-67-comet/"><img src="day-67-comet/assets/comet_simulation.gif" width="100%" alt="CoMET simulation"></a><br><b>Day 67 · CoMET</b><br><sub>Fixes late, slightly-off roadside messages</sub></td>
+  </tr>
+</table>
+
+## 🧭 Explore by domain
+
+| Domain | What it covers | Papers |
+|---|---|---|
+| 👁️ [Perception](#-perception) | Cameras, radar, LiDAR, depth, HD maps and 3D occupancy | 12 |
+| 🔮 [Prediction & forecasting](#-prediction--forecasting) | Trajectories, intentions and future occupancy of other road users | 21 |
+| 🧭 [Planning & end-to-end driving](#-planning--end-to-end-driving) | World models and planners that decide where the car goes | 17 |
+| 📡 [V2X & cooperative driving](#-v2x--cooperative-driving) | Cars and roadside units sharing what they see, despite delay and loss | 11 |
+| 🔋 [EV battery & vehicle health](#-ev-battery--vehicle-health) | Degradation, remaining useful life and health monitoring | 3 |
+| 🛡️ [Safety, risk & uncertainty](#-safety-risk--uncertainty) | Risk fields, calibrated uncertainty and safety-critical scenarios | 7 |
+
+### 👁️ Perception
+
+<details><summary><b>12 papers</b>: Cameras, radar, LiDAR, depth, HD maps and 3D occupancy</summary>
+
+| Day | Paper | In one line | arXiv | Demo |
+|---|---|---|---|---|
+| 69 | [**RaMOD**](day-69-ramod/) · Moving-Object Detection from Raw mmWave Radar | Finds what's moving in raw radar, even in rain | [2611.13271](https://arxiv.org/abs/2611.13271) | [▶ GIF](day-69-ramod/assets/ramod_simulation.gif) |
+| 62 | [**EvoOcc**](day-62-evoocc/) · Fast-Slow Evolutionary Occupancy Prediction | Fuses a fast-but-weak and a slow-but-late model | [2611.02499](https://arxiv.org/abs/2611.02499) | [▶ GIF](day-62-evoocc/assets/evoocc_sim.gif) |
+| 55 | [**FastBEVFusion**](day-55-fastbevfusion/) · Fast LiDAR + Camera BEV Fusion | Faster LiDAR-camera fusion in bird's-eye view | [2610.37153](https://arxiv.org/abs/2610.37153) | [▶ GIF](day-55-fastbevfusion/assets/fastbev_demo.gif) |
+| 51 | [**Foundation4D**](day-51-foundation4d/) · One Model for Depth, Detection, Occupancy and Gaussians | One backbone for four perception tasks | [2610.30340](https://arxiv.org/abs/2610.30340) | [▶ GIF](day-51-foundation4d/assets/foundation4d_simulation.gif) |
+| 45 | [**Decision-FLIP**](day-45-decision-flip/) · Budget-Free Pruning for Gaussian Occupancy Models | Label-free pruning of occupancy models | [2610.20917](https://arxiv.org/abs/2610.20917) | [▶ GIF](day-45-decision-flip/assets/decision_flip_simulation.gif) |
+| 42 | [**RadarGSOcc**](day-42-radargsocc/) · Doppler-Aware 3D Semantic Occupancy from 4D Radar | 3D occupancy from 4D radar alone | [2610.18686](https://arxiv.org/abs/2610.18686) | [▶ GIF](day-42-radargsocc/assets/simulation.gif) |
+| 29 | [**MapLightning**](day-29-maplightning/) · Online Vectorized HD Maps with 1D Map Tokens | Builds HD maps on the fly without camera calibration | [2610.01905](https://arxiv.org/abs/2610.01905) | [▶ GIF](day-29-maplightning/assets/maplightning_simulation.gif) |
+| 23 | [**PriorMapBEVNet**](day-23-priormapbevnet/) · Vision-Built Map Priors for 3D Detection + HD Mapping | Camera detection boosted by a remembered map of the route | [2609.26325](https://arxiv.org/abs/2609.26325) | [▶ GIF](day-23-priormapbevnet/priormapbevnet_simulation.gif) |
+| 21 | [**ChronoFuse**](day-21-chronofuse/) · Predicting Ahead to Beat Event-Camera Latency | Detects where objects will be when the output is ready | [2609.26919](https://arxiv.org/abs/2609.26919) | [▶ GIF](day-21-chronofuse/chronofuse_simulation.gif) |
+| 14 | [**Sparse-BEVNet**](day-14-sparse-bevnet/) · Sparse-Attention Multi-View BEV 3D Detection | Cheaper camera-only 3D detection with sparse attention | [2609.14185](https://arxiv.org/abs/2609.14185) | [▶ GIF](day-14-sparse-bevnet/assets/sparse_bevnet_simulation.gif) |
+| 8 | [**Marigold**](day-08-marigold/) · Diffusion Models as Monocular Depth Estimators | Turns an image generator into a single-camera depth sensor | [2312.02145](https://arxiv.org/abs/2312.02145) | [▶ GIF](day-08-marigold/trajectory_simulation.gif) |
+| 3 | [**PART**](day-03-part/) · Physics-Aware Radar Transformer | Radar transformer that respects Doppler physics | [2609.02289](https://arxiv.org/abs/2609.02289) | [▶ GIF](day-03-part/trajectory_simulation.gif) |
+
+</details>
+
+### 🔮 Prediction & forecasting
+
+<details open><summary><b>21 papers</b>: Trajectories, intentions and future occupancy of other road users</summary>
+
+| Day | Paper | In one line | arXiv | Demo |
+|---|---|---|---|---|
+| 72 | [**FloCOS**](day-72-flocos/) · Compact Forward Occupancy Sets via Flow Matching | Predicts the space a nearby car might take | [2611.15488](https://arxiv.org/abs/2611.15488) | [▶ GIF](day-72-flocos/assets/flocos_simulation.gif) |
+| 66 | [**FreeOcc**](day-66-freeocc/) · 4D Occupancy Forecasting | Forecasts how the 3D scene fills up next | [2611.08128](https://arxiv.org/abs/2611.08128) | — |
+| 65 | [**MotoVerse**](day-65-motoverse/) · Traffic Anticipation from a Rider's View | Predicts traffic through a motorcyclist's eyes | [2611.06007](https://arxiv.org/abs/2611.06007) | — |
+| 60 | [**INTERACT-Slots**](day-60-interact/) · Object-Centric World Model for Interaction-Aware Prediction | Sees the road as objects, then imagines their futures | [2611.02526](https://arxiv.org/abs/2611.02526) | [▶ GIF](day-60-interact/assets/interact_demo_trained.gif) |
+| 58 | [**Motion-Onset-GNN**](day-58-motion-onset/) · Meta-Learned Scene Graphs for Motion Onset | Predicts the moment a stopped agent starts moving | [2610.38993](https://arxiv.org/abs/2610.38993) | [▶ GIF](day-58-motion-onset/assets/onset_demo.gif) |
+| 57 | [**eCoMAE**](day-57-ecomae/) · Evidential Masked Pretraining for VRU Intent | Pedestrian/cyclist intent with honest uncertainty | [2610.39958](https://arxiv.org/abs/2610.39958) | [▶ GIF](day-57-ecomae/assets/ecomae_demo.gif) |
+| 54 | [**SpatialBEV**](day-54-spatialbev/) · Off-Road Dynamics Learning in BEV | Learns how a vehicle moves over rough terrain | [2610.22900](https://arxiv.org/abs/2610.22900) | [▶ GIF](day-54-spatialbev/assets/spatialbev_demo.gif) |
+| 49 | [**KG-LaneChange**](day-49-kg-lanechange/) · Lane-Change Prediction with Knowledge Graphs | Knowledge graphs + Bayesian inference for lane changes | [2610.30528](https://arxiv.org/abs/2610.30528) | [▶ GIF](day-49-kg-lanechange/assets/simulation.gif) |
+| 46 | [**STC-MGNet**](day-46-stc-mgnet/) · Pedestrian Intention via Multimodal Graph Network | Pedestrian intent from pose graphs + ego motion | [2610.23356](https://arxiv.org/abs/2610.23356) | [▶ GIF](day-46-stc-mgnet/assets/simulation.gif) |
+| 43 | [**FutureLift**](day-43-futurelift/) · Bidirectional Future Graphs for Motion Forecasting | Refines forecast proposals as future graphs | [2610.22215](https://arxiv.org/abs/2610.22215) | [▶ GIF](day-43-futurelift/assets/simulation.gif) |
+| 41 | [**X-TRACK**](day-41-xtrack-uq/) · Physics-Aware Highway Trajectory Prediction with UQ | Physics-aware forecasts with calibrated uncertainty | [2610.11580](https://arxiv.org/abs/2610.11580) | [▶ GIF](day-41-xtrack-uq/assets/simulation.gif) |
+| 38 | [**WZDrive**](day-38-wzdrive/) · Trajectory Prediction in Road Construction Zones | Uses driver gaze to predict paths through work zones | [2610.12747](https://arxiv.org/abs/2610.12747) | [▶ GIF](day-38-wzdrive/assets/wzdrive_simulation.gif) |
+| 36 | [**MESSENGER**](day-36-messenger/) · Memory-Enhanced Scene-Flow Forecasting | Forecasts LiDAR motion using a memory of past flow | [2610.10759](https://arxiv.org/abs/2610.10759) | [▶ GIF](day-36-messenger/assets/messenger_simulation.gif) |
+| 35 | [**CAA-GMM**](day-35-caa-gmm/) · Context-Aware Gaussian-Mixture Trajectory Prediction | Attention over neighbours and map, mixture of futures | [2610.09174](https://arxiv.org/abs/2610.09174) | [▶ GIF](day-35-caa-gmm/assets/simulation.gif) |
+| 34 | [**LighTROcc**](day-34-lightrocc/) · Lightweight 4D Occupancy Forecasting with 3D Gaussians | Forecasts occupancy per object with 3D Gaussians | [2610.09444](https://arxiv.org/abs/2610.09444) | [▶ GIF](day-34-lightrocc/assets/lightrocc_simulation.gif) |
+| 32 | [**MoCAR**](day-32-mocar/) · Motion-Code Autoregression for Trajectory Forecasting | Forecasts motion as a sequence of learned motion codes | [2610.06210](https://arxiv.org/abs/2610.06210) | [▶ GIF](day-32-mocar/assets/mocar_simulation.gif) |
+| 28 | [**MomWorld**](day-28-momworld/) · Momentum-Aware Latent World Model | Long-horizon prediction with latent momentum | [2609.33737](https://arxiv.org/abs/2609.33737) | [▶ GIF](day-28-momworld/outputs/momworld_simulation.gif) |
+| 24 | [**INTERACT**](day-24-interact/) · Anchor-Conditioned Prediction + Trust-Region Refinement | Predicts how others react, once per intent instead of per plan | [2609.31137](https://arxiv.org/abs/2609.31137) | [▶ GIF](day-24-interact/assets/simulation.gif) |
+| 16 | [**EKF-Neural-Fusion**](day-16-ekf-neural-fusion/) · Neural Fusion of EKF Trajectory Candidates | Blends classic Kalman motion models with a neural predictor | [2609.19813](https://arxiv.org/abs/2609.19813) | [▶ GIF](day-16-ekf-neural-fusion/trajectory_fusion_simulation.gif) |
+| 9 | [**TrajFusionNet+**](day-09-trajfusionnet-plus/) · Pedestrian Crossing Intention with Scene Graphs | Will that pedestrian cross? Trajectories + scene graphs | [2609.10806](https://arxiv.org/abs/2609.10806) | [▶ GIF](day-09-trajfusionnet-plus/trajectory_simulation.gif) |
+| 7 | [**MC-DeTra**](day-07-mc-detra/) · Motion-Consistent Joint Detection + Forecasting | Detects objects and forecasts their motion in one pass | [2609.11717](https://arxiv.org/abs/2609.11717) | [▶ GIF](day-07-mc-detra/trajectory_simulation.gif) |
+
+</details>
+
+### 🧭 Planning & end-to-end driving
+
+<details><summary><b>17 papers</b>: World models and planners that decide where the car goes</summary>
+
+| Day | Paper | In one line | arXiv | Demo |
+|---|---|---|---|---|
+| 71 | [**ForeseeDrive**](day-71-foreseedrive/) · Future-Token Conditioning for Anticipatory Driving | Gives the planner a forecast so it reacts early | [2611.14286](https://arxiv.org/abs/2611.14286) | [▶ GIF](day-71-foreseedrive/assets/foresee_simulation.gif) |
+| 68 | [**LOWP**](day-68-lowp/) · Look Only Where You Plan | Reads the cameras only where the car will drive | [2611.10264](https://arxiv.org/abs/2611.10264) | [▶ GIF](day-68-lowp/assets/lowp_simulation.gif) |
+| 64 | [**VFlash**](day-64-vflash/) · Flash Primitive Decoding | Drafts a whole path in one pass (~10x faster) | [2611.08449](https://arxiv.org/abs/2611.08449) | — |
+| 63 | [**NegWAM**](day-63-negwam/) · Negative-Aware World-Action Model | Learns from near misses, not just good driving | [2611.08111](https://arxiv.org/abs/2611.08111) | [▶ GIF](day-63-negwam/assets/negwam_demo.gif) |
+| 61 | [**RFWorld**](day-61-rfworld/) · Rollout-Free Trajectory Evaluation | Scores candidate paths without step-by-step rollouts | [2611.05072](https://arxiv.org/abs/2611.05072) | [▶ GIF](day-61-rfworld/assets/rfworld_demo.gif) |
+| 50 | [**Hazard-Guided Flow**](day-50-hazard-guided-flow/) · Hazard-Energy Guidance for Flow-Matching Planners | Steers a generative planner away from hazards | [2610.28184](https://arxiv.org/abs/2610.28184) | [▶ GIF](day-50-hazard-guided-flow/assets/simulation.gif) |
+| 39 | [**ManeuverFlow**](day-39-maneuverflow/) · Maneuver Hypotheses with Future Evidence | One-step, intent-diverse plan generation | [2610.13409](https://arxiv.org/abs/2610.13409) | [▶ GIF](day-39-maneuverflow/assets/maneuverflow_simulation.gif) |
+| 27 | [**EMPlan**](day-27-emplan/) · Multi-Modal Planning with Reward-Guided Preferences | Sparse plan anchors tuned by rule-based rewards | [2609.38862](https://arxiv.org/abs/2609.38862) | [▶ GIF](day-27-emplan/assets/emplan_simulation.gif) |
+| 26 | [**WALT**](day-26-walt/) · World-Model-Aligned Latent Trajectories | Plans in a latent space borrowed from a world model | [2609.30436](https://arxiv.org/abs/2609.30436) | [▶ GIF](day-26-walt/assets/walt_simulation.gif) |
+| 25 | [**ECO**](day-25-eco/) · Endpoint-Constrained Trajectory Optimization | Training-free layer that smooths planned paths | [2609.31383](https://arxiv.org/abs/2609.31383) | [▶ GIF](day-25-eco/assets/eco_simulation.gif) |
+| 22 | [**S2Planner**](day-22-s2planner/) · Multi-Scale Semantic Planner | Plans straight from DINOv3 image features | [2609.29813](https://arxiv.org/abs/2609.29813) | [▶ GIF](day-22-s2planner/outputs/s2planner_simulation.gif) |
+| 20 | [**ForeDrive**](day-20-foredrive/) · Foresight-Guided Driving with a Latent World Model | A latent world model gives the planner foresight | [2609.26299](https://arxiv.org/abs/2609.26299) | [▶ GIF](day-20-foredrive/simulation.gif) |
+| 17 | [**RiskWorld**](day-17-riskworld/) · Risk-Aware World Model with Flow-Guided Occupancy | Forecasts occupancy + risk, then replaces risky plans | [2609.18442](https://arxiv.org/abs/2609.18442) | [▶ GIF](day-17-riskworld/outputs/riskworld_simulation.gif) |
+| 15 | [**MM-Future**](day-15-mm-future/) · Multi-Mode Joint World-Action Modeling | Generates future scenes and actions together | [2609.20377](https://arxiv.org/abs/2609.20377) | [▶ GIF](day-15-mm-future/mm_future_simulation.gif) |
+| 5 | [**DriveZero**](day-05-drivezero/) · End-to-End Driving Beyond Human Demonstrations | Learns to drive past human examples with RL + distillation | [2609.06055](https://arxiv.org/abs/2609.06055) | [▶ GIF](day-05-drivezero/trajectory_simulation.gif) |
+| 2 | [**Qwen-Drive-1.0**](day-02-qwen-drive-1-0/) · Vision-Language Foundation Model for Autonomous Driving | A vision-language model that perceives and plans | [2609.00111](https://arxiv.org/abs/2609.00111) | [▶ GIF](day-02-qwen-drive-1-0/trajectory_simulation.gif) |
+| 1 | [**SV-WAM**](day-01-sv-wam/) · Surround-View World-Action Model for End-to-End Driving | One model sees all cameras and outputs the drive | [2609.03602](https://arxiv.org/abs/2609.03602) | [▶ GIF](day-01-sv-wam/trajectory_simulation.gif) |
+
+</details>
+
+### 📡 V2X & cooperative driving
+
+<details><summary><b>11 papers</b>: Cars and roadside units sharing what they see, despite delay and loss</summary>
+
+| Day | Paper | In one line | arXiv | Demo |
+|---|---|---|---|---|
+| 67 | [**CoMET**](day-67-comet/) · Shared Pose-Error Tracking for Async V2X Detection | Fixes late, slightly-off roadside messages | [2611.09121](https://arxiv.org/abs/2611.09121) | [▶ GIF](day-67-comet/assets/comet_simulation.gif) |
+| 56 | [**LinkDreamer**](day-56-linkdreamer/) · Cooperative Perception over Intermittent V2X | Keeps cooperating when the V2X link drops | [2610.39258](https://arxiv.org/abs/2610.39258) | [▶ GIF](day-56-linkdreamer/assets/linkdreamer_demo.gif) |
+| 48 | [**LoRA-FedFT**](day-48-lora-fedft/) · Pedestrian Prediction through LoRA Federated Training | Federated LoRA tuning of a foundation forecaster | [2610.18640](https://arxiv.org/abs/2610.18640) | [▶ GIF](day-48-lora-fedft/assets/simulation.gif) |
+| 47 | [**TRB**](day-47-trb/) · Temporal Residual Bottleneck for Async Collaborative Perception | Corrects delayed collaborator BEV features | [2610.10090](https://arxiv.org/abs/2610.10090) | [▶ GIF](day-47-trb/assets/trb_simulation.gif) |
+| 44 | [**LoRA-Fed-Ped**](day-44-lora-fed-ped/) · LoRA Federated Training for Pedestrian Prediction | Only tiny LoRA adapters cross the V2I link | [2610.18640](https://arxiv.org/abs/2610.18640) | [▶ GIF](day-44-lora-fed-ped/assets/simulation.gif) |
+| 40 | [**CoCam4D**](day-40-cocam4d/) · Geometry-Aware Cooperative 4D Camera Perception | 35-byte object messages with delay compensation | [2610.11577](https://arxiv.org/abs/2610.11577) | [▶ GIF](day-40-cocam4d/cocam4d_simulation.gif) |
+| 33 | [**Sparse2comm**](day-33-sparse2comm/) · Robust Cooperative 3D Detection | Shares ~2% of the map yet detects cooperatively | [2610.08573](https://arxiv.org/abs/2610.08573) | [▶ GIF](day-33-sparse2comm/assets/simulation.gif) |
+| 30 | [**EgoRefine**](day-30-egorefine/) · Ego-Referenced Alignment for Async Collaborative Perception | Aligns late collaborator data to what the ego sees now | [2610.00319](https://arxiv.org/abs/2610.00319) | [▶ GIF](day-30-egorefine/egorefine_simulation.gif) |
+| 19 | [**V2X-LDPC-Recovery**](day-19-v2x-ldpc-recovery/) · Prediction-Aided V2X Safety-Message Recovery | Repairs corrupted V2X messages using motion prediction | [2609.25609](https://arxiv.org/abs/2609.25609) | [▶ GIF](day-19-v2x-ldpc-recovery/assets/v2x_ldpc_recovery_simulation.gif) |
+| 13 | [**LDE**](day-13-lde/) · Learning from Distributed Eyes | Adapts perception using a nearby car's detections as labels | [2609.18511](https://arxiv.org/abs/2609.18511) | [▶ GIF](day-13-lde/assets/lde_simulation.gif) |
+| 12 | [**BeamTransFuser**](day-12-beamtransfuser/) · Robust V2X Beam Prediction with Multi-Modal Sensing | Points the radio beam using cameras, LiDAR, radar and GPS | [2609.10200](https://arxiv.org/abs/2609.10200) | [▶ GIF](day-12-beamtransfuser/assets/beam_prediction_simulation.gif) |
+
+</details>
+
+### 🔋 EV battery & vehicle health
+
+<details><summary><b>3 papers</b>: Degradation, remaining useful life and health monitoring</summary>
+
+| Day | Paper | In one line | arXiv | Demo |
+|---|---|---|---|---|
+| 70 | [**FlowBatt**](day-70-flowbatt/) · Flow Matching for Battery Degradation Prediction | Forecasts a battery's ageing curve with uncertainty | [2611.03150](https://arxiv.org/abs/2611.03150) | [▶ GIF](day-70-flowbatt/assets/flowbatt_simulation.gif) |
+| 53 | [**CWT-RUL**](day-53-cwt-rul/) · Early-Cycle Battery Life from Wavelet Scalograms | Predicts battery lifetime from its first cycles | [2610.34159](https://arxiv.org/abs/2610.34159) | [▶ GIF](day-53-cwt-rul/assets/cwt_rul_simulation.gif) |
+| 18 | [**ChargeIC-LSTM**](day-18-ic-degradation-lstm/) · Battery Degradation Monitoring from Charging Signals | Reads battery health from an ordinary charging session | [2609.22843](https://arxiv.org/abs/2609.22843) | [▶ GIF](day-18-ic-degradation-lstm/battery_ic_simulation.gif) |
+
+</details>
+
+### 🛡️ Safety, risk & uncertainty
+
+<details><summary><b>7 papers</b>: Risk fields, calibrated uncertainty and safety-critical scenarios</summary>
+
+| Day | Paper | In one line | arXiv | Demo |
+|---|---|---|---|---|
+| 52 | [**SafeDriveVLA**](day-52-safedrivevla/) · Conflict-Aware Instruction Following | Follow, adapt or refuse a risky instruction | [2610.20609](https://arxiv.org/abs/2610.20609) | [▶ GIF](day-52-safedrivevla/assets/safedrivevla_simulation.gif) |
+| 37 | [**SCOPE**](day-37-scope/) · Control-Ready Uncertainty for Trajectory Diffusion | Uncertainty tubes ~45x faster than sampling | [2610.12431](https://arxiv.org/abs/2610.12431) | [▶ GIF](day-37-scope/assets/scope_simulation.gif) |
+| 31 | [**SLLCP**](day-31-sllcp/) · Localized Conformal Safety Monitoring with VLMs | Turns an overconfident VLM into calibrated safety sets | [2610.02765](https://arxiv.org/abs/2610.02765) | [▶ GIF](day-31-sllcp/assets/sllcp_simulation.gif) |
+| 11 | [**DRiF**](day-11-drif/) · Data-Driven Risk Fields for Safer Driving | Dense risk map shared with mapping and planning | [2609.10377](https://arxiv.org/abs/2609.10377) | [▶ GIF](day-11-drif/assets/trajectory_simulation.gif) |
+| 10 | [**READ**](day-10-read/) · Risk-Informed Fields for End-to-End Driving | A learned risk field instead of fixed safety bubbles | [2609.12371](https://arxiv.org/abs/2609.12371) | [▶ GIF](day-10-read/assets/trajectory_simulation.gif) |
+| 6 | [**COSTER**](day-06-coster/) · Collision-Snapshot Time-Reversed Scenario Generation | Builds crash scenarios by running time backwards from impact | [2609.06433](https://arxiv.org/abs/2609.06433) | [▶ GIF](day-06-coster/trajectory_simulation.gif) |
+| 4 | [**SSDS + DAPSE**](day-04-ssds-dapse/) · One Diffusion Model, Two Roles | One diffusion model plans and also invents risky test scenarios | [2609.04921](https://arxiv.org/abs/2609.04921) | [▶ GIF](day-04-ssds-dapse/trajectory_simulation.gif) |
+
+</details>
+
+## 🛣️ The AI Road Trip (weekly recaps)
+
+Every week the daily rebuilds are bundled into one recap: a carousel, a narrated video, or a one-image overview.
+
+| Leg | Days | Papers | Format |
 |---|---|---|---|
-| 1 | [SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving](day-01-sv-wam/) | [2609.03602](https://arxiv.org/abs/2609.03602) | End-to-end driving / World-Action Models |
-| 2 | [Qwen-Drive-1.0: An Initial Step towards a Vision-Language Foundation Model for Autonomous Driving](day-02-qwen-drive-1-0/) | [2609.00111](https://arxiv.org/abs/2609.00111) | VLM unifying ADAS perception + planning |
-| 3 | [If It Moves, Radar Knows: A Physics-Aware Radar Transformer (PART)](day-03-part/) | [2609.02289](https://arxiv.org/abs/2609.02289) | ADAS radar perception |
-| 4 | [One Diffusion Model, Two Roles: SSDS + DAPSE](day-04-ssds-dapse/) | [2609.04921](https://arxiv.org/abs/2609.04921) | Trajectory planning + safety-critical scenario generation |
-| 5 | [DriveZero: End-to-End Driving Beyond Human Demonstrations](day-05-drivezero/) | [2609.06055](https://arxiv.org/abs/2609.06055) | Closed-loop RL / teacher-student distillation |
-| 6 | [COSTER: Collision Snapshot Guided Time-Reversed Scenario Generation](day-06-coster/) | [2609.06433](https://arxiv.org/abs/2609.06433) | Safety-critical scenario generation (CVAE) |
-| 7 | [MC-DeTra: Motion-Consistent Joint Detection + Trajectory Forecasting](day-07-mc-detra/) | [2609.11717](https://arxiv.org/abs/2609.11717) | Joint BEV perception + forecasting |
-| 8 | [Marigold: Diffusion Models as Monocular Depth Estimators](day-08-marigold/) | [2312.02145](https://arxiv.org/abs/2312.02145) | Monocular depth estimation (general CV, evaluated for automotive fit) |
-| 9 | [TrajFusionNet+: Transformer-Based Prediction of Pedestrian Crossing Intention via Fusion of Trajectory Representations and Scene Graphs](day-09-trajfusionnet-plus/) | [2609.10806](https://arxiv.org/abs/2609.10806) | ADAS pedestrian crossing-intention prediction — adds a Graph Attention Module onto TrajFusionNet |
-| 10 | [READ: Learning Risk-Informed Fields for End-to-End Autonomous Driving](day-10-read/) | [2609.12371](https://arxiv.org/abs/2609.12371) | ADAS / end-to-end driving — continuous, differentiable, coordinate-conditioned risk field replacing fixed-shape safety bubbles |
-| 11 | [DRiF: Data-Driven Risk Fields for Safer End-to-End Autonomous Driving](day-11-drif/) | [2609.10377](https://arxiv.org/abs/2609.10377) | ADAS / end-to-end driving — dense BEV risk field trained by pairwise risk-ranking, sharing one BEV feature with map segmentation + planning; verified Bench2Drive gains |
-| 12 | [BeamTransFuser: Robust Beam Prediction for V2X Networks with Multi-Modal Sensing](day-12-beamtransfuser/) | [2609.10200](https://arxiv.org/abs/2609.10200) | V2X beam prediction — hierarchical Transformer fusing camera/LiDAR/radar/GPS with a generative modality-imputer for dropped sensors |
-| 13 | [LDE: Learning from Distributed Eyes: Leveraging Collaborative Perception for Automated Model Adaptation](day-13-lde/) | [2609.18511](https://arxiv.org/abs/2609.18511) | ADAS perception + V2X — unsupervised domain adaptation using a collaborator vehicle's perception as pseudo-labels over a bandwidth-gated link |
-| 14 | [Sparse-BEVNet: Bi-Level Routing and Sparse Spatial Attention based Multi-View BEV 3D Object Detection](day-14-sparse-bevnet/) | [2609.14185](https://arxiv.org/abs/2609.14185) | ADAS vision perception — efficient camera-only BEV 3D detection via routed/sparse attention instead of dense BEVFormer-style sampling |
-| 15 | [MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving](day-15-mm-future/) | [2609.20377](https://arxiv.org/abs/2609.20377) | Joint action+scene generative planning — bidirectional flow-matching Transformer, K-means action prior, future-conditioned proposal scorer |
-| 16 | [Vehicle Trajectory Prediction via Neural Fusion of Multiple EKF-Based Trajectory Candidates](day-16-ekf-neural-fusion/) | [2609.19813](https://arxiv.org/abs/2609.19813) | Multi-modal trajectory forecasting — late fusion of 4 classical EKF motion models with a neural (Trajectron++-style) predictor via learned per-timestep attention |
-| 17 | [RiskWorld: Risk-Aware World Modeling with Flow-Guided Occupancy Evolution for Selective Trajectory Planning](day-17-riskworld/) | [2609.18442](https://arxiv.org/abs/2609.18442) | Trajectory + occupancy forecasting / risk-aware planning — flow-guided occupancy evolution fused with a spatial risk field, gated into a selective trajectory-replacement planner |
-| 18 | [ChargeIC-LSTM: Intelligent Degradation Monitoring in Lithium-ion Batteries via Discharge Incremental Capacity Feature Estimation](day18-ic-degradation-lstm/) | [2609.22843](https://arxiv.org/abs/2609.22843) | EV battery degradation monitoring — first battery-category entry; predicts a battery's discharge IC curve directly from the charging-phase signal |
-| 19 | [Prediction-Aided V2X Safety Message Recovery via Uncertainty-Aware LDPC Decoding](day19-v2x-ldpc-recovery/) | [2609.25609](https://arxiv.org/abs/2609.25609) | V2X safety-message reliability — propagates probabilistic motion-prediction uncertainty into a second, prior-guided LDPC belief-propagation decode pass |
-| 20 | [ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model](day20-foredrive/) | [2609.26299](https://arxiv.org/abs/2609.26299) | End-to-end driving / latent world models — JEPA-style multi-horizon forecasting asymmetrically coupled via stop-gradient into a Diffusion Transformer planner |
-| 21 | ["Bend the Clock": ChronoFuse — Predicting Ahead to Beat Latency in Event-Based Object Detection](day21-chronofuse/) | [2609.26919](https://arxiv.org/abs/2609.26919) | ADAS vision perception — first event-camera / latency-compensation entry; predicts object state for the moment a detector's own output becomes available |
-| 22 | [S2Planner: Multi-Scale Semantic Planner for End-to-End Autonomous Driving](day22-s2planner/) | [2609.29813](https://arxiv.org/abs/2609.29813) | End-to-end driving / vision-foundation-model planning — plans directly from DINOv3 features via geometry-guided camera cross-attention, no world model or risk field |
-| 23 | [PriorMapBEVNet: Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping](day-23-priormapbevnet/) | [2609.26325](https://arxiv.org/abs/2609.26325) | ADAS vision perception — first entry using a persistent, cross-traversal vision-built scene memory (no LiDAR) fused with live camera BEV features |
-| 24 | [INTERACT: Interactive Planning for Autonomous Driving via Anchor-Conditioned Prediction and Trust-Region Refinement](day-24-interact/) | [2609.31137](https://arxiv.org/abs/2609.31137) | Trajectory forecasting + interactive planning — predicts other agents' reactions once per map-derived intent anchor (not once per candidate trajectory), then refines with trust-region CEM |
-| 25 | [ECO: Guiding End-to-End Driving Models with Endpoint-Constrained Trajectory Optimization](day-25-eco/) | [2609.31383](https://arxiv.org/abs/2609.31383) | End-to-end driving / trajectory post-processing — training-free layer that keeps the policy's predicted endpoint, anchors to executed history, and re-solves intermediate waypoints for smooth, trackable paths |
-| 26 | [WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving](day-26-walt/) | [2609.30436](https://arxiv.org/abs/2609.30436) | End-to-end driving / latent trajectory planning — a dual-branch trajectory autoencoder borrows knowledge from a frozen driving world model, and the planner predicts in that learned latent space instead of raw waypoints |
-| 27 | [EMPlan: Efficient Multi-Modal Planning with Reward-Guided Preference Optimization](day-27-emplan/) | [2609.38862](https://arxiv.org/abs/2609.38862) | End-to-end driving / multi-modal planning — sparse anchors + offset refinement, then unpaired rule-reward preference fine-tuning; toy collision rate 53.9% → 6.3% → 2.5% |
-| 28 | [MomWorld: Momentum-Aware Latent World Model for Long-Horizon Autonomous Driving](day-28-momworld/) | [2609.33737](https://arxiv.org/abs/2609.33737) | Long-horizon trajectory prediction — latent momentum + scene-adaptive reset gate + MoFlow flow-matching refiner; paper's gain not reproduced at toy scale (disclosed) |
-| 29 | [MapLightning: Online Vectorized HD Map Construction with 1D Map Tokens](day-29-maplightning/) | [2610.01905](https://arxiv.org/abs/2610.01905) | ADAS perception / online HD mapping — 24 learned 1D map tokens + full self-attention, no camera parameters; robustness claim only partly reproduced (tie up to 4°, small edge at 6°) |
-| 30 | [EgoRefine: Ego-Referenced Predictive Alignment and Trajectory-Conditioned Reliability-Aware Fusion for Asynchronous Collaborative Perception](day-30-egorefine/) | [2610.00319](https://arxiv.org/abs/2610.00319) | V2X / collaborative perception — the ego's own live features refine where delayed collaborator features are sampled, and a reliability gate reweights the fusion; collaboration gain reproduced (AP@1.0 0.79 → 0.90), alignment gain within noise at toy scale (disclosed) |
-| 31 | [SLLCP: Localized Conformal Safety Monitoring with Vision-Language Models for Autonomous Driving](day-31-sllcp/) | [2610.02765](https://arxiv.org/abs/2610.02765) | ADAS safety / collision prediction — split label-conditional, scene-localized conformal prediction turns a VLM's overconfident "safe" into calibrated safety sets; toy unsafe recall 0.1% → 89.5%, localization adds only ~+0.8 pt (disclosed) |
-| 32 | [MoCAR: Motion-code Coordinate-aware AutoRegression for Continuous Trajectory Forecasting](day-32-mocar/) | [2610.06210](https://arxiv.org/abs/2610.06210) | Trajectory forecasting — decoder-only Transformer predicts learned continuous motion codes that also carry the reference-frame transition; paper's advantage **not** reproduced at toy scale (one-shot baseline 0.133 m beats MoCAR 0.176 m minADE@3, disclosed) |
-| 33 | [Sparse2comm: Towards Robust Cooperative 3D Object Detection](day-33-sparse2comm/) | [2610.08573](https://arxiv.org/abs/2610.08573) | V2X cooperative detection — sparse mask-sampled messages → dense reconstruction → latency-aware flow alignment → self-calibrating fusion; toy AP@r2 0.814 → 0.865 vs a sparse-fusion baseline (~2% of BEV cells sent) |
-| 34 | [LighTROcc: Lightweight 4D Occupancy Forecasting via Instance-Centric 3D Gaussians](day-34-lightrocc/) | [2610.09444](https://arxiv.org/abs/2610.09444) | Occupancy forecasting — per-object queries lifted to 3D by depth, expanded into Gaussian mixtures and displaced forward; wins at equal steps (IoU 0.404 vs 0.235) but a dense baseline ties at equal wall-clock (disclosed) |
-| 35 | [CAA-GMM: Context-aware Attention-based Gaussian Mixture Models for Vehicular Trajectory Prediction](day-35-caa-gmm/) | [2610.09174](https://arxiv.org/abs/2610.09174) | Trajectory forecasting — attention over neighbours + raster context with a 3-way gate and K-Gaussian mixture head; minADE@6 0.055 vs 0.136 m clean, but collapses under total V2X outage unless outage-augmented (disclosed) |
-| 36 | [MESSENGER: Memory-Enhanced Sequential Scene Flow Estimation via Autoregressive Next-Frame Forecasting](day-36-messenger/) | [2610.10759](https://arxiv.org/abs/2610.10759) | LiDAR scene-flow forecasting — memory buffer of past flows + latent states with an uncertainty-aware reweighting gate; toy EPE 6–9% better than pairwise, worse on static points, gate did not learn to discriminate (disclosed) |
-| 37 | [SCOPE: Control-Ready Uncertainty for Trajectory Diffusion](day-37-scope/) | [2610.12431](https://arxiv.org/abs/2610.12431) | Trajectory-forecast uncertainty / pedestrian occupancy — banded + low-rank precision head distilled from a frozen diffusion model's score curvature gives per-step Gaussian tubes with no sampling; toy 0.68 ms vs 30.5 ms (~45×) for 32-sample Monte-Carlo, 95% coverage in every crowd-density bucket (fixed covariance: 89% in dense scenes) |
-| 38 | [Trajectory Prediction for Autonomous Driving in Road Construction Zones Using Human-in-the-Loop Driving Data (WZDrive)](day-38-wzdrive/) | [2610.12747](https://arxiv.org/abs/2610.12747) | Ego-trajectory prediction in work zones. First entry to use driver gaze and control inputs as predictors. Paper: minADE@6 1.09 m and minFDE@6 2.12 m on WZDrive-Data (1,183 segments, 33 drivers). Repo reconstruction (synthetic): top-1 ADE 0.855→0.430 m, but minADE@6 not improved (0.311 vs 0.335) |
-| 39 | [ManeuverFlow: Maneuver Hypothesis Generation with Future Evidence for Trajectory Evaluation and Refinement in End-to-End Autonomous Driving](day-39-maneuverflow/) | [2610.13409](https://arxiv.org/abs/2610.13409) | Multi-modal trajectory generation and planning. One-step MeanFlow with a maneuver-routed MoE and a Gaussian-mixture intent prior. Candidates are scored with current plus world-model-predicted future evidence, then Frenet-refined. Paper: 90.6 PDMS on NAVSIM v1 and 90.1 EPDMS on NAVSIM v2. Repo (synthetic): no-collision rate 0.505→0.837, but the baseline has lower imitation error |
-| 40 | [CoCam4D: Geometry-Aware Cooperative 4D Perception for Camera-Only Autonomous Driving](day-40-cocam4d/) | [2610.11577](https://arxiv.org/abs/2610.11577) | V2X cooperative perception with latency compensation. 35-byte uncertainty-tagged Dynamic Object Primitives, velocity-propagated delay compensation and Mahalanobis-gated information-filter fusion. Paper: +11.48% on OPV2V+ and +10.62% on DAIR-V2X-C. Repo (synthetic, primitive-level): error at 500 ms latency 0.66 m vs 1.45 m for stale late fusion |
-| 41 | [Uncertainty-Aware Optimization for Physics-Aware Highway Trajectory Prediction (X-TRACK)](day-41-xtrack-uq/) | [2610.11580](https://arxiv.org/abs/2610.11580) | Vehicle trajectory forecasting with calibrated uncertainty. xLSTM/GAT/LSTM predictor with a kinematic-bicycle layer, aleatoric plus epistemic uncertainty, and split conformal calibration. Paper: ADE 0.56→0.44, coverage 62→95.4%. Repo (synthetic): ADE 2.34→2.07, coverage 92.2→94.4% |
-| 42 | [RadarGSOcc: Doppler-Aware 3D Semantic Occupancy Prediction Using 4D Radar Tensor with Geometric-Semantic Feature Extraction](day-42-radargsocc/) | [2610.18686](https://arxiv.org/abs/2610.18686) | ADAS radar perception, 3D semantic occupancy. Paper: W-mIoU 25.5 vs 21.9 for RadarOcc, with 104.6M vs 117.5M parameters. Repo (synthetic): occupancy IoU 0.965 vs 0.970 for the baseline, so the gain was not reproduced |
-| 43 | [FutureLift: Lifting Trajectory Proposals into Bidirectional Future Graphs for Motion Forecasting](day-43-futurelift/) | [2610.22215](https://arxiv.org/abs/2610.22215) | Multi-modal trajectory forecasting — backbone-agnostic proposal refiner: each proposal becomes temporal graph nodes with history/map/bidirectional-temporal/modal edges, updated in one pass |
-| 44 | [LoRA Federated Training for Pedestrian Trajectory Prediction](day-44-lora-fed-ped/) | [2610.18640](https://arxiv.org/abs/2610.18640) | Pedestrian trajectory forecasting + V2X — federated fine-tuning where only LoRA adapters cross the V2I link. Paper: abstract only accessible, no metrics recovered. Repo (synthetic): ADE 2.79→2.02 m vs 1.96 m for full-model FedAvg, with 96.8% fewer bits transmitted |
-| 45 | [Decision-FLIP: Budget-Free Structured Pruning for Gaussian Occupancy Models](day-45-decision-flip/) | [2610.20917](https://arxiv.org/abs/2610.20917) | ADAS 3D occupancy efficiency: label-free Mean-FLIP row scoring plus guarded Otsu pruning of a Gaussian bank. Paper: abstract only, no metrics recovered beyond the headline ranges. Repo (synthetic): 32% of rows removed, mIoU 0.731 to 0.705 vs 0.686 for random, bank latency -34% |
-| 46 | [STC-MGNet: Spatial-Temporal-Channel Attention-Enhanced Multimodal Graph Network for Pedestrian Intention Prediction](day-46-stc-mgnet/) | [2610.23356](https://arxiv.org/abs/2610.23356) | ADAS pedestrian crossing-intention prediction: pose-graph encoder with joint/frame/channel attention plus cross-modal channel gating from visual and ego-motion cues. Paper: abstract only, 70/87/88% on JAADbeh/JAADall/PIE. Repo (synthetic): 65.9% pose-only, 68.3% with STC attention, 89.2% full model; the baseline has no context, so the jump is mostly context vs. none |
-| 47 | [Temporal Residual Bottleneck for Robust Asynchronous Collaborative Perception](day-47-trb/) | [2610.10090](https://arxiv.org/abs/2610.10090) | V2X latency — pose-warp anchor + Δt-conditioned xLSTM + gated residual bottleneck for delayed collaborator BEV features. Reconstruction (synthetic, 1 seed) did not reproduce the paper's gain over pose-warp alone (F1 0.881 vs 0.883); see SOURCING.md |
-| 48 | [Pedestrian Trajectory Prediction through LoRA Federated Training (LoRA-FedFT)](day-48-lora-fedft/) | [2610.18640](https://arxiv.org/abs/2610.18640) | V2X + pedestrian trajectory forecasting: connected vehicles fine-tune a foundation forecaster (Chronos-2) with LoRA and upload only the adapters to an edge server. Paper: ADE 0.59 m / FDE 1.24 m, about 1 cm from centralized, ~7.8 MB vs ~478 MB per upload, ~27 min vs ~1 d 4 h of 5G uplink time. Reconstruction (synthetic, 1 seed): LoRA uploads 62 KB vs 1,080 KB per vehicle (~10x less uplink to reach ADE 1.49 m); full fine-tuning at equal local epochs was slightly more accurate (0.99 vs 1.03 m), so the paper's accuracy claim is only partly reproduced; see SOURCING.md |
+| [Leg 10](road-trip/AI-Road-Trip-Leg10-Overview.png) | 67–72 | CoMET, LOWP, RaMOD, FlowBatt, ForeseeDrive, FloCOS | One-image overview |
+| [Leg 9](road-trip/AI-Road-Trip-Leg9.mp4) | 60–65 | INTERACT-Slots, RFWorld, EvoOcc, NegWAM, VFlash, MotoVerse | Video |
+| [Leg 8](road-trip/AI-Road-Trip-Leg8-Narrated-Male.mp4) | 52–58 | SafeDriveVLA, CWT-RUL, SpatialBEV, FastBEVFusion, LinkDreamer, eCoMAE, Motion-Onset-GNN | Narrated video |
+| [Leg 7](road-trip/AI-Road-Trip-Leg7-Narrated.mp4) | 45–51 | Decision-FLIP, STC-MGNet, TRB, LoRA-FedFT, KG-LaneChange, Hazard-Guided Flow, Foundation4D | Narrated video |
+| [Leg 6](road-trip/AI-Road-Trip-Leg6-Narrated.mp4) | 38–44 | WZDrive, ManeuverFlow, CoCam4D, X-TRACK, RadarGSOcc, FutureLift, LoRA-Fed-Ped | Narrated video |
+| [Leg 5](road-trip/AI-Road-Trip-Leg5-Carousel.pdf) | 31–37 | SLLCP, MoCAR, Sparse2comm, LighTROcc, CAA-GMM, MESSENGER, SCOPE | Carousel (PDF) |
+| [Leg 4](road-trip/AI-Road-Trip-Leg4-Carousel.pdf) | 24–30 | INTERACT, ECO, WALT, EMPlan, MomWorld, MapLightning, EgoRefine | Carousel (PDF) |
+| [Leg 3](road-trip/AI-Road-Trip-Leg3-Carousel.pdf) | 16–23 | EKF-Neural-Fusion, RiskWorld, ChargeIC-LSTM, V2X-LDPC-Recovery, ForeDrive, ChronoFuse, S2Planner, PriorMapBEVNet | Carousel (PDF) |
+| [Leg 2](road-trip/AI-Road-Trip-Leg2-Carousel.pdf) | 8–15 | Marigold, TrajFusionNet+, READ, DRiF, BeamTransFuser, LDE, Sparse-BEVNet, MM-Future | Carousel (PDF) |
+| [Leg 1](road-trip/AI-Road-Trip-Carousel.pdf) | 1–7 | SV-WAM, Qwen-Drive-1.0, PART, SSDS + DAPSE, DriveZero, COSTER, MC-DeTra | Carousel (PDF) |
 
-Each `day-NN-*/` folder is self-contained and independently runnable:
+## 🚀 Run any day in 60 seconds
+
+Every `day-NN-*/` folder is self-contained:
 
 ```bash
-cd day-0N-<name>
+git clone https://github.com/Lalithprabu/automotive-ai-daily-reviews.git
+cd automotive-ai-daily-reviews/day-72-flocos
 pip install -r requirements.txt
-pytest tests/ -v                                    # shape + backward-pass tests
-python train.py --steps 20                           # synthetic-data smoke-test training loop
-python simulate.py                                   # renders the simulation GIF (flags vary by day; see each README)
+pytest tests/ -v        # unit tests
+python train.py         # trains on synthetic data (see the folder README for flags)
+python simulate.py      # renders the simulation GIF
 ```
 
-Every day's README has its own "Architecture" (with a rendered diagram), "Old vs. New" framing, "Simulation" (with the animated GIF), "Limitations", and "Sourcing / reconstruction note" sections.
+Each folder README covers the architecture, an old-vs-new comparison, results, limitations and a sourcing note (`SOURCING.md` in recent days) that separates what came from the paper from what is my own choice.
 
-## Code provenance
+## 📁 Repository layout
 
-Days 1–4's code was carried forward from each day's own original daily-review session and its own repo package. Days 5–7 (DriveZero, COSTER, MC-DeTra) and Days 10–14 (READ, DRiF, BeamTransFuser, LDE, Sparse-BEVNet) were **freshly reconstructed** when each package was assembled, because each scheduled daily run executes in its own isolated container and the original sessions' files were not retrievable afterward — only the papers' architecture descriptions (and, for some days, verbatim code excerpts) survived in the shared project log. Day 15 (MM-Future) was built and pushed directly in the same live session that has GitHub write access, the first day not routed through a zip hand-off. Every day's code and every `simulate.py` — reconstructed or original — was independently re-verified when its package was assembled: every `pytest` suite passes, every `train.py` runs to completion, and every `simulate.py` renders a real GIF. See each day's own README for its specific sourcing/reconstruction note and what is and isn't independently verified from the source paper itself.
+```text
+automotive-ai-daily-reviews/
+├── README.md              ← you are here (generated by tools/build_readme.py)
+├── catalog.json           ← one entry per day: the single source of truth
+├── daily-series-log.md    ← full chronological log (generated)
+├── day-01-sv-wam/ … day-72-flocos/   ← one self-contained folder per paper
+├── road-trip/             ← weekly recap carousels, videos and overview images
+├── assets/                ← banner
+├── docs/PROVENANCE.md     ← how earlier days were sourced and rebuilt
+└── tools/                 ← README generator + banner source
+```
 
-**Days 31–37** were each built in a scheduled cloud session from an abstract-level read of the paper (arXiv full text was rate-limited, HTTP 429, every day), so every architecture dimension, dataset and number in those folders is the repo's own disclosed reconstruction; each folder's `SOURCING.md` lists exactly what is paper-sourced. Weekly summary carousel: *The AI Road Trip, Leg 5* (Days 31–37).
+## 🙋 Suggest a use case
 
-This is an independent, best-effort reference implementation series for educational purposes — it is **not** any of the papers' authors' official code release.
-## Day 52 - SafeDriveVLA (2026-10-26)
-Conflict-aware instruction following: a 3-level compliance mode (FOLLOW / ADAPT / REFUSE) plus a world model that "dreams" what happens if the ego strictly obeys the instruction. Paper: [arXiv:2610.20609](https://arxiv.org/abs/2610.20609). Code, tests and simulation: [day-52-safedrivevla](day-52-safedrivevla/). Synthetic reconstruction, not the authors' model or numbers; see its SOURCING.md.
+Is there a driving problem you wish AI would solve? [Open a use-case request](https://github.com/Lalithprabu/automotive-ai-daily-reviews/issues/new?template=use-case.yml) or comment on the LinkedIn post. I pick one suggestion for an upcoming day and credit you in that day's post.
 
-![SafeDriveVLA simulation](day-52-safedrivevla/assets/safedrivevla_simulation.gif)
+## ⚖️ Honesty note
+
+This is an independent, educational series of **toy-scale reference re-implementations**. It is *not* the authors' official code, and results come from synthetic data rather than the papers' benchmarks. When an idea did not reproduce, the folder says so. Sourcing details are in [docs/PROVENANCE.md](docs/PROVENANCE.md) and each folder's README / `SOURCING.md`. Day 59 was a rest stop. Licensed under [MIT](LICENSE).
