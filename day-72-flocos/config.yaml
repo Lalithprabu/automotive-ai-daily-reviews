@@ -1,0 +1,26 @@
+# FloCOS toy re-implementation - all values are MY choices (paper details unreadable)
+data:
+  n_train: 40000
+  n_val: 2000
+  n_test: 3000
+  seed_train: 1
+  seed_val: 2
+  seed_test: 3
+model:
+  d: 128
+  width: 256
+  blocks: 4
+  M: 6            # set components (noise draws) per agent
+  nfe: 4          # Euler steps of the flow ODE at train (stage 2) and test
+train:
+  seed: 0
+  batch: 512
+  lr: 2.0e-3
+  fm_epochs: 30
+  set_steps: 1000
+  set_batch: 128
+  set_lr: 2.0e-4
+  lambda_cov: 10.0
+  lambda_area: 0.02     # per m^2 of mean union area
+  baseline_epochs: 30
+  mtp_K: 6
