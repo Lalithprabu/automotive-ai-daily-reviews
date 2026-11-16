@@ -1,9 +1,9 @@
 <p align="center"><img src="assets/banner.png" alt="Automotive AI Daily Reviews" width="100%"></p>
 
 <p align="center">
-  <img alt="papers" src="https://img.shields.io/badge/papers%20rebuilt-71-ffb020?style=for-the-badge">
-  <img alt="latest" src="https://img.shields.io/badge/latest-Day%2072-4cc9f0?style=for-the-badge">
-  <img alt="simulations" src="https://img.shields.io/badge/simulations-68-3ddc84?style=for-the-badge">
+  <img alt="papers" src="https://img.shields.io/badge/papers%20rebuilt-72-ffb020?style=for-the-badge">
+  <img alt="latest" src="https://img.shields.io/badge/latest-Day%2073-4cc9f0?style=for-the-badge">
+  <img alt="simulations" src="https://img.shields.io/badge/simulations-69-3ddc84?style=for-the-badge">
   <img alt="pytorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
   <img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge">
 </p>
@@ -40,14 +40,14 @@ Every day I pick a fresh automotive machine-learning paper (ADAS perception, mot
 
 <table>
   <tr>
+    <td align="center" width="33%"><a href="day-73-petmpc/"><img src="day-73-petmpc/assets/petmpc_simulation.gif" width="100%" alt="PET-MPC simulation"></a><br><b>Day 73 · PET-MPC</b><br><sub>Safety margins sized by measured forecast error</sub></td>
     <td align="center" width="33%"><a href="day-72-flocos/"><img src="day-72-flocos/assets/flocos_simulation.gif" width="100%" alt="FloCOS simulation"></a><br><b>Day 72 · FloCOS</b><br><sub>Predicts the space a nearby car might take</sub></td>
     <td align="center" width="33%"><a href="day-71-foreseedrive/"><img src="day-71-foreseedrive/assets/foresee_simulation.gif" width="100%" alt="ForeseeDrive simulation"></a><br><b>Day 71 · ForeseeDrive</b><br><sub>Gives the planner a forecast so it reacts early</sub></td>
-    <td align="center" width="33%"><a href="day-70-flowbatt/"><img src="day-70-flowbatt/assets/flowbatt_simulation.gif" width="100%" alt="FlowBatt simulation"></a><br><b>Day 70 · FlowBatt</b><br><sub>Forecasts a battery's ageing curve with uncertainty</sub></td>
   </tr>
   <tr>
+    <td align="center" width="33%"><a href="day-70-flowbatt/"><img src="day-70-flowbatt/assets/flowbatt_simulation.gif" width="100%" alt="FlowBatt simulation"></a><br><b>Day 70 · FlowBatt</b><br><sub>Forecasts a battery's ageing curve with uncertainty</sub></td>
     <td align="center" width="33%"><a href="day-69-ramod/"><img src="day-69-ramod/assets/ramod_simulation.gif" width="100%" alt="RaMOD simulation"></a><br><b>Day 69 · RaMOD</b><br><sub>Finds what's moving in raw radar, even in rain</sub></td>
     <td align="center" width="33%"><a href="day-68-lowp/"><img src="day-68-lowp/assets/lowp_simulation.gif" width="100%" alt="LOWP simulation"></a><br><b>Day 68 · LOWP</b><br><sub>Reads the cameras only where the car will drive</sub></td>
-    <td align="center" width="33%"><a href="day-67-comet/"><img src="day-67-comet/assets/comet_simulation.gif" width="100%" alt="CoMET simulation"></a><br><b>Day 67 · CoMET</b><br><sub>Fixes late, slightly-off roadside messages</sub></td>
   </tr>
 </table>
 
@@ -56,7 +56,7 @@ Every day I pick a fresh automotive machine-learning paper (ADAS perception, mot
 | Domain | What it covers | Papers |
 |---|---|---|
 | 👁️ [Perception](#-perception) | Cameras, radar, LiDAR, depth, HD maps and 3D occupancy | 12 |
-| 🔮 [Prediction & forecasting](#-prediction--forecasting) | Trajectories, intentions and future occupancy of other road users | 21 |
+| 🔮 [Prediction & forecasting](#-prediction--forecasting) | Trajectories, intentions and future occupancy of other road users | 22 |
 | 🧭 [Planning & end-to-end driving](#-planning--end-to-end-driving) | World models and planners that decide where the car goes | 17 |
 | 📡 [V2X & cooperative driving](#-v2x--cooperative-driving) | Cars and roadside units sharing what they see, despite delay and loss | 11 |
 | 🔋 [EV battery & vehicle health](#-ev-battery--vehicle-health) | Degradation, remaining useful life and health monitoring | 3 |
@@ -85,10 +85,11 @@ Every day I pick a fresh automotive machine-learning paper (ADAS perception, mot
 
 ### 🔮 Prediction & forecasting
 
-<details open><summary><b>21 papers</b>: Trajectories, intentions and future occupancy of other road users</summary>
+<details open><summary><b>22 papers</b>: Trajectories, intentions and future occupancy of other road users</summary>
 
 | Day | Paper | In one line | arXiv | Demo |
 |---|---|---|---|---|
+| 73 | [**PET-MPC**](day-73-petmpc/) · Prediction-Error-Tightened MPC for Crowd Navigation | Safety margins sized by measured forecast error | [2611.15781](https://arxiv.org/abs/2611.15781) | [▶ GIF](day-73-petmpc/assets/petmpc_simulation.gif) |
 | 72 | [**FloCOS**](day-72-flocos/) · Compact Forward Occupancy Sets via Flow Matching | Predicts the space a nearby car might take | [2611.15488](https://arxiv.org/abs/2611.15488) | [▶ GIF](day-72-flocos/assets/flocos_simulation.gif) |
 | 66 | [**FreeOcc**](day-66-freeocc/) · 4D Occupancy Forecasting | Forecasts how the 3D scene fills up next | [2611.08128](https://arxiv.org/abs/2611.08128) | — |
 | 65 | [**MotoVerse**](day-65-motoverse/) · Traffic Anticipation from a Rider's View | Predicts traffic through a motorcyclist's eyes | [2611.06007](https://arxiv.org/abs/2611.06007) | — |
@@ -210,7 +211,7 @@ Every `day-NN-*/` folder is self-contained:
 
 ```bash
 git clone https://github.com/Lalithprabu/automotive-ai-daily-reviews.git
-cd automotive-ai-daily-reviews/day-72-flocos
+cd automotive-ai-daily-reviews/day-73-petmpc
 pip install -r requirements.txt
 pytest tests/ -v        # unit tests
 python train.py         # trains on synthetic data (see the folder README for flags)
@@ -226,7 +227,7 @@ automotive-ai-daily-reviews/
 ├── README.md              ← you are here (generated by tools/build_readme.py)
 ├── catalog.json           ← one entry per day: the single source of truth
 ├── daily-series-log.md    ← full chronological log (generated)
-├── day-01-sv-wam/ … day-72-flocos/   ← one self-contained folder per paper
+├── day-01-sv-wam/ … day-73-petmpc/   ← one self-contained folder per paper
 ├── road-trip/             ← weekly recap carousels, videos and overview images
 ├── assets/                ← banner
 ├── docs/PROVENANCE.md     ← how earlier days were sourced and rebuilt

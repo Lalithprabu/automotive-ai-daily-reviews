@@ -1,0 +1,75 @@
+{
+ "study": "crowd",
+ "n_ped": 10,
+ "seeds": [
+  1000,
+  1039
+ ],
+ "summary": {
+  "cv_nominal": {
+   "n": 40,
+   "contact_rate": 0.275,
+   "contact_time_frac": 0.006751632607729309,
+   "ps_overlap_frac": 0.05782596947789383,
+   "mean_time": 28.045000000000005,
+   "mean_time_reached": 28.045000000000005,
+   "success": 1.0,
+   "min_clear_p05": -0.5194572661773231
+  },
+  "koopman_nominal": {
+   "n": 40,
+   "contact_rate": 0.25,
+   "contact_time_frac": 0.007475862426250561,
+   "ps_overlap_frac": 0.06937925264517442,
+   "mean_time": 29.1125,
+   "mean_time_reached": 29.1125,
+   "success": 1.0,
+   "min_clear_p05": -0.4440575795938566
+  },
+  "koopman_fixed": {
+   "n": 40,
+   "contact_rate": 0.225,
+   "contact_time_frac": 0.00835382591062351,
+   "ps_overlap_frac": 0.046234229796837646,
+   "mean_time": 31.325000000000006,
+   "mean_time_reached": 30.974358974358974,
+   "success": 0.975,
+   "min_clear_p05": -0.47145517165294454
+  },
+  "pet_mpc": {
+   "n": 40,
+   "contact_rate": 0.15,
+   "contact_time_frac": 0.004151567001928103,
+   "ps_overlap_frac": 0.024189438407699736,
+   "mean_time": 32.7625,
+   "mean_time_reached": 32.118421052631575,
+   "success": 0.95,
+   "min_clear_p05": -0.451476015837081
+  },
+  "pet_mpc_generic": {
+   "n": 40,
+   "contact_rate": 0.075,
+   "contact_time_frac": 0.0013129216445401095,
+   "ps_overlap_frac": 0.11779916743748187,
+   "mean_time": 28.125000000000007,
+   "mean_time_reached": 27.692307692307697,
+   "success": 0.975,
+   "min_clear_p05": -0.023624180691482415
+  }
+ },
+ "paired_pet_vs_nominal": {
+  "a_only": 8,
+  "b_only": 4,
+  "both": 2,
+  "dtime_mean": 2.794736842105263,
+  "dtime_ci95": 1.778942078046191
+ },
+ "paired_aware_vs_generic": {
+  "a_only": 3,
+  "b_only": 6,
+  "both": 0,
+  "dtime_mean": 4.416216216216216,
+  "dtime_ci95": 1.7660352392381706
+ },
+ "wall_s": 653.2978684902191
+}

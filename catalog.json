@@ -1,849 +1,859 @@
 {
- "start_date": "2026-09-05",
- "rest_days": [
-  59
- ],
- "days": [
-  {
-   "day": 1,
-   "name": "SV-WAM",
-   "title": "Surround-View World-Action Model for End-to-End Driving",
-   "arxiv": "2609.03602",
-   "domain": "planning",
-   "summary": "One model sees all cameras and outputs the drive",
-   "folder": "day-01-sv-wam",
-   "gif": "day-01-sv-wam/trajectory_simulation.gif"
-  },
-  {
-   "day": 2,
-   "name": "Qwen-Drive-1.0",
-   "title": "Vision-Language Foundation Model for Autonomous Driving",
-   "arxiv": "2609.00111",
-   "domain": "planning",
-   "summary": "A vision-language model that perceives and plans",
-   "folder": "day-02-qwen-drive-1-0",
-   "gif": "day-02-qwen-drive-1-0/trajectory_simulation.gif"
-  },
-  {
-   "day": 3,
-   "name": "PART",
-   "title": "Physics-Aware Radar Transformer",
-   "arxiv": "2609.02289",
-   "domain": "perception",
-   "summary": "Radar transformer that respects Doppler physics",
-   "folder": "day-03-part",
-   "gif": "day-03-part/trajectory_simulation.gif"
-  },
-  {
-   "day": 4,
-   "name": "SSDS + DAPSE",
-   "title": "One Diffusion Model, Two Roles",
-   "arxiv": "2609.04921",
-   "domain": "safety",
-   "summary": "One diffusion model plans and also invents risky test scenarios",
-   "folder": "day-04-ssds-dapse",
-   "gif": "day-04-ssds-dapse/trajectory_simulation.gif"
-  },
-  {
-   "day": 5,
-   "name": "DriveZero",
-   "title": "End-to-End Driving Beyond Human Demonstrations",
-   "arxiv": "2609.06055",
-   "domain": "planning",
-   "summary": "Learns to drive past human examples with RL + distillation",
-   "folder": "day-05-drivezero",
-   "gif": "day-05-drivezero/trajectory_simulation.gif"
-  },
-  {
-   "day": 6,
-   "name": "COSTER",
-   "title": "Collision-Snapshot Time-Reversed Scenario Generation",
-   "arxiv": "2609.06433",
-   "domain": "safety",
-   "summary": "Builds crash scenarios by running time backwards from impact",
-   "folder": "day-06-coster",
-   "gif": "day-06-coster/trajectory_simulation.gif"
-  },
-  {
-   "day": 7,
-   "name": "MC-DeTra",
-   "title": "Motion-Consistent Joint Detection + Forecasting",
-   "arxiv": "2609.11717",
-   "domain": "prediction",
-   "summary": "Detects objects and forecasts their motion in one pass",
-   "folder": "day-07-mc-detra",
-   "gif": "day-07-mc-detra/trajectory_simulation.gif"
-  },
-  {
-   "day": 8,
-   "name": "Marigold",
-   "title": "Diffusion Models as Monocular Depth Estimators",
-   "arxiv": "2312.02145",
-   "domain": "perception",
-   "summary": "Turns an image generator into a single-camera depth sensor",
-   "folder": "day-08-marigold",
-   "gif": "day-08-marigold/trajectory_simulation.gif"
-  },
-  {
-   "day": 9,
-   "name": "TrajFusionNet+",
-   "title": "Pedestrian Crossing Intention with Scene Graphs",
-   "arxiv": "2609.10806",
-   "domain": "prediction",
-   "summary": "Will that pedestrian cross? Trajectories + scene graphs",
-   "folder": "day-09-trajfusionnet-plus",
-   "gif": "day-09-trajfusionnet-plus/trajectory_simulation.gif"
-  },
-  {
-   "day": 10,
-   "name": "READ",
-   "title": "Risk-Informed Fields for End-to-End Driving",
-   "arxiv": "2609.12371",
-   "domain": "safety",
-   "summary": "A learned risk field instead of fixed safety bubbles",
-   "folder": "day-10-read",
-   "gif": "day-10-read/assets/trajectory_simulation.gif"
-  },
-  {
-   "day": 11,
-   "name": "DRiF",
-   "title": "Data-Driven Risk Fields for Safer Driving",
-   "arxiv": "2609.10377",
-   "domain": "safety",
-   "summary": "Dense risk map shared with mapping and planning",
-   "folder": "day-11-drif",
-   "gif": "day-11-drif/assets/trajectory_simulation.gif"
-  },
-  {
-   "day": 12,
-   "name": "BeamTransFuser",
-   "title": "Robust V2X Beam Prediction with Multi-Modal Sensing",
-   "arxiv": "2609.10200",
-   "domain": "v2x",
-   "summary": "Points the radio beam using cameras, LiDAR, radar and GPS",
-   "folder": "day-12-beamtransfuser",
-   "gif": "day-12-beamtransfuser/assets/beam_prediction_simulation.gif"
-  },
-  {
-   "day": 13,
-   "name": "LDE",
-   "title": "Learning from Distributed Eyes",
-   "arxiv": "2609.18511",
-   "domain": "v2x",
-   "summary": "Adapts perception using a nearby car's detections as labels",
-   "folder": "day-13-lde",
-   "gif": "day-13-lde/assets/lde_simulation.gif"
-  },
-  {
-   "day": 14,
-   "name": "Sparse-BEVNet",
-   "title": "Sparse-Attention Multi-View BEV 3D Detection",
-   "arxiv": "2609.14185",
-   "domain": "perception",
-   "summary": "Cheaper camera-only 3D detection with sparse attention",
-   "folder": "day-14-sparse-bevnet",
-   "gif": "day-14-sparse-bevnet/assets/sparse_bevnet_simulation.gif"
-  },
-  {
-   "day": 15,
-   "name": "MM-Future",
-   "title": "Multi-Mode Joint World-Action Modeling",
-   "arxiv": "2609.20377",
-   "domain": "planning",
-   "summary": "Generates future scenes and actions together",
-   "folder": "day-15-mm-future",
-   "gif": "day-15-mm-future/mm_future_simulation.gif"
-  },
-  {
-   "day": 16,
-   "name": "EKF-Neural-Fusion",
-   "title": "Neural Fusion of EKF Trajectory Candidates",
-   "arxiv": "2609.19813",
-   "domain": "prediction",
-   "summary": "Blends classic Kalman motion models with a neural predictor",
-   "folder": "day-16-ekf-neural-fusion",
-   "gif": "day-16-ekf-neural-fusion/trajectory_fusion_simulation.gif"
-  },
-  {
-   "day": 17,
-   "name": "RiskWorld",
-   "title": "Risk-Aware World Model with Flow-Guided Occupancy",
-   "arxiv": "2609.18442",
-   "domain": "planning",
-   "summary": "Forecasts occupancy + risk, then replaces risky plans",
-   "folder": "day-17-riskworld",
-   "gif": "day-17-riskworld/outputs/riskworld_simulation.gif"
-  },
-  {
-   "day": 18,
-   "name": "ChargeIC-LSTM",
-   "title": "Battery Degradation Monitoring from Charging Signals",
-   "arxiv": "2609.22843",
-   "domain": "battery",
-   "summary": "Reads battery health from an ordinary charging session",
-   "folder": "day-18-ic-degradation-lstm",
-   "gif": "day-18-ic-degradation-lstm/battery_ic_simulation.gif"
-  },
-  {
-   "day": 19,
-   "name": "V2X-LDPC-Recovery",
-   "title": "Prediction-Aided V2X Safety-Message Recovery",
-   "arxiv": "2609.25609",
-   "domain": "v2x",
-   "summary": "Repairs corrupted V2X messages using motion prediction",
-   "folder": "day-19-v2x-ldpc-recovery",
-   "gif": "day-19-v2x-ldpc-recovery/assets/v2x_ldpc_recovery_simulation.gif"
-  },
-  {
-   "day": 20,
-   "name": "ForeDrive",
-   "title": "Foresight-Guided Driving with a Latent World Model",
-   "arxiv": "2609.26299",
-   "domain": "planning",
-   "summary": "A latent world model gives the planner foresight",
-   "folder": "day-20-foredrive",
-   "gif": "day-20-foredrive/simulation.gif"
-  },
-  {
-   "day": 21,
-   "name": "ChronoFuse",
-   "title": "Predicting Ahead to Beat Event-Camera Latency",
-   "arxiv": "2609.26919",
-   "domain": "perception",
-   "summary": "Detects where objects will be when the output is ready",
-   "folder": "day-21-chronofuse",
-   "gif": "day-21-chronofuse/chronofuse_simulation.gif"
-  },
-  {
-   "day": 22,
-   "name": "S2Planner",
-   "title": "Multi-Scale Semantic Planner",
-   "arxiv": "2609.29813",
-   "domain": "planning",
-   "summary": "Plans straight from DINOv3 image features",
-   "folder": "day-22-s2planner",
-   "gif": "day-22-s2planner/outputs/s2planner_simulation.gif"
-  },
-  {
-   "day": 23,
-   "name": "PriorMapBEVNet",
-   "title": "Vision-Built Map Priors for 3D Detection + HD Mapping",
-   "arxiv": "2609.26325",
-   "domain": "perception",
-   "summary": "Camera detection boosted by a remembered map of the route",
-   "folder": "day-23-priormapbevnet",
-   "gif": "day-23-priormapbevnet/priormapbevnet_simulation.gif"
-  },
-  {
-   "day": 24,
-   "name": "INTERACT",
-   "title": "Anchor-Conditioned Prediction + Trust-Region Refinement",
-   "arxiv": "2609.31137",
-   "domain": "prediction",
-   "summary": "Predicts how others react, once per intent instead of per plan",
-   "folder": "day-24-interact",
-   "gif": "day-24-interact/assets/simulation.gif"
-  },
-  {
-   "day": 25,
-   "name": "ECO",
-   "title": "Endpoint-Constrained Trajectory Optimization",
-   "arxiv": "2609.31383",
-   "domain": "planning",
-   "summary": "Training-free layer that smooths planned paths",
-   "folder": "day-25-eco",
-   "gif": "day-25-eco/assets/eco_simulation.gif"
-  },
-  {
-   "day": 26,
-   "name": "WALT",
-   "title": "World-Model-Aligned Latent Trajectories",
-   "arxiv": "2609.30436",
-   "domain": "planning",
-   "summary": "Plans in a latent space borrowed from a world model",
-   "folder": "day-26-walt",
-   "gif": "day-26-walt/assets/walt_simulation.gif"
-  },
-  {
-   "day": 27,
-   "name": "EMPlan",
-   "title": "Multi-Modal Planning with Reward-Guided Preferences",
-   "arxiv": "2609.38862",
-   "domain": "planning",
-   "summary": "Sparse plan anchors tuned by rule-based rewards",
-   "folder": "day-27-emplan",
-   "gif": "day-27-emplan/assets/emplan_simulation.gif"
-  },
-  {
-   "day": 28,
-   "name": "MomWorld",
-   "title": "Momentum-Aware Latent World Model",
-   "arxiv": "2609.33737",
-   "domain": "prediction",
-   "summary": "Long-horizon prediction with latent momentum",
-   "folder": "day-28-momworld",
-   "gif": "day-28-momworld/outputs/momworld_simulation.gif"
-  },
-  {
-   "day": 29,
-   "name": "MapLightning",
-   "title": "Online Vectorized HD Maps with 1D Map Tokens",
-   "arxiv": "2610.01905",
-   "domain": "perception",
-   "summary": "Builds HD maps on the fly without camera calibration",
-   "folder": "day-29-maplightning",
-   "gif": "day-29-maplightning/assets/maplightning_simulation.gif"
-  },
-  {
-   "day": 30,
-   "name": "EgoRefine",
-   "title": "Ego-Referenced Alignment for Async Collaborative Perception",
-   "arxiv": "2610.00319",
-   "domain": "v2x",
-   "summary": "Aligns late collaborator data to what the ego sees now",
-   "folder": "day-30-egorefine",
-   "gif": "day-30-egorefine/egorefine_simulation.gif"
-  },
-  {
-   "day": 31,
-   "name": "SLLCP",
-   "title": "Localized Conformal Safety Monitoring with VLMs",
-   "arxiv": "2610.02765",
-   "domain": "safety",
-   "summary": "Turns an overconfident VLM into calibrated safety sets",
-   "folder": "day-31-sllcp",
-   "gif": "day-31-sllcp/assets/sllcp_simulation.gif"
-  },
-  {
-   "day": 32,
-   "name": "MoCAR",
-   "title": "Motion-Code Autoregression for Trajectory Forecasting",
-   "arxiv": "2610.06210",
-   "domain": "prediction",
-   "summary": "Forecasts motion as a sequence of learned motion codes",
-   "folder": "day-32-mocar",
-   "gif": "day-32-mocar/assets/mocar_simulation.gif"
-  },
-  {
-   "day": 33,
-   "name": "Sparse2comm",
-   "title": "Robust Cooperative 3D Detection",
-   "arxiv": "2610.08573",
-   "domain": "v2x",
-   "summary": "Shares ~2% of the map yet detects cooperatively",
-   "folder": "day-33-sparse2comm",
-   "gif": "day-33-sparse2comm/assets/simulation.gif"
-  },
-  {
-   "day": 34,
-   "name": "LighTROcc",
-   "title": "Lightweight 4D Occupancy Forecasting with 3D Gaussians",
-   "arxiv": "2610.09444",
-   "domain": "prediction",
-   "summary": "Forecasts occupancy per object with 3D Gaussians",
-   "folder": "day-34-lightrocc",
-   "gif": "day-34-lightrocc/assets/lightrocc_simulation.gif"
-  },
-  {
-   "day": 35,
-   "name": "CAA-GMM",
-   "title": "Context-Aware Gaussian-Mixture Trajectory Prediction",
-   "arxiv": "2610.09174",
-   "domain": "prediction",
-   "summary": "Attention over neighbours and map, mixture of futures",
-   "folder": "day-35-caa-gmm",
-   "gif": "day-35-caa-gmm/assets/simulation.gif"
-  },
-  {
-   "day": 36,
-   "name": "MESSENGER",
-   "title": "Memory-Enhanced Scene-Flow Forecasting",
-   "arxiv": "2610.10759",
-   "domain": "prediction",
-   "summary": "Forecasts LiDAR motion using a memory of past flow",
-   "folder": "day-36-messenger",
-   "gif": "day-36-messenger/assets/messenger_simulation.gif"
-  },
-  {
-   "day": 37,
-   "name": "SCOPE",
-   "title": "Control-Ready Uncertainty for Trajectory Diffusion",
-   "arxiv": "2610.12431",
-   "domain": "safety",
-   "summary": "Uncertainty tubes ~45x faster than sampling",
-   "folder": "day-37-scope",
-   "gif": "day-37-scope/assets/scope_simulation.gif"
-  },
-  {
-   "day": 38,
-   "name": "WZDrive",
-   "title": "Trajectory Prediction in Road Construction Zones",
-   "arxiv": "2610.12747",
-   "domain": "prediction",
-   "summary": "Uses driver gaze to predict paths through work zones",
-   "folder": "day-38-wzdrive",
-   "gif": "day-38-wzdrive/assets/wzdrive_simulation.gif"
-  },
-  {
-   "day": 39,
-   "name": "ManeuverFlow",
-   "title": "Maneuver Hypotheses with Future Evidence",
-   "arxiv": "2610.13409",
-   "domain": "planning",
-   "summary": "One-step, intent-diverse plan generation",
-   "folder": "day-39-maneuverflow",
-   "gif": "day-39-maneuverflow/assets/maneuverflow_simulation.gif"
-  },
-  {
-   "day": 40,
-   "name": "CoCam4D",
-   "title": "Geometry-Aware Cooperative 4D Camera Perception",
-   "arxiv": "2610.11577",
-   "domain": "v2x",
-   "summary": "35-byte object messages with delay compensation",
-   "folder": "day-40-cocam4d",
-   "gif": "day-40-cocam4d/cocam4d_simulation.gif"
-  },
-  {
-   "day": 41,
-   "name": "X-TRACK",
-   "title": "Physics-Aware Highway Trajectory Prediction with UQ",
-   "arxiv": "2610.11580",
-   "domain": "prediction",
-   "summary": "Physics-aware forecasts with calibrated uncertainty",
-   "folder": "day-41-xtrack-uq",
-   "gif": "day-41-xtrack-uq/assets/simulation.gif"
-  },
-  {
-   "day": 42,
-   "name": "RadarGSOcc",
-   "title": "Doppler-Aware 3D Semantic Occupancy from 4D Radar",
-   "arxiv": "2610.18686",
-   "domain": "perception",
-   "summary": "3D occupancy from 4D radar alone",
-   "folder": "day-42-radargsocc",
-   "gif": "day-42-radargsocc/assets/simulation.gif"
-  },
-  {
-   "day": 43,
-   "name": "FutureLift",
-   "title": "Bidirectional Future Graphs for Motion Forecasting",
-   "arxiv": "2610.22215",
-   "domain": "prediction",
-   "summary": "Refines forecast proposals as future graphs",
-   "folder": "day-43-futurelift",
-   "gif": "day-43-futurelift/assets/simulation.gif"
-  },
-  {
-   "day": 44,
-   "name": "LoRA-Fed-Ped",
-   "title": "LoRA Federated Training for Pedestrian Prediction",
-   "arxiv": "2610.18640",
-   "domain": "v2x",
-   "summary": "Only tiny LoRA adapters cross the V2I link",
-   "folder": "day-44-lora-fed-ped",
-   "gif": "day-44-lora-fed-ped/assets/simulation.gif"
-  },
-  {
-   "day": 45,
-   "name": "Decision-FLIP",
-   "title": "Budget-Free Pruning for Gaussian Occupancy Models",
-   "arxiv": "2610.20917",
-   "domain": "perception",
-   "summary": "Label-free pruning of occupancy models",
-   "folder": "day-45-decision-flip",
-   "gif": "day-45-decision-flip/assets/decision_flip_simulation.gif"
-  },
-  {
-   "day": 46,
-   "name": "STC-MGNet",
-   "title": "Pedestrian Intention via Multimodal Graph Network",
-   "arxiv": "2610.23356",
-   "domain": "prediction",
-   "summary": "Pedestrian intent from pose graphs + ego motion",
-   "folder": "day-46-stc-mgnet",
-   "gif": "day-46-stc-mgnet/assets/simulation.gif"
-  },
-  {
-   "day": 47,
-   "name": "TRB",
-   "title": "Temporal Residual Bottleneck for Async Collaborative Perception",
-   "arxiv": "2610.10090",
-   "domain": "v2x",
-   "summary": "Corrects delayed collaborator BEV features",
-   "folder": "day-47-trb",
-   "gif": "day-47-trb/assets/trb_simulation.gif"
-  },
-  {
-   "day": 48,
-   "name": "LoRA-FedFT",
-   "title": "Pedestrian Prediction through LoRA Federated Training",
-   "arxiv": "2610.18640",
-   "domain": "v2x",
-   "summary": "Federated LoRA tuning of a foundation forecaster",
-   "folder": "day-48-lora-fedft",
-   "gif": "day-48-lora-fedft/assets/simulation.gif"
-  },
-  {
-   "day": 49,
-   "name": "KG-LaneChange",
-   "title": "Lane-Change Prediction with Knowledge Graphs",
-   "arxiv": "2610.30528",
-   "domain": "prediction",
-   "summary": "Knowledge graphs + Bayesian inference for lane changes",
-   "folder": "day-49-kg-lanechange",
-   "gif": "day-49-kg-lanechange/assets/simulation.gif"
-  },
-  {
-   "day": 50,
-   "name": "Hazard-Guided Flow",
-   "title": "Hazard-Energy Guidance for Flow-Matching Planners",
-   "arxiv": "2610.28184",
-   "domain": "planning",
-   "summary": "Steers a generative planner away from hazards",
-   "folder": "day-50-hazard-guided-flow",
-   "gif": "day-50-hazard-guided-flow/assets/simulation.gif"
-  },
-  {
-   "day": 51,
-   "name": "Foundation4D",
-   "title": "One Model for Depth, Detection, Occupancy and Gaussians",
-   "arxiv": "2610.30340",
-   "domain": "perception",
-   "summary": "One backbone for four perception tasks",
-   "folder": "day-51-foundation4d",
-   "gif": "day-51-foundation4d/assets/foundation4d_simulation.gif"
-  },
-  {
-   "day": 52,
-   "name": "SafeDriveVLA",
-   "title": "Conflict-Aware Instruction Following",
-   "arxiv": "2610.20609",
-   "domain": "safety",
-   "summary": "Follow, adapt or refuse a risky instruction",
-   "folder": "day-52-safedrivevla",
-   "gif": "day-52-safedrivevla/assets/safedrivevla_simulation.gif"
-  },
-  {
-   "day": 53,
-   "name": "CWT-RUL",
-   "title": "Early-Cycle Battery Life from Wavelet Scalograms",
-   "arxiv": "2610.34159",
-   "domain": "battery",
-   "summary": "Predicts battery lifetime from its first cycles",
-   "folder": "day-53-cwt-rul",
-   "gif": "day-53-cwt-rul/assets/cwt_rul_simulation.gif"
-  },
-  {
-   "day": 54,
-   "name": "SpatialBEV",
-   "title": "Off-Road Dynamics Learning in BEV",
-   "arxiv": "2610.22900",
-   "domain": "prediction",
-   "summary": "Learns how a vehicle moves over rough terrain",
-   "folder": "day-54-spatialbev",
-   "gif": "day-54-spatialbev/assets/spatialbev_demo.gif"
-  },
-  {
-   "day": 55,
-   "name": "FastBEVFusion",
-   "title": "Fast LiDAR + Camera BEV Fusion",
-   "arxiv": "2610.37153",
-   "domain": "perception",
-   "summary": "Faster LiDAR-camera fusion in bird's-eye view",
-   "folder": "day-55-fastbevfusion",
-   "gif": "day-55-fastbevfusion/assets/fastbev_demo.gif"
-  },
-  {
-   "day": 56,
-   "name": "LinkDreamer",
-   "title": "Cooperative Perception over Intermittent V2X",
-   "arxiv": "2610.39258",
-   "domain": "v2x",
-   "summary": "Keeps cooperating when the V2X link drops",
-   "folder": "day-56-linkdreamer",
-   "gif": "day-56-linkdreamer/assets/linkdreamer_demo.gif"
-  },
-  {
-   "day": 57,
-   "name": "eCoMAE",
-   "title": "Evidential Masked Pretraining for VRU Intent",
-   "arxiv": "2610.39958",
-   "domain": "prediction",
-   "summary": "Pedestrian/cyclist intent with honest uncertainty",
-   "folder": "day-57-ecomae",
-   "gif": "day-57-ecomae/assets/ecomae_demo.gif"
-  },
-  {
-   "day": 58,
-   "name": "Motion-Onset-GNN",
-   "title": "Meta-Learned Scene Graphs for Motion Onset",
-   "arxiv": "2610.38993",
-   "domain": "prediction",
-   "summary": "Predicts the moment a stopped agent starts moving",
-   "folder": "day-58-motion-onset",
-   "gif": "day-58-motion-onset/assets/onset_demo.gif"
-  },
-  {
-   "day": 60,
-   "name": "INTERACT-Slots",
-   "title": "Object-Centric World Model for Interaction-Aware Prediction",
-   "arxiv": "2611.02526",
-   "domain": "prediction",
-   "summary": "Sees the road as objects, then imagines their futures",
-   "folder": "day-60-interact",
-   "gif": "day-60-interact/assets/interact_demo_trained.gif"
-  },
-  {
-   "day": 61,
-   "name": "RFWorld",
-   "title": "Rollout-Free Trajectory Evaluation",
-   "arxiv": "2611.05072",
-   "domain": "planning",
-   "summary": "Scores candidate paths without step-by-step rollouts",
-   "folder": "day-61-rfworld",
-   "gif": "day-61-rfworld/assets/rfworld_demo.gif"
-  },
-  {
-   "day": 62,
-   "name": "EvoOcc",
-   "title": "Fast-Slow Evolutionary Occupancy Prediction",
-   "arxiv": "2611.02499",
-   "domain": "perception",
-   "summary": "Fuses a fast-but-weak and a slow-but-late model",
-   "folder": "day-62-evoocc",
-   "gif": "day-62-evoocc/assets/evoocc_sim.gif"
-  },
-  {
-   "day": 63,
-   "name": "NegWAM",
-   "title": "Negative-Aware World-Action Model",
-   "arxiv": "2611.08111",
-   "domain": "planning",
-   "summary": "Learns from near misses, not just good driving",
-   "folder": "day-63-negwam",
-   "gif": "day-63-negwam/assets/negwam_demo.gif"
-  },
-  {
-   "day": 64,
-   "name": "VFlash",
-   "title": "Flash Primitive Decoding",
-   "arxiv": "2611.08449",
-   "domain": "planning",
-   "summary": "Drafts a whole path in one pass (~10x faster)",
-   "folder": "day-64-vflash",
-   "gif": null
-  },
-  {
-   "day": 65,
-   "name": "MotoVerse",
-   "title": "Traffic Anticipation from a Rider's View",
-   "arxiv": "2611.06007",
-   "domain": "prediction",
-   "summary": "Predicts traffic through a motorcyclist's eyes",
-   "folder": "day-65-motoverse",
-   "gif": null
-  },
-  {
-   "day": 66,
-   "name": "FreeOcc",
-   "title": "4D Occupancy Forecasting",
-   "arxiv": "2611.08128",
-   "domain": "prediction",
-   "summary": "Forecasts how the 3D scene fills up next",
-   "folder": "day-66-freeocc",
-   "gif": null
-  },
-  {
-   "day": 67,
-   "name": "CoMET",
-   "title": "Shared Pose-Error Tracking for Async V2X Detection",
-   "arxiv": "2611.09121",
-   "domain": "v2x",
-   "summary": "Fixes late, slightly-off roadside messages",
-   "folder": "day-67-comet",
-   "gif": "day-67-comet/assets/comet_simulation.gif"
-  },
-  {
-   "day": 68,
-   "name": "LOWP",
-   "title": "Look Only Where You Plan",
-   "arxiv": "2611.10264",
-   "domain": "planning",
-   "summary": "Reads the cameras only where the car will drive",
-   "folder": "day-68-lowp",
-   "gif": "day-68-lowp/assets/lowp_simulation.gif"
-  },
-  {
-   "day": 69,
-   "name": "RaMOD",
-   "title": "Moving-Object Detection from Raw mmWave Radar",
-   "arxiv": "2611.13271",
-   "domain": "perception",
-   "summary": "Finds what's moving in raw radar, even in rain",
-   "folder": "day-69-ramod",
-   "gif": "day-69-ramod/assets/ramod_simulation.gif"
-  },
-  {
-   "day": 70,
-   "name": "FlowBatt",
-   "title": "Flow Matching for Battery Degradation Prediction",
-   "arxiv": "2611.03150",
-   "domain": "battery",
-   "summary": "Forecasts a battery's ageing curve with uncertainty",
-   "folder": "day-70-flowbatt",
-   "gif": "day-70-flowbatt/assets/flowbatt_simulation.gif"
-  },
-  {
-   "day": 71,
-   "name": "ForeseeDrive",
-   "title": "Future-Token Conditioning for Anticipatory Driving",
-   "arxiv": "2611.14286",
-   "domain": "planning",
-   "summary": "Gives the planner a forecast so it reacts early",
-   "folder": "day-71-foreseedrive",
-   "gif": "day-71-foreseedrive/assets/foresee_simulation.gif"
-  },
-  {
-   "day": 72,
-   "name": "FloCOS",
-   "title": "Compact Forward Occupancy Sets via Flow Matching",
-   "arxiv": "2611.15488",
-   "domain": "prediction",
-   "summary": "Predicts the space a nearby car might take",
-   "folder": "day-72-flocos",
-   "gif": "day-72-flocos/assets/flocos_simulation.gif"
-  }
- ],
- "legs": [
-  {
-   "leg": 1,
-   "days": [
-    1,
-    7
-   ],
-   "format": "Carousel (PDF)",
-   "file": "road-trip/AI-Road-Trip-Carousel.pdf"
-  },
-  {
-   "leg": 2,
-   "days": [
-    8,
-    15
-   ],
-   "format": "Carousel (PDF)",
-   "file": "road-trip/AI-Road-Trip-Leg2-Carousel.pdf"
-  },
-  {
-   "leg": 3,
-   "days": [
-    16,
-    23
-   ],
-   "format": "Carousel (PDF)",
-   "file": "road-trip/AI-Road-Trip-Leg3-Carousel.pdf"
-  },
-  {
-   "leg": 4,
-   "days": [
-    24,
-    30
-   ],
-   "format": "Carousel (PDF)",
-   "file": "road-trip/AI-Road-Trip-Leg4-Carousel.pdf"
-  },
-  {
-   "leg": 5,
-   "days": [
-    31,
-    37
-   ],
-   "format": "Carousel (PDF)",
-   "file": "road-trip/AI-Road-Trip-Leg5-Carousel.pdf"
-  },
-  {
-   "leg": 6,
-   "days": [
-    38,
-    44
-   ],
-   "format": "Narrated video",
-   "file": "road-trip/AI-Road-Trip-Leg6-Narrated.mp4"
-  },
-  {
-   "leg": 7,
-   "days": [
-    45,
-    51
-   ],
-   "format": "Narrated video",
-   "file": "road-trip/AI-Road-Trip-Leg7-Narrated.mp4"
-  },
-  {
-   "leg": 8,
-   "days": [
-    52,
-    58
-   ],
-   "format": "Narrated video",
-   "file": "road-trip/AI-Road-Trip-Leg8-Narrated-Male.mp4"
-  },
-  {
-   "leg": 9,
-   "days": [
-    60,
-    65
-   ],
-   "format": "Video",
-   "file": "road-trip/AI-Road-Trip-Leg9.mp4"
-  },
-  {
-   "leg": 10,
-   "days": [
-    67,
-    72
-   ],
-   "format": "One-image overview",
-   "file": "road-trip/AI-Road-Trip-Leg10-Overview.png",
-   "title": "One drive home, 6 new AI papers",
-   "highlights": [
+  "start_date": "2026-09-05",
+  "rest_days": [
+    59
+  ],
+  "days": [
     {
-     "day": 67,
-     "moment": "The blind intersection",
-     "result": "detection 0.34 → 0.88, zero learned weights",
-     "verdict": "held"
+      "day": 1,
+      "name": "SV-WAM",
+      "title": "Surround-View World-Action Model for End-to-End Driving",
+      "arxiv": "2609.03602",
+      "domain": "planning",
+      "summary": "One model sees all cameras and outputs the drive",
+      "folder": "day-01-sv-wam",
+      "gif": "day-01-sv-wam/trajectory_simulation.gif"
     },
     {
-     "day": 68,
-     "moment": "The busy downtown street",
-     "result": "path error 0.35 vs 0.42 m, no speed-up",
-     "verdict": "partly"
+      "day": 2,
+      "name": "Qwen-Drive-1.0",
+      "title": "Vision-Language Foundation Model for Autonomous Driving",
+      "arxiv": "2609.00111",
+      "domain": "planning",
+      "summary": "A vision-language model that perceives and plans",
+      "folder": "day-02-qwen-drive-1-0",
+      "gif": "day-02-qwen-drive-1-0/trajectory_simulation.gif"
     },
     {
-     "day": 69,
-     "moment": "Heavy rain on the highway",
-     "result": "speed error 0.57 vs 1.83 m/s",
-     "verdict": "held"
+      "day": 3,
+      "name": "PART",
+      "title": "Physics-Aware Radar Transformer",
+      "arxiv": "2609.02289",
+      "domain": "perception",
+      "summary": "Radar transformer that respects Doppler physics",
+      "folder": "day-03-part",
+      "gif": "day-03-part/trajectory_simulation.gif"
     },
     {
-     "day": 71,
-     "moment": "Traffic slows suddenly",
-     "result": "crashes 25.5% → 5.7% with a perfect forecast; +1 pt with its own",
-     "verdict": "partly"
+      "day": 4,
+      "name": "SSDS + DAPSE",
+      "title": "One Diffusion Model, Two Roles",
+      "arxiv": "2609.04921",
+      "domain": "safety",
+      "summary": "One diffusion model plans and also invents risky test scenarios",
+      "folder": "day-04-ssds-dapse",
+      "gif": "day-04-ssds-dapse/trajectory_simulation.gif"
     },
     {
-     "day": 72,
-     "moment": "Merging onto the highway",
-     "result": "merge crashes 2% vs 15.7%",
-     "verdict": "held"
+      "day": 5,
+      "name": "DriveZero",
+      "title": "End-to-End Driving Beyond Human Demonstrations",
+      "arxiv": "2609.06055",
+      "domain": "planning",
+      "summary": "Learns to drive past human examples with RL + distillation",
+      "folder": "day-05-drivezero",
+      "gif": "day-05-drivezero/trajectory_simulation.gif"
     },
     {
-     "day": 70,
-     "moment": "Parked in the garage",
-     "result": "2.6x faster, accuracy a tie",
-     "verdict": "partly"
+      "day": 6,
+      "name": "COSTER",
+      "title": "Collision-Snapshot Time-Reversed Scenario Generation",
+      "arxiv": "2609.06433",
+      "domain": "safety",
+      "summary": "Builds crash scenarios by running time backwards from impact",
+      "folder": "day-06-coster",
+      "gif": "day-06-coster/trajectory_simulation.gif"
+    },
+    {
+      "day": 7,
+      "name": "MC-DeTra",
+      "title": "Motion-Consistent Joint Detection + Forecasting",
+      "arxiv": "2609.11717",
+      "domain": "prediction",
+      "summary": "Detects objects and forecasts their motion in one pass",
+      "folder": "day-07-mc-detra",
+      "gif": "day-07-mc-detra/trajectory_simulation.gif"
+    },
+    {
+      "day": 8,
+      "name": "Marigold",
+      "title": "Diffusion Models as Monocular Depth Estimators",
+      "arxiv": "2312.02145",
+      "domain": "perception",
+      "summary": "Turns an image generator into a single-camera depth sensor",
+      "folder": "day-08-marigold",
+      "gif": "day-08-marigold/trajectory_simulation.gif"
+    },
+    {
+      "day": 9,
+      "name": "TrajFusionNet+",
+      "title": "Pedestrian Crossing Intention with Scene Graphs",
+      "arxiv": "2609.10806",
+      "domain": "prediction",
+      "summary": "Will that pedestrian cross? Trajectories + scene graphs",
+      "folder": "day-09-trajfusionnet-plus",
+      "gif": "day-09-trajfusionnet-plus/trajectory_simulation.gif"
+    },
+    {
+      "day": 10,
+      "name": "READ",
+      "title": "Risk-Informed Fields for End-to-End Driving",
+      "arxiv": "2609.12371",
+      "domain": "safety",
+      "summary": "A learned risk field instead of fixed safety bubbles",
+      "folder": "day-10-read",
+      "gif": "day-10-read/assets/trajectory_simulation.gif"
+    },
+    {
+      "day": 11,
+      "name": "DRiF",
+      "title": "Data-Driven Risk Fields for Safer Driving",
+      "arxiv": "2609.10377",
+      "domain": "safety",
+      "summary": "Dense risk map shared with mapping and planning",
+      "folder": "day-11-drif",
+      "gif": "day-11-drif/assets/trajectory_simulation.gif"
+    },
+    {
+      "day": 12,
+      "name": "BeamTransFuser",
+      "title": "Robust V2X Beam Prediction with Multi-Modal Sensing",
+      "arxiv": "2609.10200",
+      "domain": "v2x",
+      "summary": "Points the radio beam using cameras, LiDAR, radar and GPS",
+      "folder": "day-12-beamtransfuser",
+      "gif": "day-12-beamtransfuser/assets/beam_prediction_simulation.gif"
+    },
+    {
+      "day": 13,
+      "name": "LDE",
+      "title": "Learning from Distributed Eyes",
+      "arxiv": "2609.18511",
+      "domain": "v2x",
+      "summary": "Adapts perception using a nearby car's detections as labels",
+      "folder": "day-13-lde",
+      "gif": "day-13-lde/assets/lde_simulation.gif"
+    },
+    {
+      "day": 14,
+      "name": "Sparse-BEVNet",
+      "title": "Sparse-Attention Multi-View BEV 3D Detection",
+      "arxiv": "2609.14185",
+      "domain": "perception",
+      "summary": "Cheaper camera-only 3D detection with sparse attention",
+      "folder": "day-14-sparse-bevnet",
+      "gif": "day-14-sparse-bevnet/assets/sparse_bevnet_simulation.gif"
+    },
+    {
+      "day": 15,
+      "name": "MM-Future",
+      "title": "Multi-Mode Joint World-Action Modeling",
+      "arxiv": "2609.20377",
+      "domain": "planning",
+      "summary": "Generates future scenes and actions together",
+      "folder": "day-15-mm-future",
+      "gif": "day-15-mm-future/mm_future_simulation.gif"
+    },
+    {
+      "day": 16,
+      "name": "EKF-Neural-Fusion",
+      "title": "Neural Fusion of EKF Trajectory Candidates",
+      "arxiv": "2609.19813",
+      "domain": "prediction",
+      "summary": "Blends classic Kalman motion models with a neural predictor",
+      "folder": "day-16-ekf-neural-fusion",
+      "gif": "day-16-ekf-neural-fusion/trajectory_fusion_simulation.gif"
+    },
+    {
+      "day": 17,
+      "name": "RiskWorld",
+      "title": "Risk-Aware World Model with Flow-Guided Occupancy",
+      "arxiv": "2609.18442",
+      "domain": "planning",
+      "summary": "Forecasts occupancy + risk, then replaces risky plans",
+      "folder": "day-17-riskworld",
+      "gif": "day-17-riskworld/outputs/riskworld_simulation.gif"
+    },
+    {
+      "day": 18,
+      "name": "ChargeIC-LSTM",
+      "title": "Battery Degradation Monitoring from Charging Signals",
+      "arxiv": "2609.22843",
+      "domain": "battery",
+      "summary": "Reads battery health from an ordinary charging session",
+      "folder": "day-18-ic-degradation-lstm",
+      "gif": "day-18-ic-degradation-lstm/battery_ic_simulation.gif"
+    },
+    {
+      "day": 19,
+      "name": "V2X-LDPC-Recovery",
+      "title": "Prediction-Aided V2X Safety-Message Recovery",
+      "arxiv": "2609.25609",
+      "domain": "v2x",
+      "summary": "Repairs corrupted V2X messages using motion prediction",
+      "folder": "day-19-v2x-ldpc-recovery",
+      "gif": "day-19-v2x-ldpc-recovery/assets/v2x_ldpc_recovery_simulation.gif"
+    },
+    {
+      "day": 20,
+      "name": "ForeDrive",
+      "title": "Foresight-Guided Driving with a Latent World Model",
+      "arxiv": "2609.26299",
+      "domain": "planning",
+      "summary": "A latent world model gives the planner foresight",
+      "folder": "day-20-foredrive",
+      "gif": "day-20-foredrive/simulation.gif"
+    },
+    {
+      "day": 21,
+      "name": "ChronoFuse",
+      "title": "Predicting Ahead to Beat Event-Camera Latency",
+      "arxiv": "2609.26919",
+      "domain": "perception",
+      "summary": "Detects where objects will be when the output is ready",
+      "folder": "day-21-chronofuse",
+      "gif": "day-21-chronofuse/chronofuse_simulation.gif"
+    },
+    {
+      "day": 22,
+      "name": "S2Planner",
+      "title": "Multi-Scale Semantic Planner",
+      "arxiv": "2609.29813",
+      "domain": "planning",
+      "summary": "Plans straight from DINOv3 image features",
+      "folder": "day-22-s2planner",
+      "gif": "day-22-s2planner/outputs/s2planner_simulation.gif"
+    },
+    {
+      "day": 23,
+      "name": "PriorMapBEVNet",
+      "title": "Vision-Built Map Priors for 3D Detection + HD Mapping",
+      "arxiv": "2609.26325",
+      "domain": "perception",
+      "summary": "Camera detection boosted by a remembered map of the route",
+      "folder": "day-23-priormapbevnet",
+      "gif": "day-23-priormapbevnet/priormapbevnet_simulation.gif"
+    },
+    {
+      "day": 24,
+      "name": "INTERACT",
+      "title": "Anchor-Conditioned Prediction + Trust-Region Refinement",
+      "arxiv": "2609.31137",
+      "domain": "prediction",
+      "summary": "Predicts how others react, once per intent instead of per plan",
+      "folder": "day-24-interact",
+      "gif": "day-24-interact/assets/simulation.gif"
+    },
+    {
+      "day": 25,
+      "name": "ECO",
+      "title": "Endpoint-Constrained Trajectory Optimization",
+      "arxiv": "2609.31383",
+      "domain": "planning",
+      "summary": "Training-free layer that smooths planned paths",
+      "folder": "day-25-eco",
+      "gif": "day-25-eco/assets/eco_simulation.gif"
+    },
+    {
+      "day": 26,
+      "name": "WALT",
+      "title": "World-Model-Aligned Latent Trajectories",
+      "arxiv": "2609.30436",
+      "domain": "planning",
+      "summary": "Plans in a latent space borrowed from a world model",
+      "folder": "day-26-walt",
+      "gif": "day-26-walt/assets/walt_simulation.gif"
+    },
+    {
+      "day": 27,
+      "name": "EMPlan",
+      "title": "Multi-Modal Planning with Reward-Guided Preferences",
+      "arxiv": "2609.38862",
+      "domain": "planning",
+      "summary": "Sparse plan anchors tuned by rule-based rewards",
+      "folder": "day-27-emplan",
+      "gif": "day-27-emplan/assets/emplan_simulation.gif"
+    },
+    {
+      "day": 28,
+      "name": "MomWorld",
+      "title": "Momentum-Aware Latent World Model",
+      "arxiv": "2609.33737",
+      "domain": "prediction",
+      "summary": "Long-horizon prediction with latent momentum",
+      "folder": "day-28-momworld",
+      "gif": "day-28-momworld/outputs/momworld_simulation.gif"
+    },
+    {
+      "day": 29,
+      "name": "MapLightning",
+      "title": "Online Vectorized HD Maps with 1D Map Tokens",
+      "arxiv": "2610.01905",
+      "domain": "perception",
+      "summary": "Builds HD maps on the fly without camera calibration",
+      "folder": "day-29-maplightning",
+      "gif": "day-29-maplightning/assets/maplightning_simulation.gif"
+    },
+    {
+      "day": 30,
+      "name": "EgoRefine",
+      "title": "Ego-Referenced Alignment for Async Collaborative Perception",
+      "arxiv": "2610.00319",
+      "domain": "v2x",
+      "summary": "Aligns late collaborator data to what the ego sees now",
+      "folder": "day-30-egorefine",
+      "gif": "day-30-egorefine/egorefine_simulation.gif"
+    },
+    {
+      "day": 31,
+      "name": "SLLCP",
+      "title": "Localized Conformal Safety Monitoring with VLMs",
+      "arxiv": "2610.02765",
+      "domain": "safety",
+      "summary": "Turns an overconfident VLM into calibrated safety sets",
+      "folder": "day-31-sllcp",
+      "gif": "day-31-sllcp/assets/sllcp_simulation.gif"
+    },
+    {
+      "day": 32,
+      "name": "MoCAR",
+      "title": "Motion-Code Autoregression for Trajectory Forecasting",
+      "arxiv": "2610.06210",
+      "domain": "prediction",
+      "summary": "Forecasts motion as a sequence of learned motion codes",
+      "folder": "day-32-mocar",
+      "gif": "day-32-mocar/assets/mocar_simulation.gif"
+    },
+    {
+      "day": 33,
+      "name": "Sparse2comm",
+      "title": "Robust Cooperative 3D Detection",
+      "arxiv": "2610.08573",
+      "domain": "v2x",
+      "summary": "Shares ~2% of the map yet detects cooperatively",
+      "folder": "day-33-sparse2comm",
+      "gif": "day-33-sparse2comm/assets/simulation.gif"
+    },
+    {
+      "day": 34,
+      "name": "LighTROcc",
+      "title": "Lightweight 4D Occupancy Forecasting with 3D Gaussians",
+      "arxiv": "2610.09444",
+      "domain": "prediction",
+      "summary": "Forecasts occupancy per object with 3D Gaussians",
+      "folder": "day-34-lightrocc",
+      "gif": "day-34-lightrocc/assets/lightrocc_simulation.gif"
+    },
+    {
+      "day": 35,
+      "name": "CAA-GMM",
+      "title": "Context-Aware Gaussian-Mixture Trajectory Prediction",
+      "arxiv": "2610.09174",
+      "domain": "prediction",
+      "summary": "Attention over neighbours and map, mixture of futures",
+      "folder": "day-35-caa-gmm",
+      "gif": "day-35-caa-gmm/assets/simulation.gif"
+    },
+    {
+      "day": 36,
+      "name": "MESSENGER",
+      "title": "Memory-Enhanced Scene-Flow Forecasting",
+      "arxiv": "2610.10759",
+      "domain": "prediction",
+      "summary": "Forecasts LiDAR motion using a memory of past flow",
+      "folder": "day-36-messenger",
+      "gif": "day-36-messenger/assets/messenger_simulation.gif"
+    },
+    {
+      "day": 37,
+      "name": "SCOPE",
+      "title": "Control-Ready Uncertainty for Trajectory Diffusion",
+      "arxiv": "2610.12431",
+      "domain": "safety",
+      "summary": "Uncertainty tubes ~45x faster than sampling",
+      "folder": "day-37-scope",
+      "gif": "day-37-scope/assets/scope_simulation.gif"
+    },
+    {
+      "day": 38,
+      "name": "WZDrive",
+      "title": "Trajectory Prediction in Road Construction Zones",
+      "arxiv": "2610.12747",
+      "domain": "prediction",
+      "summary": "Uses driver gaze to predict paths through work zones",
+      "folder": "day-38-wzdrive",
+      "gif": "day-38-wzdrive/assets/wzdrive_simulation.gif"
+    },
+    {
+      "day": 39,
+      "name": "ManeuverFlow",
+      "title": "Maneuver Hypotheses with Future Evidence",
+      "arxiv": "2610.13409",
+      "domain": "planning",
+      "summary": "One-step, intent-diverse plan generation",
+      "folder": "day-39-maneuverflow",
+      "gif": "day-39-maneuverflow/assets/maneuverflow_simulation.gif"
+    },
+    {
+      "day": 40,
+      "name": "CoCam4D",
+      "title": "Geometry-Aware Cooperative 4D Camera Perception",
+      "arxiv": "2610.11577",
+      "domain": "v2x",
+      "summary": "35-byte object messages with delay compensation",
+      "folder": "day-40-cocam4d",
+      "gif": "day-40-cocam4d/cocam4d_simulation.gif"
+    },
+    {
+      "day": 41,
+      "name": "X-TRACK",
+      "title": "Physics-Aware Highway Trajectory Prediction with UQ",
+      "arxiv": "2610.11580",
+      "domain": "prediction",
+      "summary": "Physics-aware forecasts with calibrated uncertainty",
+      "folder": "day-41-xtrack-uq",
+      "gif": "day-41-xtrack-uq/assets/simulation.gif"
+    },
+    {
+      "day": 42,
+      "name": "RadarGSOcc",
+      "title": "Doppler-Aware 3D Semantic Occupancy from 4D Radar",
+      "arxiv": "2610.18686",
+      "domain": "perception",
+      "summary": "3D occupancy from 4D radar alone",
+      "folder": "day-42-radargsocc",
+      "gif": "day-42-radargsocc/assets/simulation.gif"
+    },
+    {
+      "day": 43,
+      "name": "FutureLift",
+      "title": "Bidirectional Future Graphs for Motion Forecasting",
+      "arxiv": "2610.22215",
+      "domain": "prediction",
+      "summary": "Refines forecast proposals as future graphs",
+      "folder": "day-43-futurelift",
+      "gif": "day-43-futurelift/assets/simulation.gif"
+    },
+    {
+      "day": 44,
+      "name": "LoRA-Fed-Ped",
+      "title": "LoRA Federated Training for Pedestrian Prediction",
+      "arxiv": "2610.18640",
+      "domain": "v2x",
+      "summary": "Only tiny LoRA adapters cross the V2I link",
+      "folder": "day-44-lora-fed-ped",
+      "gif": "day-44-lora-fed-ped/assets/simulation.gif"
+    },
+    {
+      "day": 45,
+      "name": "Decision-FLIP",
+      "title": "Budget-Free Pruning for Gaussian Occupancy Models",
+      "arxiv": "2610.20917",
+      "domain": "perception",
+      "summary": "Label-free pruning of occupancy models",
+      "folder": "day-45-decision-flip",
+      "gif": "day-45-decision-flip/assets/decision_flip_simulation.gif"
+    },
+    {
+      "day": 46,
+      "name": "STC-MGNet",
+      "title": "Pedestrian Intention via Multimodal Graph Network",
+      "arxiv": "2610.23356",
+      "domain": "prediction",
+      "summary": "Pedestrian intent from pose graphs + ego motion",
+      "folder": "day-46-stc-mgnet",
+      "gif": "day-46-stc-mgnet/assets/simulation.gif"
+    },
+    {
+      "day": 47,
+      "name": "TRB",
+      "title": "Temporal Residual Bottleneck for Async Collaborative Perception",
+      "arxiv": "2610.10090",
+      "domain": "v2x",
+      "summary": "Corrects delayed collaborator BEV features",
+      "folder": "day-47-trb",
+      "gif": "day-47-trb/assets/trb_simulation.gif"
+    },
+    {
+      "day": 48,
+      "name": "LoRA-FedFT",
+      "title": "Pedestrian Prediction through LoRA Federated Training",
+      "arxiv": "2610.18640",
+      "domain": "v2x",
+      "summary": "Federated LoRA tuning of a foundation forecaster",
+      "folder": "day-48-lora-fedft",
+      "gif": "day-48-lora-fedft/assets/simulation.gif"
+    },
+    {
+      "day": 49,
+      "name": "KG-LaneChange",
+      "title": "Lane-Change Prediction with Knowledge Graphs",
+      "arxiv": "2610.30528",
+      "domain": "prediction",
+      "summary": "Knowledge graphs + Bayesian inference for lane changes",
+      "folder": "day-49-kg-lanechange",
+      "gif": "day-49-kg-lanechange/assets/simulation.gif"
+    },
+    {
+      "day": 50,
+      "name": "Hazard-Guided Flow",
+      "title": "Hazard-Energy Guidance for Flow-Matching Planners",
+      "arxiv": "2610.28184",
+      "domain": "planning",
+      "summary": "Steers a generative planner away from hazards",
+      "folder": "day-50-hazard-guided-flow",
+      "gif": "day-50-hazard-guided-flow/assets/simulation.gif"
+    },
+    {
+      "day": 51,
+      "name": "Foundation4D",
+      "title": "One Model for Depth, Detection, Occupancy and Gaussians",
+      "arxiv": "2610.30340",
+      "domain": "perception",
+      "summary": "One backbone for four perception tasks",
+      "folder": "day-51-foundation4d",
+      "gif": "day-51-foundation4d/assets/foundation4d_simulation.gif"
+    },
+    {
+      "day": 52,
+      "name": "SafeDriveVLA",
+      "title": "Conflict-Aware Instruction Following",
+      "arxiv": "2610.20609",
+      "domain": "safety",
+      "summary": "Follow, adapt or refuse a risky instruction",
+      "folder": "day-52-safedrivevla",
+      "gif": "day-52-safedrivevla/assets/safedrivevla_simulation.gif"
+    },
+    {
+      "day": 53,
+      "name": "CWT-RUL",
+      "title": "Early-Cycle Battery Life from Wavelet Scalograms",
+      "arxiv": "2610.34159",
+      "domain": "battery",
+      "summary": "Predicts battery lifetime from its first cycles",
+      "folder": "day-53-cwt-rul",
+      "gif": "day-53-cwt-rul/assets/cwt_rul_simulation.gif"
+    },
+    {
+      "day": 54,
+      "name": "SpatialBEV",
+      "title": "Off-Road Dynamics Learning in BEV",
+      "arxiv": "2610.22900",
+      "domain": "prediction",
+      "summary": "Learns how a vehicle moves over rough terrain",
+      "folder": "day-54-spatialbev",
+      "gif": "day-54-spatialbev/assets/spatialbev_demo.gif"
+    },
+    {
+      "day": 55,
+      "name": "FastBEVFusion",
+      "title": "Fast LiDAR + Camera BEV Fusion",
+      "arxiv": "2610.37153",
+      "domain": "perception",
+      "summary": "Faster LiDAR-camera fusion in bird's-eye view",
+      "folder": "day-55-fastbevfusion",
+      "gif": "day-55-fastbevfusion/assets/fastbev_demo.gif"
+    },
+    {
+      "day": 56,
+      "name": "LinkDreamer",
+      "title": "Cooperative Perception over Intermittent V2X",
+      "arxiv": "2610.39258",
+      "domain": "v2x",
+      "summary": "Keeps cooperating when the V2X link drops",
+      "folder": "day-56-linkdreamer",
+      "gif": "day-56-linkdreamer/assets/linkdreamer_demo.gif"
+    },
+    {
+      "day": 57,
+      "name": "eCoMAE",
+      "title": "Evidential Masked Pretraining for VRU Intent",
+      "arxiv": "2610.39958",
+      "domain": "prediction",
+      "summary": "Pedestrian/cyclist intent with honest uncertainty",
+      "folder": "day-57-ecomae",
+      "gif": "day-57-ecomae/assets/ecomae_demo.gif"
+    },
+    {
+      "day": 58,
+      "name": "Motion-Onset-GNN",
+      "title": "Meta-Learned Scene Graphs for Motion Onset",
+      "arxiv": "2610.38993",
+      "domain": "prediction",
+      "summary": "Predicts the moment a stopped agent starts moving",
+      "folder": "day-58-motion-onset",
+      "gif": "day-58-motion-onset/assets/onset_demo.gif"
+    },
+    {
+      "day": 60,
+      "name": "INTERACT-Slots",
+      "title": "Object-Centric World Model for Interaction-Aware Prediction",
+      "arxiv": "2611.02526",
+      "domain": "prediction",
+      "summary": "Sees the road as objects, then imagines their futures",
+      "folder": "day-60-interact",
+      "gif": "day-60-interact/assets/interact_demo_trained.gif"
+    },
+    {
+      "day": 61,
+      "name": "RFWorld",
+      "title": "Rollout-Free Trajectory Evaluation",
+      "arxiv": "2611.05072",
+      "domain": "planning",
+      "summary": "Scores candidate paths without step-by-step rollouts",
+      "folder": "day-61-rfworld",
+      "gif": "day-61-rfworld/assets/rfworld_demo.gif"
+    },
+    {
+      "day": 62,
+      "name": "EvoOcc",
+      "title": "Fast-Slow Evolutionary Occupancy Prediction",
+      "arxiv": "2611.02499",
+      "domain": "perception",
+      "summary": "Fuses a fast-but-weak and a slow-but-late model",
+      "folder": "day-62-evoocc",
+      "gif": "day-62-evoocc/assets/evoocc_sim.gif"
+    },
+    {
+      "day": 63,
+      "name": "NegWAM",
+      "title": "Negative-Aware World-Action Model",
+      "arxiv": "2611.08111",
+      "domain": "planning",
+      "summary": "Learns from near misses, not just good driving",
+      "folder": "day-63-negwam",
+      "gif": "day-63-negwam/assets/negwam_demo.gif"
+    },
+    {
+      "day": 64,
+      "name": "VFlash",
+      "title": "Flash Primitive Decoding",
+      "arxiv": "2611.08449",
+      "domain": "planning",
+      "summary": "Drafts a whole path in one pass (~10x faster)",
+      "folder": "day-64-vflash",
+      "gif": null
+    },
+    {
+      "day": 65,
+      "name": "MotoVerse",
+      "title": "Traffic Anticipation from a Rider's View",
+      "arxiv": "2611.06007",
+      "domain": "prediction",
+      "summary": "Predicts traffic through a motorcyclist's eyes",
+      "folder": "day-65-motoverse",
+      "gif": null
+    },
+    {
+      "day": 66,
+      "name": "FreeOcc",
+      "title": "4D Occupancy Forecasting",
+      "arxiv": "2611.08128",
+      "domain": "prediction",
+      "summary": "Forecasts how the 3D scene fills up next",
+      "folder": "day-66-freeocc",
+      "gif": null
+    },
+    {
+      "day": 67,
+      "name": "CoMET",
+      "title": "Shared Pose-Error Tracking for Async V2X Detection",
+      "arxiv": "2611.09121",
+      "domain": "v2x",
+      "summary": "Fixes late, slightly-off roadside messages",
+      "folder": "day-67-comet",
+      "gif": "day-67-comet/assets/comet_simulation.gif"
+    },
+    {
+      "day": 68,
+      "name": "LOWP",
+      "title": "Look Only Where You Plan",
+      "arxiv": "2611.10264",
+      "domain": "planning",
+      "summary": "Reads the cameras only where the car will drive",
+      "folder": "day-68-lowp",
+      "gif": "day-68-lowp/assets/lowp_simulation.gif"
+    },
+    {
+      "day": 69,
+      "name": "RaMOD",
+      "title": "Moving-Object Detection from Raw mmWave Radar",
+      "arxiv": "2611.13271",
+      "domain": "perception",
+      "summary": "Finds what's moving in raw radar, even in rain",
+      "folder": "day-69-ramod",
+      "gif": "day-69-ramod/assets/ramod_simulation.gif"
+    },
+    {
+      "day": 70,
+      "name": "FlowBatt",
+      "title": "Flow Matching for Battery Degradation Prediction",
+      "arxiv": "2611.03150",
+      "domain": "battery",
+      "summary": "Forecasts a battery's ageing curve with uncertainty",
+      "folder": "day-70-flowbatt",
+      "gif": "day-70-flowbatt/assets/flowbatt_simulation.gif"
+    },
+    {
+      "day": 71,
+      "name": "ForeseeDrive",
+      "title": "Future-Token Conditioning for Anticipatory Driving",
+      "arxiv": "2611.14286",
+      "domain": "planning",
+      "summary": "Gives the planner a forecast so it reacts early",
+      "folder": "day-71-foreseedrive",
+      "gif": "day-71-foreseedrive/assets/foresee_simulation.gif"
+    },
+    {
+      "day": 72,
+      "name": "FloCOS",
+      "title": "Compact Forward Occupancy Sets via Flow Matching",
+      "arxiv": "2611.15488",
+      "domain": "prediction",
+      "summary": "Predicts the space a nearby car might take",
+      "folder": "day-72-flocos",
+      "gif": "day-72-flocos/assets/flocos_simulation.gif"
+    },
+    {
+      "day": 73,
+      "name": "PET-MPC",
+      "title": "Prediction-Error-Tightened MPC for Crowd Navigation",
+      "arxiv": "2611.15781",
+      "domain": "prediction",
+      "summary": "Safety margins sized by measured forecast error",
+      "folder": "day-73-petmpc",
+      "gif": "day-73-petmpc/assets/petmpc_simulation.gif"
     }
-   ]
-  }
- ]
+  ],
+  "legs": [
+    {
+      "leg": 1,
+      "days": [
+        1,
+        7
+      ],
+      "format": "Carousel (PDF)",
+      "file": "road-trip/AI-Road-Trip-Carousel.pdf"
+    },
+    {
+      "leg": 2,
+      "days": [
+        8,
+        15
+      ],
+      "format": "Carousel (PDF)",
+      "file": "road-trip/AI-Road-Trip-Leg2-Carousel.pdf"
+    },
+    {
+      "leg": 3,
+      "days": [
+        16,
+        23
+      ],
+      "format": "Carousel (PDF)",
+      "file": "road-trip/AI-Road-Trip-Leg3-Carousel.pdf"
+    },
+    {
+      "leg": 4,
+      "days": [
+        24,
+        30
+      ],
+      "format": "Carousel (PDF)",
+      "file": "road-trip/AI-Road-Trip-Leg4-Carousel.pdf"
+    },
+    {
+      "leg": 5,
+      "days": [
+        31,
+        37
+      ],
+      "format": "Carousel (PDF)",
+      "file": "road-trip/AI-Road-Trip-Leg5-Carousel.pdf"
+    },
+    {
+      "leg": 6,
+      "days": [
+        38,
+        44
+      ],
+      "format": "Narrated video",
+      "file": "road-trip/AI-Road-Trip-Leg6-Narrated.mp4"
+    },
+    {
+      "leg": 7,
+      "days": [
+        45,
+        51
+      ],
+      "format": "Narrated video",
+      "file": "road-trip/AI-Road-Trip-Leg7-Narrated.mp4"
+    },
+    {
+      "leg": 8,
+      "days": [
+        52,
+        58
+      ],
+      "format": "Narrated video",
+      "file": "road-trip/AI-Road-Trip-Leg8-Narrated-Male.mp4"
+    },
+    {
+      "leg": 9,
+      "days": [
+        60,
+        65
+      ],
+      "format": "Video",
+      "file": "road-trip/AI-Road-Trip-Leg9.mp4"
+    },
+    {
+      "leg": 10,
+      "days": [
+        67,
+        72
+      ],
+      "format": "One-image overview",
+      "file": "road-trip/AI-Road-Trip-Leg10-Overview.png",
+      "title": "One drive home, 6 new AI papers",
+      "highlights": [
+        {
+          "day": 67,
+          "moment": "The blind intersection",
+          "result": "detection 0.34 → 0.88, zero learned weights",
+          "verdict": "held"
+        },
+        {
+          "day": 68,
+          "moment": "The busy downtown street",
+          "result": "path error 0.35 vs 0.42 m, no speed-up",
+          "verdict": "partly"
+        },
+        {
+          "day": 69,
+          "moment": "Heavy rain on the highway",
+          "result": "speed error 0.57 vs 1.83 m/s",
+          "verdict": "held"
+        },
+        {
+          "day": 71,
+          "moment": "Traffic slows suddenly",
+          "result": "crashes 25.5% → 5.7% with a perfect forecast; +1 pt with its own",
+          "verdict": "partly"
+        },
+        {
+          "day": 72,
+          "moment": "Merging onto the highway",
+          "result": "merge crashes 2% vs 15.7%",
+          "verdict": "held"
+        },
+        {
+          "day": 70,
+          "moment": "Parked in the garage",
+          "result": "2.6x faster, accuracy a tie",
+          "verdict": "partly"
+        }
+      ]
+    }
+  ]
 }

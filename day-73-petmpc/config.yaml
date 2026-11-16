@@ -1,0 +1,17 @@
+# PET-MPC toy re-implementation - all values are MY choices (paper sections III-V not readable)
+predictor:
+  window: 12        # one-step transitions in the regularised LS window
+  lam: 2.0          # Frobenius pull toward the previous operator
+  delta: 0.25       # Markov violation level  -> m_i = sqrt(Sigma_i / delta) = 2 * rms error
+  beta: 0.08        # EMA rate of the online second moments
+  cap: 1.0          # m, margin cap
+mpc:
+  N: 20             # 2.0 s horizon at Ts = 0.1 s
+  v_max: 1.2
+  w_max: 1.5
+  a_max: 1.5
+  v_ref: 1.0
+eval:
+  obstacle_seeds: 300
+  crowd_seeds: 40
+  n_ped: 10

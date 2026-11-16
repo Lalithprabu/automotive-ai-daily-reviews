@@ -1,0 +1,9 @@
+torch>=2.2
+numpy
+scipy
+osqp>=1.0
+opencv-python-headless
+imageio
+imageio-ffmpeg
+pyyaml
+pytest
