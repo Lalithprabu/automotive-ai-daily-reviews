@@ -1,0 +1,24 @@
+# Day 74 - DPC under varying friction (toy re-implementation of arXiv 2611.21378 from its abstract)
+world:
+  mu_high: 1.0          # dry tyres / track
+  mu_low: 0.5           # "wet" / low-friction tyres
+  wet_sectors: [[0.15, 0.45], [0.65, 0.85]]   # fractions of the lap with mu_low on the mixed track
+  v_max: 3.0            # m/s (1:10 scale car)
+  a_lat: 2.9            # m/s^2 used for the speed profile (59% of mu_low * g)
+data:
+  T: 800                # control samples per recording (40 s at 20 Hz, ~4.5 laps)
+  excitation: 0.06      # rad, random steps held 2-6 samples on top of a feedback law
+dpc:
+  T_ini: 5
+  N: 15                 # 0.75 s horizon at 20 Hz
+  lam: 1.0              # ridge weight on g
+  w_u: 10.0             # input-consistency weight (near-hard)
+  w_y: 1.0              # output-history weight (soft, noisy)
+qp:                     # chosen on dev seed 0 (data seed 1) from 4 settings; held-out seeds >= 100
+  q_ey: 80.0
+  q_epsi: 4.0
+  r: 0.2
+  r_d: 3.0
+eval:
+  seeds: [100, 120]     # held-out: data-recording seed = closed-loop seed = s
+  laps: 2

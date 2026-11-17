@@ -723,6 +723,16 @@
       "summary": "Safety margins sized by measured forecast error",
       "folder": "day-73-petmpc",
       "gif": "day-73-petmpc/assets/petmpc_simulation.gif"
+    },
+    {
+      "day": 74,
+      "name": "DPC-Friction",
+      "title": "Data-Driven Predictive Control under Varying Friction",
+      "arxiv": "2611.21378",
+      "domain": "prediction",
+      "summary": "Model-free racing control on pooled dry+wet data",
+      "folder": "day-74-dpc-friction",
+      "gif": "day-74-dpc-friction/assets/dpc_simulation.gif"
     }
   ],
   "legs": [
