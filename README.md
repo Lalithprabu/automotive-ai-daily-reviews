@@ -1,9 +1,9 @@
 <p align="center"><img src="assets/banner.png" alt="Automotive AI Daily Reviews" width="100%"></p>
 
 <p align="center">
-  <img alt="papers" src="https://img.shields.io/badge/papers%20rebuilt-73-ffb020?style=for-the-badge">
-  <img alt="latest" src="https://img.shields.io/badge/latest-Day%2074-4cc9f0?style=for-the-badge">
-  <img alt="simulations" src="https://img.shields.io/badge/simulations-70-3ddc84?style=for-the-badge">
+  <img alt="papers" src="https://img.shields.io/badge/papers%20rebuilt-74-ffb020?style=for-the-badge">
+  <img alt="latest" src="https://img.shields.io/badge/latest-Day%2076-4cc9f0?style=for-the-badge">
+  <img alt="simulations" src="https://img.shields.io/badge/simulations-71-3ddc84?style=for-the-badge">
   <img alt="pytorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white">
   <img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge">
 </p>
@@ -40,14 +40,14 @@ Every day I pick a fresh automotive machine-learning paper (ADAS perception, mot
 
 <table>
   <tr>
+    <td align="center" width="33%"><a href="day-76-driver-idmae/"><img src="day-76-driver-idmae/assets/idmae_simulation.gif" width="100%" alt="ID-MAE simulation"></a><br><b>Day 76 · ID-MAE</b><br><sub>Is the driver impaired? Label as a masked token</sub></td>
     <td align="center" width="33%"><a href="day-74-dpc-friction/"><img src="day-74-dpc-friction/assets/dpc_simulation.gif" width="100%" alt="DPC-Friction simulation"></a><br><b>Day 74 · DPC-Friction</b><br><sub>Model-free racing control on pooled dry+wet data</sub></td>
     <td align="center" width="33%"><a href="day-73-petmpc/"><img src="day-73-petmpc/assets/petmpc_simulation.gif" width="100%" alt="PET-MPC simulation"></a><br><b>Day 73 · PET-MPC</b><br><sub>Safety margins sized by measured forecast error</sub></td>
-    <td align="center" width="33%"><a href="day-72-flocos/"><img src="day-72-flocos/assets/flocos_simulation.gif" width="100%" alt="FloCOS simulation"></a><br><b>Day 72 · FloCOS</b><br><sub>Predicts the space a nearby car might take</sub></td>
   </tr>
   <tr>
+    <td align="center" width="33%"><a href="day-72-flocos/"><img src="day-72-flocos/assets/flocos_simulation.gif" width="100%" alt="FloCOS simulation"></a><br><b>Day 72 · FloCOS</b><br><sub>Predicts the space a nearby car might take</sub></td>
     <td align="center" width="33%"><a href="day-71-foreseedrive/"><img src="day-71-foreseedrive/assets/foresee_simulation.gif" width="100%" alt="ForeseeDrive simulation"></a><br><b>Day 71 · ForeseeDrive</b><br><sub>Gives the planner a forecast so it reacts early</sub></td>
     <td align="center" width="33%"><a href="day-70-flowbatt/"><img src="day-70-flowbatt/assets/flowbatt_simulation.gif" width="100%" alt="FlowBatt simulation"></a><br><b>Day 70 · FlowBatt</b><br><sub>Forecasts a battery's ageing curve with uncertainty</sub></td>
-    <td align="center" width="33%"><a href="day-69-ramod/"><img src="day-69-ramod/assets/ramod_simulation.gif" width="100%" alt="RaMOD simulation"></a><br><b>Day 69 · RaMOD</b><br><sub>Finds what's moving in raw radar, even in rain</sub></td>
   </tr>
 </table>
 
@@ -60,7 +60,7 @@ Every day I pick a fresh automotive machine-learning paper (ADAS perception, mot
 | 🧭 [Planning & end-to-end driving](#-planning--end-to-end-driving) | World models and planners that decide where the car goes | 17 |
 | 📡 [V2X & cooperative driving](#-v2x--cooperative-driving) | Cars and roadside units sharing what they see, despite delay and loss | 11 |
 | 🔋 [EV battery & vehicle health](#-ev-battery--vehicle-health) | Degradation, remaining useful life and health monitoring | 3 |
-| 🛡️ [Safety, risk & uncertainty](#-safety-risk--uncertainty) | Risk fields, calibrated uncertainty and safety-critical scenarios | 7 |
+| 🛡️ [Safety, risk & uncertainty](#-safety-risk--uncertainty) | Risk fields, calibrated uncertainty and safety-critical scenarios | 8 |
 
 ### 👁️ Perception
 
@@ -175,10 +175,11 @@ Every day I pick a fresh automotive machine-learning paper (ADAS perception, mot
 
 ### 🛡️ Safety, risk & uncertainty
 
-<details><summary><b>7 papers</b>: Risk fields, calibrated uncertainty and safety-critical scenarios</summary>
+<details><summary><b>8 papers</b>: Risk fields, calibrated uncertainty and safety-critical scenarios</summary>
 
 | Day | Paper | In one line | arXiv | Demo |
 |---|---|---|---|---|
+| 76 | [**ID-MAE**](day-76-driver-idmae/) · Masked Diffusion Autoencoder for Impaired Driving | Is the driver impaired? Label as a masked token | [2611.23211](https://arxiv.org/abs/2611.23211) | [▶ GIF](day-76-driver-idmae/assets/idmae_simulation.gif) |
 | 52 | [**SafeDriveVLA**](day-52-safedrivevla/) · Conflict-Aware Instruction Following | Follow, adapt or refuse a risky instruction | [2610.20609](https://arxiv.org/abs/2610.20609) | [▶ GIF](day-52-safedrivevla/assets/safedrivevla_simulation.gif) |
 | 37 | [**SCOPE**](day-37-scope/) · Control-Ready Uncertainty for Trajectory Diffusion | Uncertainty tubes ~45x faster than sampling | [2610.12431](https://arxiv.org/abs/2610.12431) | [▶ GIF](day-37-scope/assets/scope_simulation.gif) |
 | 31 | [**SLLCP**](day-31-sllcp/) · Localized Conformal Safety Monitoring with VLMs | Turns an overconfident VLM into calibrated safety sets | [2610.02765](https://arxiv.org/abs/2610.02765) | [▶ GIF](day-31-sllcp/assets/sllcp_simulation.gif) |
@@ -212,7 +213,7 @@ Every `day-NN-*/` folder is self-contained:
 
 ```bash
 git clone https://github.com/Lalithprabu/automotive-ai-daily-reviews.git
-cd automotive-ai-daily-reviews/day-74-dpc-friction
+cd automotive-ai-daily-reviews/day-76-driver-idmae
 pip install -r requirements.txt
 pytest tests/ -v        # unit tests
 python train.py         # trains on synthetic data (see the folder README for flags)
@@ -228,7 +229,7 @@ automotive-ai-daily-reviews/
 ├── README.md              ← you are here (generated by tools/build_readme.py)
 ├── catalog.json           ← one entry per day: the single source of truth
 ├── daily-series-log.md    ← full chronological log (generated)
-├── day-01-sv-wam/ … day-74-dpc-friction/   ← one self-contained folder per paper
+├── day-01-sv-wam/ … day-76-driver-idmae/   ← one self-contained folder per paper
 ├── road-trip/             ← weekly recap carousels, videos and overview images
 ├── assets/                ← banner
 ├── docs/PROVENANCE.md     ← how earlier days were sourced and rebuilt

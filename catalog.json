@@ -733,6 +733,16 @@
       "summary": "Model-free racing control on pooled dry+wet data",
       "folder": "day-74-dpc-friction",
       "gif": "day-74-dpc-friction/assets/dpc_simulation.gif"
+    },
+    {
+      "day": 76,
+      "name": "ID-MAE",
+      "title": "Masked Diffusion Autoencoder for Impaired Driving",
+      "arxiv": "2611.23211",
+      "domain": "safety",
+      "summary": "Is the driver impaired? Label as a masked token",
+      "folder": "day-76-driver-idmae",
+      "gif": "day-76-driver-idmae/assets/idmae_simulation.gif"
     }
   ],
   "legs": [

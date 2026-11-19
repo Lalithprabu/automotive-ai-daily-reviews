@@ -1,0 +1,25 @@
+# Day 76 - ID-MAE toy re-implementation (arXiv 2611.23211, abstract only)
+data:
+  train_drivers: [0, 90]        # driver ids [lo, hi)  -> 90 participants
+  test_drivers: [100, 130]      # 30 held-out participants (split by driver)
+  n_loc: 30                     # locations per driver; each driven once per condition (location-matched)
+  win_s: 10.0                   # window length, 10 Hz -> T = 100
+  warm_s: 3.0
+model:
+  d: 96
+  layers: 3
+  heads: 4
+  ff: 192
+  dropout: 0.1
+train:
+  steps: 1000
+  batch: 128
+  lr: 1.0e-3
+  weight_decay: 0.01
+  lam: 1.0                      # reconstruction weight (0 = ablation)
+  t_min: 0.1
+  label_fracs: [1.0, 0.1]       # fraction of training windows that carry an impairment label
+  seeds: [0, 1, 2]
+eval:
+  n_future: 4                   # forecast the last 4 patches = 2.0 s of a 10 s window
+  sampler_steps: 4
