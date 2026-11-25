@@ -1,0 +1,16 @@
+data:
+  n_train: 6000
+  n_test: 1500
+  seed_train: 1
+  seed_test: 2
+model:
+  d: 96
+  n_reg: 8          # shared "glance" tokens (+ 1 ego-speed token)
+train:
+  steps: 2000
+  batch: 32
+  lr: 0.002
+  wd: 0.01
+  threads: 1        # two variants run in parallel on 2 CPUs
+eval:
+  top_m: 8          # glance hypotheses refined and re-scored

@@ -1,0 +1,13 @@
+# Day 82 - RadarOSV toy re-implementation (synthetic data)
+data:
+  n_train: 10000      # synthetic scenes (about 50 s to generate with 2 workers)
+  n_test: 1500
+train:
+  steps: 3000
+  batch: 8
+  lr: 1.0e-3
+  # free, static, car, truck, cyclist, pedestrian
+  class_weights: [0.2, 1.0, 2.0, 2.0, 3.0, 4.0]
+radar:
+  imaging: {range_bins: 64, range_res_m: 0.4, az_bins: 64, fov_deg: 120, doppler_bins: 16, v_unamb_mps: 2.5}
+  single_chip: {range_bins: 32, range_res_m: 0.8, az_bins: 16, fov_deg: 120, doppler_bins: 32, v_unamb_mps: 24.0}

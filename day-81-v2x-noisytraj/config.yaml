@@ -1,0 +1,17 @@
+# Day 81 - noise-robust interaction-aware trajectory prediction (toy re-implementation of arXiv 2611.28128)
+data:            # [n_scenes, seed]
+  train: [40000, 81]
+  test: [3000, 8181]
+noise:
+  train_max_level: 4.0          # noise-augmented runs draw level ~ U(0, 4) per scene
+  eval_levels: [0, 0.5, 1, 2, 3, 4]
+train:
+  steps: 5000
+  batch: 64
+  lr: 0.0004
+model:
+  d: 128
+  heads: 4
+  modes: 6
+  history: 20                   # 2 s at 10 Hz
+  future: 30                    # 3 s at 10 Hz

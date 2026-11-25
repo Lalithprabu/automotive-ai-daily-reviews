@@ -1,0 +1,262 @@
+{
+ "n_clips": 1500,
+ "n_by_type": {
+  "small": 607,
+  "big": 440,
+  "clear": 453
+ },
+ "metrics": {
+  "keep_lane": {
+   "score": 0.489644318819046,
+   "score_small": 0.38390591740608215,
+   "score_big": 0.385525643825531,
+   "score_clear": 0.7324598431587219,
+   "collision_rate": 0.3173333406448364,
+   "collision_small": 0.4530477523803711,
+   "offroad_rate": 0.0
+  },
+  "oracle_anchor": {
+   "score": 0.9070718884468079,
+   "score_small": 0.9016631841659546,
+   "score_big": 0.8965702652931213,
+   "score_clear": 0.9245193004608154
+  },
+  "oracle_refined": {
+   "score": 0.9159942865371704,
+   "score_small": 0.9139239192008972,
+   "score_big": 0.9084400534629822,
+   "score_clear": 0.9261058568954468
+  },
+  "glance": {
+   "score": 0.5640642642974854,
+   "score_small": 0.5677196979522705,
+   "score_big": 0.5042225122451782,
+   "score_clear": 0.617290735244751,
+   "collision_rate": 0.27533334493637085,
+   "collision_small": 0.2817133665084839,
+   "offroad_rate": 0.0,
+   "regret": 0.2688468098640442,
+   "top1_ok": 0.1353333294391632,
+   "glance_pick": 0.5691084861755371,
+   "frac": 1.0,
+   "rank_corr": 0.5417903065681458
+  },
+  "glance_s1": {
+   "score": 0.5678243041038513,
+   "score_small": 0.5715239644050598,
+   "score_big": 0.5419530272483826,
+   "score_clear": 0.5879959464073181,
+   "collision_rate": 0.25333333015441895,
+   "collision_small": 0.2586491107940674,
+   "offroad_rate": 0.0,
+   "regret": 0.2632906436920166,
+   "top1_ok": 0.20933333039283752,
+   "glance_pick": 0.5735342502593994,
+   "frac": 1.0,
+   "rank_corr": 0.5368657112121582
+  },
+  "gaze_refine": {
+   "score": 0.8508797287940979,
+   "score_small": 0.8316893577575684,
+   "score_big": 0.8190145492553711,
+   "score_clear": 0.9075447916984558,
+   "collision_rate": 0.02933335304260254,
+   "collision_small": 0.04118615388870239,
+   "offroad_rate": 0.0,
+   "regret": 0.04972505569458008,
+   "top1_ok": 0.5273333191871643,
+   "glance_pick": 0.8420074582099915,
+   "frac": 1.0,
+   "rank_corr": 0.7762312889099121
+  },
+  "gaze_score": {
+   "score": 0.8612399101257324,
+   "score_small": 0.851015567779541,
+   "score_big": 0.8239157795906067,
+   "score_clear": 0.9111931920051575,
+   "collision_rate": 0.02533334493637085,
+   "collision_small": 0.024711668491363525,
+   "offroad_rate": 0.0,
+   "regret": 0.0423748604953289,
+   "top1_ok": 0.5586666464805603,
+   "glance_pick": 0.8344895243644714,
+   "frac": 0.1744784712791443,
+   "rank_corr": 0.7819747924804688
+  },
+  "gaze": {
+   "score": 0.868904709815979,
+   "score_small": 0.8526754379272461,
+   "score_big": 0.8465977311134338,
+   "score_clear": 0.9123181700706482,
+   "collision_rate": 0.022000014781951904,
+   "collision_small": 0.03294891119003296,
+   "offroad_rate": 0.0,
+   "regret": 0.03437945619225502,
+   "top1_ok": 0.6553333401679993,
+   "glance_pick": 0.8515563011169434,
+   "frac": 0.17438089847564697,
+   "rank_corr": 0.7963379621505737
+  },
+  "random": {
+   "score": 0.6488355994224548,
+   "score_small": 0.6299945116043091,
+   "score_big": 0.5922883749008179,
+   "score_clear": 0.7290064692497253,
+   "collision_rate": 0.18866664171218872,
+   "collision_small": 0.217462956905365,
+   "offroad_rate": 0.0,
+   "regret": 0.20154647529125214,
+   "top1_ok": 0.1679999977350235,
+   "glance_pick": 0.6278419494628906,
+   "frac": 0.17579098045825958,
+   "rank_corr": 0.6103357076644897
+  },
+  "all": {
+   "score": 0.8414596319198608,
+   "score_small": 0.818274736404419,
+   "score_big": 0.8127498030662537,
+   "score_clear": 0.9004122018814087,
+   "collision_rate": 0.02533334493637085,
+   "collision_small": 0.03294891119003296,
+   "offroad_rate": 0.0,
+   "regret": 0.05375799536705017,
+   "top1_ok": 0.44066667556762695,
+   "glance_pick": 0.7990878224372864,
+   "frac": 1.0,
+   "rank_corr": 0.7653244733810425
+  }
+ },
+ "ci": {
+  "glance_s1_minus_glance/score": [
+   0.0037600253708660603,
+   -0.011640728451311588,
+   0.01868976280093193
+  ],
+  "glance_s1_minus_glance/score_small": [
+   0.003804224543273449,
+   -0.023788196966052055,
+   0.029921649023890495
+  ],
+  "glance_s1_minus_glance/collision": [
+   -0.02199999988079071,
+   -0.04066666588187218,
+   -0.0033333334140479565
+  ],
+  "gaze_refine_minus_glance/score": [
+   0.28681543469429016,
+   0.268684983253479,
+   0.3051498830318451
+  ],
+  "gaze_refine_minus_glance/score_small": [
+   0.2639696002006531,
+   0.23391248285770416,
+   0.2937524616718292
+  ],
+  "gaze_refine_minus_glance/collision": [
+   -0.2460000067949295,
+   -0.2680000066757202,
+   -0.2226666659116745
+  ],
+  "gaze_score_minus_glance/score": [
+   0.2971756160259247,
+   0.27915871143341064,
+   0.31560033559799194
+  ],
+  "gaze_score_minus_glance/score_small": [
+   0.2832958698272705,
+   0.2542840838432312,
+   0.31276562809944153
+  ],
+  "gaze_score_minus_glance/collision": [
+   -0.25,
+   -0.27266666293144226,
+   -0.2266666740179062
+  ],
+  "gaze_minus_glance/score": [
+   0.3048403859138489,
+   0.28684288263320923,
+   0.3237760066986084
+  ],
+  "gaze_minus_glance/score_small": [
+   0.2849556505680084,
+   0.2553250789642334,
+   0.3162674605846405
+  ],
+  "gaze_minus_glance/collision": [
+   -0.25333333015441895,
+   -0.27666667103767395,
+   -0.23066666722297668
+  ],
+  "random_minus_glance/score": [
+   0.08477135002613068,
+   0.06640047580003738,
+   0.10160979628562927
+  ],
+  "random_minus_glance/score_small": [
+   0.062274787575006485,
+   0.03241227939724922,
+   0.09228876233100891
+  ],
+  "random_minus_glance/collision": [
+   -0.08666666597127914,
+   -0.10733333230018616,
+   -0.06400000303983688
+  ],
+  "all_minus_glance/score": [
+   0.2773953080177307,
+   0.2592601180076599,
+   0.29571130871772766
+  ],
+  "all_minus_glance/score_small": [
+   0.25055500864982605,
+   0.22272858023643494,
+   0.28066256642341614
+  ],
+  "all_minus_glance/collision": [
+   -0.25,
+   -0.27266666293144226,
+   -0.2266666740179062
+  ],
+  "gaze_minus_random/score": [
+   0.2200690358877182,
+   0.2036207765340805,
+   0.236271470785141
+  ],
+  "gaze_minus_random/score_small": [
+   0.22268086671829224,
+   0.19430740177631378,
+   0.25109854340553284
+  ],
+  "gaze_minus_all/score": [
+   0.027445083484053612,
+   0.019126050174236298,
+   0.035709448158741
+  ],
+  "gaze_minus_all/score_small": [
+   0.03440066799521446,
+   0.017721572890877724,
+   0.05089428275823593
+  ],
+  "gaze_score_minus_gaze_refine/score": [
+   0.010360173881053925,
+   0.0014593841042369604,
+   0.018917905166745186
+  ]
+ },
+ "clips": {
+  "random_small": 1351,
+  "gaze_win": 1109,
+  "gaze_fail": 194,
+  "n_gaze_win": 161,
+  "n_gaze_fail_vs_glance_ok": 14
+ },
+ "labels": {
+  "glance": "glance only (shared tokens)",
+  "glance_s1": "glance only, seed 1",
+  "gaze_refine": "gaze for refinement only",
+  "gaze_score": "gaze for scoring only",
+  "gaze": "GGDriver-style: gaze refine + score",
+  "random": "random patches, matched count",
+  "all": "attention over all 240 patches"
+ }
+}

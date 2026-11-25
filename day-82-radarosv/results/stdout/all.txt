@@ -1,0 +1,3 @@
+./run_all.sh: line 5:   612 Killed                  python3 train.py --run base --seed 1 > results/stdout/base_s1.txt 2>&1
+./run_all.sh: line 4:   673 Killed                  python3 train.py --run osv --seed 1 > results/stdout/osv_s1.txt 2>&1
+./run_all.sh: line 4:   682 Killed                  python3 train.py --run osv_ext --seed 0 > results/stdout/osv_ext_s0.txt 2>&1

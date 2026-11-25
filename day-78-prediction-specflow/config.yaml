@@ -1,0 +1,15 @@
+data:
+  n_train: 24000
+  n_val: 1000
+  n_test: 4000
+  seed: 0
+train:
+  steps: 5000
+  batch: 64
+  lr: 3.0e-4
+  wd: 1.0e-4
+  h_train: 6
+  log_every: 200
+eval:
+  H: 20
+  steps: 10

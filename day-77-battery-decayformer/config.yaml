@@ -1,0 +1,15 @@
+data:
+  cells_per_cond: 6        # 48 conditions x 6 = 288 cells
+  n_folds: 6               # aging-condition-exclusive folds (8 held-out conditions each)
+  seed: 0
+train:
+  steps: 1500
+  batch: 32
+  lr: 2.0e-3
+  weight_decay: 1.0e-4
+  k_min: 20                # random observed prefix length during training (k_min..100 cycles)
+  p_full: 0.5              # share of samples that see all 100 cycles
+  seeds: [0]               # one run per fold, one fixed config (the paper's protocol)
+eval:
+  k_main: 100              # headline: forecast from the first 100 cycles
+  k_ext: [25, 50, 100]

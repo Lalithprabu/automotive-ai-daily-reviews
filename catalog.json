@@ -744,6 +744,24 @@
       "folder": "day-76-driver-idmae",
       "gif": "day-76-driver-idmae/assets/idmae_simulation.gif"
     }
+    {"day": 77, "name": "DecayFormer", "title": "Hybrid SSM-Attention for Battery Degradation Trajectories", "arxiv": "2611.19116",
+     "domain": "battery", "summary": "A battery's whole life from its first 100 cycles",
+     "folder": "day-77-battery-decayformer", "gif": "day-77-battery-decayformer/assets/decayformer_simulation.gif"},
+    {"day": 78, "name": "SpecFlow", "title": "Flow Matching in the Acceleration Spectrum", "arxiv": "2611.26390",
+     "domain": "prediction", "summary": "Forecast acceleration, integrate, get smooth futures",
+     "folder": "day-78-prediction-specflow", "gif": "day-78-prediction-specflow/assets/specflow_simulation.gif"},
+    {"day": 79, "name": "TriModalWM", "title": "Tri-Modal Driving World Model in Adverse Weather", "arxiv": "2611.22669",
+     "domain": "perception", "summary": "Forecast camera, thermal and LiDAR as one video",
+     "folder": "day-79-perception-trimodalwm", "gif": "day-79-perception-trimodalwm/assets/trimodal_simulation.gif"},
+    {"day": 80, "name": "GGDriver", "title": "Glance at What Is Shared, Gaze at What Differs", "arxiv": "2611.27330",
+     "domain": "planning", "summary": "Each candidate path reads its own camera patches",
+     "folder": "day-80-planning-ggdriver", "gif": "day-80-planning-ggdriver/assets/ggdriver_simulation.gif"},
+    {"day": 81, "name": "NoisyV2X", "title": "Trajectory Prediction Under Sensing and V2X Noise", "arxiv": "2611.28128",
+     "domain": "v2x", "summary": "Denoise the input, or retrain on noisy data?",
+     "folder": "day-81-v2x-noisytraj", "gif": "day-81-v2x-noisytraj/assets/noisytraj_simulation.gif"},
+    {"day": 82, "name": "RadarOSV", "title": "RadarOSV: Unified Scene and Motion Perception from mmWave Radars", "arxiv": "2611.30078",
+     "domain": "perception", "summary": "Second radar fixes speed aliasing",
+     "folder": "day-82-radarosv", "gif": "day-82-radarosv/assets/radarosv_simulation.gif"}
   ],
   "legs": [
     {

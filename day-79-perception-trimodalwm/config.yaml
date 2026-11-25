@@ -1,0 +1,16 @@
+# Day 79 - tri-modal driving world model (toy re-implementation of arXiv 2611.22669, abstract only)
+data:
+  train_per_weather: 500      # 6 weathers -> 3,000 training clips of 14 frames
+  test_per_weather: 100       # 600 held-out clips (paper: 58 validation sequences on DSERT-RoLL)
+  train_seed: 0
+  test_seed: 1
+model:
+  d: 64                       # latent width (~0.43M params, same weights for 1 or 3 tiles)
+train:
+  batch: 8
+  lr: 0.001
+  base_steps: 900             # pretraining on clear-weather RGB only
+  steps: 1000                 # post-training per run
+  ctx_weight: 0.5             # weight of the teacher-forced one-step forecasts inside the context window
+eval:
+  horizon_s: 2.0              # headline LiDAR error at +2 s (frame 13)

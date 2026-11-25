@@ -1,0 +1,7 @@
+torch>=2.2
+numpy>=1.26
+pyyaml>=6.0
+opencv-python>=4.9
+imageio>=2.34
+imageio-ffmpeg>=0.5
+pytest>=8.0

@@ -1,0 +1,107 @@
+done rgb
+done thermal
+done lidar
+done tri
+done base
+done persist_rgb
+done persist_thermal
+done persist_lidar
+done tri_blank_rgb
+done tri_blank_thermal
+done tri_blank_lidar
+{
+ "rgb": {
+  "rgb_mae_2s": 7.737118244171143,
+  "rgb_mae_mean": 7.6073713302612305,
+  "rgb_psnr_mean": 25.807132720947266
+ },
+ "thermal": {
+  "thermal_mae_2s": 4.268966197967529,
+  "thermal_mae_mean": 3.8925936222076416
+ },
+ "lidar": {
+  "lidar_all_2s": 0.45911236966487073,
+  "lidar_all_mean": 0.41569467476816535,
+  "lidar_common_2s": 0.3526361159818167,
+  "lidar_common_mean": 0.31860596190548784,
+  "lidar_obj_2s": 5.2349661218553765,
+  "lidar_obj_mean": 4.5428113396729985
+ },
+ "base": {
+  "rgb_mae_2s": 15.074295043945312,
+  "rgb_mae_mean": 12.75516128540039,
+  "rgb_psnr_mean": 22.226530075073242
+ },
+ "tri": {
+  "rgb_mae_2s": 8.54664421081543,
+  "rgb_mae_mean": 8.351452827453613,
+  "rgb_psnr_mean": 25.029796600341797,
+  "thermal_mae_2s": 4.591605186462402,
+  "thermal_mae_mean": 4.321479320526123,
+  "lidar_all_2s": 0.46430122404459884,
+  "lidar_all_mean": 0.42402675882563645,
+  "lidar_common_2s": 0.3561908782195625,
+  "lidar_common_mean": 0.3218116294682775,
+  "lidar_obj_2s": 5.246024675424741,
+  "lidar_obj_mean": 4.611479827082307
+ },
+ "persist_rgb": {
+  "rgb_mae_2s": 9.813621520996094,
+  "rgb_mae_mean": 9.533153533935547,
+  "rgb_psnr_mean": 22.744352340698242
+ },
+ "persist_thermal": {
+  "thermal_mae_2s": 6.190650939941406,
+  "thermal_mae_mean": 5.63176965713501
+ },
+ "persist_lidar": {
+  "lidar_all_2s": 1.116108295097443,
+  "lidar_all_mean": 1.0829950780742137,
+  "lidar_common_2s": 0.386188662897289,
+  "lidar_common_mean": 0.34529037024441583,
+  "lidar_obj_2s": 9.76348624648457,
+  "lidar_obj_mean": 9.462306602001435
+ }
+}
+{
+ "tri_minus_lidar/lidar_all_2s": [
+  0.005188854379728103,
+  0.003538238347747648,
+  0.006853791291122187
+ ],
+ "tri_minus_lidar/lidar_obj_2s": [
+  0.011058553569364804,
+  -0.014308717719873475,
+  0.03640000987993612
+ ],
+ "tri_minus_persist/lidar_common_2s": [
+  -0.029997784677726458,
+  -0.03584689981314734,
+  -0.024501713523655166
+ ],
+ "lidar_minus_persist/lidar_common_2s": [
+  -0.03355254691547227,
+  -0.03926451907496705,
+  -0.02825045837727409
+ ],
+ "tri_minus_rgb/rgb_mae_2s": [
+  0.8095259666442871,
+  0.7808358218272532,
+  0.8414367573062571
+ ],
+ "tri_minus_thermal/thermal_mae_2s": [
+  0.32263898849487305,
+  0.3015512690395119,
+  0.33978294170896145
+ ],
+ "rgb_minus_persist/rgb_mae_2s": [
+  -2.076503276824951,
+  -2.161903313239415,
+  -1.9919520015915242
+ ],
+ "thermal_minus_persist/thermal_mae_2s": [
+  -1.921684741973877,
+  -2.0147410843819378,
+  -1.8172048534800609
+ ]
+}

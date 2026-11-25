@@ -1,0 +1,21 @@
+gaze: refine=gaze score=gaze params 1,030,998, 2000 steps
+{'step': 100, 'sec': 67.4, 'glance': 0.5324, 'refine': 0.3669, 'score': 0.5922}
+{'step': 200, 'sec': 131.9, 'glance': 0.4315, 'refine': 0.1824, 'score': 0.4627}
+{'step': 300, 'sec': 199.7, 'glance': 0.3825, 'refine': 0.1213, 'score': 0.3732}
+{'step': 400, 'sec': 269.2, 'glance': 0.3652, 'refine': 0.0893, 'score': 0.3239}
+{'step': 500, 'sec': 333.9, 'glance': 0.3559, 'refine': 0.076, 'score': 0.2937}
+{'step': 600, 'sec': 395.7, 'glance': 0.3358, 'refine': 0.0687, 'score': 0.2748}
+{'step': 700, 'sec': 457.6, 'glance': 0.3221, 'refine': 0.0609, 'score': 0.2607}
+{'step': 800, 'sec': 522.4, 'glance': 0.3178, 'refine': 0.0596, 'score': 0.2586}
+{'step': 900, 'sec': 588.4, 'glance': 0.3121, 'refine': 0.0553, 'score': 0.2449}
+{'step': 1000, 'sec': 652.5, 'glance': 0.3035, 'refine': 0.0512, 'score': 0.2359}
+{'step': 1100, 'sec': 715.1, 'glance': 0.3014, 'refine': 0.0476, 'score': 0.2293}
+{'step': 1200, 'sec': 777.4, 'glance': 0.2944, 'refine': 0.0454, 'score': 0.2236}
+{'step': 1300, 'sec': 838.4, 'glance': 0.2953, 'refine': 0.0424, 'score': 0.2181}
+{'step': 1400, 'sec': 900.9, 'glance': 0.2926, 'refine': 0.0391, 'score': 0.2118}
+{'step': 1500, 'sec': 964.9, 'glance': 0.2886, 'refine': 0.0368, 'score': 0.2073}
+{'step': 1600, 'sec': 1027.7, 'glance': 0.2855, 'refine': 0.0366, 'score': 0.2039}
+{'step': 1700, 'sec': 1089.2, 'glance': 0.2831, 'refine': 0.0342, 'score': 0.1984}
+{'step': 1800, 'sec': 1152.0, 'glance': 0.2846, 'refine': 0.034, 'score': 0.1971}
+{'step': 1900, 'sec': 1214.6, 'glance': 0.2799, 'refine': 0.0333, 'score': 0.1932}
+{'step': 2000, 'sec': 1277.8, 'glance': 0.2814, 'refine': 0.0318, 'score': 0.1933}
